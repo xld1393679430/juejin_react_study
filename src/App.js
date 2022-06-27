@@ -1,12 +1,24 @@
-import './App.less';
-import { Button } from 'antd';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import routers from "./router";
+import NotFound from "./components/NotFound";
+import Layout from "./components/Layout";
+import "./App.less";
 
 function App() {
+  const InitComponent = routers[0].component;
   return (
-    <div className="App">
-      <p>Hello</p>
-      <Button type="primary">Button</Button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<InitComponent />} />
+          {routers.map((item, index) => {
+            const Component = item.component;
+            return <Route key={`${item.key}---${index}`} path={item.key} element={<Component />} />;
+          })}
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
