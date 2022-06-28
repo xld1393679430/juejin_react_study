@@ -1,5 +1,5 @@
 const Index = () => {
-  return <div>study_11_rnder
+  return <div>study_11_render
   </div>;
 };
 

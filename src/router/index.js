@@ -1,7 +1,7 @@
 import { ToolOutlined } from "@ant-design/icons";
 import Home from "../pages/home";
 import Study_10_hoc from "../pages/study_10_hoc";
-import Study_11_rnder from "../pages/study_11_rnder";
+import Study_11_render from "../pages/study_11_render";
 
 const routers = [
   {
@@ -17,10 +17,10 @@ const routers = [
     component: Study_10_hoc,
   },
   {
-    key: "/study_11_rnder",
+    key: "/study_11_render",
     label: "11 优化篇-渲染控制",
     icon: <ToolOutlined />,
-    component: Study_11_rnder,
+    component: Study_11_render,
   },
 ];
 

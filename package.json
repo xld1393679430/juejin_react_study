@@ -9,7 +9,9 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.21.3",
     "axios": "^0.27.2",
+    "concurrently": "^7.2.2",
     "craco-less": "^2.0.0",
+    "nodemon": "^2.0.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-file-viewer": "^1.2.1",
@@ -20,7 +22,10 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build"
+    "build": "react-app-rewired build",
+    "server": "node server/bin/www",
+    "dev": "concurrently \"npm start\" \"npm run server\"",
+    "tips": "start启动前端项目；server启动express项目；dev同时启动前端和express项目"
   },
   "eslintConfig": {
     "extends": [
