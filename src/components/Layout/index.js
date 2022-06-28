@@ -13,7 +13,7 @@ const LayoutWrapper = ({ children }) => {
   let location = useLocation();
 
   return (
-    <Layout id="components-layout-demo-custom-trigger">
+    <Layout id="layout-root">
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logo" />
         <Menu
@@ -26,7 +26,7 @@ const LayoutWrapper = ({ children }) => {
           }}
         />
       </Sider>
-      <Layout className="site-layout">
+      <Layout id="layout-content">
         <Header
           className="site-layout-background"
           style={{
@@ -41,9 +41,8 @@ const LayoutWrapper = ({ children }) => {
         <Content
           className="site-layout-background"
           style={{
-            margin: "24px 16px",
-            padding: 24,
-            minHeight: 280,
+            padding: "24px 16px",
+            overflow: "auto",
           }}
         >
           <Outlet />
