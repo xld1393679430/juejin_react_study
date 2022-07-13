@@ -13,7 +13,7 @@ const LazySon = lazy(() => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const random = Math.random();
-      if (random > 0.8) {
+      if (random > 0.4) {
         resolve({
           default: (props) => <Son {...props} />,
         });

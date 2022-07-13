@@ -1,3 +1,7 @@
+@import url('https://cdn.bootcss.com/normalize/8.0.0/normalize.css');
+@import url('./styles/iconfont/iconfont.css');
+/* @import url('~antd/dist/antd.less'); */
+
 html, body, #root {
     height: 100%;
 }

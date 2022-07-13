@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import routers from "./router";
 import NotFound from "./components/NotFound";
 import Layout from "./components/Layout";
-import "./App.less";
 
 function App() {
   const InitComponent = routers[0].component;

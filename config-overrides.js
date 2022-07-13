@@ -10,6 +10,7 @@ module.exports = override(
 
   fixBabelImports("import", {
     libraryName: "antd",
+    libraryDirectory: "es",
     style: true, //或者true, true代表运用less
   }),
   addLessLoader({
