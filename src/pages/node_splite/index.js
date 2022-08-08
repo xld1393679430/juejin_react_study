@@ -4,6 +4,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import http from "@/http";
 import Demo1 from "./demo1.tsx";
+import Demo2 from "./demo2.tsx";
 
 const { Panel } = Collapse;
 
@@ -15,7 +16,6 @@ const Index = () => {
       path: "src/pages/node_splite/demo1.tsx",
       component: Demo1,
     },
-    
   ]);
 
   const handleChange = async (item) => {
@@ -28,6 +28,13 @@ const Index = () => {
       setList([...list]);
     }
   };
+
+  return (
+    <>
+      <Demo1 />
+      <Demo2 />
+    </>
+  )
 
   return (
     <List

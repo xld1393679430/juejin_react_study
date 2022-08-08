@@ -1,30 +1,47 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { Button } from "antd";
-import TimeSplite from "../study_13_large_data/demo1";
+import json from "@/package.json";
 
-// const jsonx = require('jsonx')
+/**
+ * 前端方式开启多线程处理json
+ */
 class Index extends React.Component {
-  state = {
-    MyComponent: null,
-  };
-  componentDidMount() {
-    // const aa = React.cloneElement(TimeSplite)
-    // const bb = jsonx.getReactElement(TimeSplite)
-    // const cc = jsonx.default
-    const component = <TimeSplite />;
-    this.setState({
-      MyComponent: component?._self?._reactInternals,
+
+  handleWorker = () => {
+    let data1 = {
+      __render__: "container",
+    };
+    let data2 = {
+      __render__: "baseComponent",
+    };
+    Object.keys(json).map((key) => {
+      const value = json[key];
+      if (typeof value === "object") {
+        data1[key] = value;
+      } else {
+        data2[key] = value;
+      }
+      return null;
     });
-    console.log(component, component?._self?._reactInternals, 222);
-  }
+
+    [data1, data2].map((item) => {
+      const worker = new Worker(`./${item.__render__}.js`, { name: item.__render__ });
+      worker.postMessage({ json: item });
+      worker.addEventListener("message", function (e) {
+        const { json, finished } = e.data;
+        console.log(finished, json, '4444');
+        if (finished) {
+          worker.terminate();
+        }
+      });
+      return null;
+    });
+  };
+
   render() {
-    const { MyComponent } = this.state;
     return (
       <>
-        <Button>Button 1</Button>
-        {/* {React.createElement()} */}
-        {/* <MyComponent /> */}
+        <Button onClick={this.handleWorker}>开启多线程处理json</Button>
       </>
     );
   }

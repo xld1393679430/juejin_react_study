@@ -6,6 +6,10 @@ function handleToast() {
 }
 
 class Index extends React.Component {
+  componentDidMount() {
+    const aa = <Button onClickCapture={this.handleDomClick}>Button 1</Button>
+    console.log(aa, '------aa');
+  }
   handleFatherClick = () => {
     alert("我是父级冒泡的触发");
   };

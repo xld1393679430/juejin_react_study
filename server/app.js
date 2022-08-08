@@ -7,6 +7,7 @@ var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var jsReviewRouter = require('./routes/js_review');
+var codeSplitRouter = require('./routes/code_split');
 var app = express();
 
 // view engine setup
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api/user', usersRouter);
 app.use('/api/js_review', jsReviewRouter);
+app.use('/api/code_split', codeSplitRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -4,6 +4,8 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import http from "@/http";
 import Demo1 from "./demo1";
+import Demo2 from "./demo2";
+import Demo3 from "./demo3";
 
 const { Panel } = Collapse;
 
@@ -15,7 +17,18 @@ const Index = () => {
       path: "src/pages/study_15_event/demo1.js",
       component: Demo1,
     },
-    
+    {
+      title: "setState",
+      codeStr: "",
+      path: "src/pages/study_15_event/demo2.js",
+      component: Demo2,
+    },
+    {
+      title: "setState",
+      codeStr: "",
+      path: "src/pages/study_15_event/demo3.js",
+      component: Demo3,
+    },
   ]);
 
   const handleChange = async (item) => {

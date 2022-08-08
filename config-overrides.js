@@ -6,6 +6,7 @@ module.exports = override(
     "@/pages": path.resolve(__dirname, "src/pages"),
     "@/components": path.resolve(__dirname, "src/components"),
     "@/http": path.resolve(__dirname, "src/http"),
+    "@/package.json": path.resolve(__dirname, "package.json"),
   }),
 
   fixBabelImports("import", {

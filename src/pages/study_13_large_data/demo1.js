@@ -31,7 +31,7 @@ function Circle({ position }) {
   return <div style={style} className="circle"></div>;
 }
 
-const MAX_COUNT = 1000;
+const MAX_COUNT = 5000;
 const EACH_COUNT = 100;
 
 class ContentA extends React.Component {
