@@ -7,6 +7,7 @@ import Study_13_large_data from "../pages/study_13_large_data";
 import Study_15_event from "../pages/study_15_event";
 import Node_splite from "../pages/node_splite";
 import Easy_coder from "../pages/easy_coder";
+import Drag from "../pages/drag";
 
 const routers = [
   {
@@ -20,6 +21,12 @@ const routers = [
     label: "node切割文件",
     icon: <ToolOutlined />,
     component: Node_splite,
+  },
+  {
+    key: "/drag",
+    label: "Drag",
+    icon: <ToolOutlined />,
+    component: Drag,
   },
   {
     key: "/easy_coder",

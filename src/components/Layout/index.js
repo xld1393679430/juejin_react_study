@@ -8,7 +8,7 @@ import "./index.less";
 const { Header, Sider, Content } = Layout;
 
 const LayoutWrapper = ({ children }) => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   let navigate = useNavigate();
   let location = useLocation();
 
