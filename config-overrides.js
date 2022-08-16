@@ -5,6 +5,7 @@ module.exports = override(
   addWebpackAlias({
     "@/pages": path.resolve(__dirname, "src/pages"),
     "@/components": path.resolve(__dirname, "src/components"),
+    "@/imgs": path.resolve(__dirname, "src/static/imgs"),
     "@/http": path.resolve(__dirname, "src/http"),
     "@/package.json": path.resolve(__dirname, "package.json"),
   }),

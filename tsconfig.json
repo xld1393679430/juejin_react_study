@@ -16,6 +16,7 @@
     "paths": {
       "@/pages": ["./src/pages"],
       "@/components": ["./src/components"],
+      "@/imgs": ["./src/static/imgs"],
       "@/http": ["./src/http"],
       "@/package.json": ["./package.json"]
     }
