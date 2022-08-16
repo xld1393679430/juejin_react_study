@@ -1,13 +1,14 @@
 import { ToolOutlined } from "@ant-design/icons";
-import Home from "../pages/home";
-import Study_10_hoc from "../pages/study_10_hoc";
-import Study_11_render from "../pages/study_11_render";
-import Study_12_render2 from "../pages/study_12_render2";
-import Study_13_large_data from "../pages/study_13_large_data";
-import Study_15_event from "../pages/study_15_event";
-import Node_splite from "../pages/node_splite";
-import Easy_coder from "../pages/easy_coder";
-import Drag from "../pages/drag";
+import Home from "@/pages/home";
+import Study_10_hoc from "@/pages/study_10_hoc";
+import Study_11_render from "@/pages/study_11_render";
+import Study_12_render2 from "@/pages/study_12_render2";
+import Study_13_large_data from "@/pages/study_13_large_data";
+import Study_15_event from "@/pages/study_15_event";
+import Node_splite from "@/pages/node_splite";
+import Easy_coder from "@/pages/easy_coder";
+import Drag from "@/pages/drag";
+import SetState from '@/pages/setState'
 
 const routers = [
   {
@@ -15,6 +16,12 @@ const routers = [
     label: "首页",
     icon: <ToolOutlined />,
     component: Home,
+  },
+  {
+    key: "/setState-sync",
+    label: "setState同步/异步",
+    icon: <ToolOutlined />,
+    component: SetState,
   },
   {
     key: "/node_splite",
