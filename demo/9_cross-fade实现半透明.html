@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .origin {
+            width: 300px;
+            height: 200px;
+            margin: 100px;
+            background-image: url('https://youimg1.tripcdn.com/target/100b0s000000hp4nnE25F.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .cross-fade-image {
+            width: 300px;
+            height: 200px;
+            margin: 100px;
+            background: no-repeat center / contain;
+            background-image: -webkit-cross-fade(url('https://images4.c-ctrip.com/target/0200c120009j4agu73541.jpg'), url('https://youimg1.tripcdn.com/target/100b0s000000hp4nnE25F.jpg'), 50%);
+            background-image: cross-fade(url('https://images4.c-ctrip.com/target/0200c120009j4agu73541.jpg'), url('https://youimg1.tripcdn.com/target/100b0s000000hp4nnE25F.jpg'), 50%);
+
+        }
+
+        .dark {
+            width: 300px;
+            height: 200px;
+            margin: 100px;
+
+            /* 兜底，IE和Firefox浏览器 */
+            background-image: url('https://youimg1.tripcdn.com/target/100b0s000000hp4nnE25F.jpg');
+            --transparent: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==);
+            /* Safari最近版本已经不需要私有前缀了 */
+            background-image: cross-fade(var(--transparent), url('https://youimg1.tripcdn.com/target/100b0s000000hp4nnE25F.jpg'), 50%);
+            /* 如使用自定义属性，-webkit-语句需要放在没有私有前缀语句的下面 */
+            background-image: -webkit-cross-fade(var(--transparent), url('https://youimg1.tripcdn.com/target/100b0s000000hp4nnE25F.jpg'), 50%);
+
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="origin">
+        <p>原图</p>
+    </div>
+
+
+    <div class="cross-fade-image">
+        <p>两张图片模糊</p>
+    </div>
+
+
+    <div class="dark">
+        <p>一张图片模糊</p>
+    </div>
+</body>
+
+</html>
