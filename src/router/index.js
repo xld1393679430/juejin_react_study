@@ -8,7 +8,8 @@ import Study_15_event from "@/pages/study_15_event";
 import Node_splite from "@/pages/node_splite";
 import Easy_coder from "@/pages/easy_coder";
 import Drag from "@/pages/drag";
-import SetState from '@/pages/setState'
+import SetState from "@/pages/setState";
+import ReactDocgen from "@/pages/react-docgen";
 
 const routers = [
   {
@@ -16,6 +17,13 @@ const routers = [
     label: "首页",
     icon: <ToolOutlined />,
     component: Home,
+  },
+
+  {
+    key: "/react-docgen",
+    label: "react-docgen",
+    icon: <ToolOutlined />,
+    component: ReactDocgen,
   },
   {
     key: "/setState-sync",
