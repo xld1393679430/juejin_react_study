@@ -10,6 +10,7 @@ import Easy_coder from "@/pages/easy_coder";
 import Drag from "@/pages/drag";
 import SetState from "@/pages/setState";
 import ReactDocgen from "@/pages/react-docgen";
+import ReactRef from "@/pages/react-ref";
 
 const routers = [
   {
@@ -18,7 +19,12 @@ const routers = [
     icon: <ToolOutlined />,
     component: Home,
   },
-
+  {
+    key: "/react-ref",
+    label: "react-ref",
+    icon: <ToolOutlined />,
+    component: ReactRef,
+  },
   {
     key: "/react-docgen",
     label: "react-docgen",
