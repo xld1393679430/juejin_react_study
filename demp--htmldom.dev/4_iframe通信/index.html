@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>window</p>
+        <button id="btn">发送消息给iframe</button>
+        <div>
+            <span>iframe发来的消息：</span>
+            <span class="window-message"></span>
+        </div>
+
+        <hr>
+
+        <p>iframe</p>
+        <iframe src="iframe.html" frameborder="0" id="iframe"></iframe>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const iframe = document.getElementById('iframe')
+            const btn = document.getElementById('btn')
+
+            btn.addEventListener('click', function () {
+                iframe.contentWindow.postMessage('哈哈', '*')
+            })
+
+            window.addEventListener('message', (event) => {
+                const messageBox = document.querySelector('.window-message')
+                messageBox.innerText = event.data
+            })
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

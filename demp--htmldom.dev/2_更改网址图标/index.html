@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 设置图片作为图标
+        function setFavicon(url) {
+            const fav = document.querySelector('link[rel=icon]')
+            if (fav) {
+                fav.href = url
+            } else {
+                const link = document.createElement('link')
+                link.rel = 'icon'
+                link.href = url
+
+                document.head.appendChild(link)
+            }
+        }
+
+        setFavicon('https://tse1-mm.cn.bing.net/th/id/OIP-C.S6yEW2QXILA8pGC2gre1ygAAAA?w=155&h=180&c=7&r=0&o=5&dpr=2&pid=1.7')
+
+        // 设置emoji作为图标
+        function setEmojiFav(emoji) {
+            const canvas = document.createElement('canvas')
+            canvas.width = 64
+            canvas.height = 64
+
+            const context = canvas.getContext('2d')
+            context.font = "64px serif"
+            context.fillText(emoji, 0 , 64)
+
+            const url = canvas.toDataURL()
+
+            setFavicon(url)
+        }
+
+        setEmojiFav("👻")
+    </script>
+</body>
+
+</html>

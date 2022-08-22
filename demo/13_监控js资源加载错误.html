@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1>监听js资源加载错误</h1>
+
+    <script>
+        function handleSourceError(event) {
+            if (!(event instanceof ErrorEvent)) {
+                console.log('--handleSourceError--', event)
+            }
+
+        }
+
+        // onerror事件不会向上冒泡，window.onerror接收不到加载失败的错误
+        window.onerror = function () {
+            console.log('---window.onerror---', event)
+        }
+
+        window.addEventListener('error', (event) => {
+            if (!(event instanceof ErrorEvent)) {
+                console.log('---addEventListener.onerror---', event instanceof ErrorEvent, event)
+            }
+        }, true)
+    </script>
+    <script src="not-exist-1.js" onerror="handleSourceError(event)"></script>
+    <script src="not-exist-2.js"></script>
+</body>
+
+</html>

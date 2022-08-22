@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <pre id="code-container">
+            <code>list.map((item, index) => { console.log('index') })</code>
+        </pre>
+
+        <div>奥术大师大所</div>
+        <button id="btn">Copy</button>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const btn = document.getElementById('btn')
+                const codeContainer = document.getElementById('code-container')
+
+                btn.addEventListener('click', function () {
+                    const selection = document.getSelection()
+
+                    const currentRange = selection.rangeCount === 0 ? null : selection.getRangeAt(0)
+
+                    const rang = document.createRange()
+                    rang.selectNodeContents(codeContainer)
+
+                    selection.removeAllRanges();
+                    selection.addRange(rang)
+
+                    try {
+                        document.execCommand('copy');
+                        btn.innerText = 'Copied'
+                    } catch (error) {
+                        btn.innerText = 'Copy'
+                    }
+                })
+            })
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h2>使用a标签下载文件(图片必须同源才可以下载)</h2>
+        <a href="./pig.png" download>点我下载图片</a>
+        <a href="https://img1.baidu.com/it/u=4054598979,484321342&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1661274000&t=00719d872950c7439aa808f5584cc60e"
+            download>点我下载图片</a>
+    </div>
+
+    <hr>
+    <div>
+        <h2>创建a便签下载文件(图片必须同源才可以下载)</h2>
+        <button
+            onclick="handleDownload('https://img1.baidu.com/it/u=4054598979,484321342&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1661274000&t=00719d872950c7439aa808f5584cc60e')">
+            点我下载图片(非同源图片 下载不成功)
+        </button>
+        <button onclick="handleDownload('./pig.png')">
+            点我下载图片(同源图片 下载成功)
+        </button>
+    </div>
+
+    <hr>
+    <div>
+        <h2>使用Blob下载Json文件</h2>
+        <button onclick="handleDownloadJson()">使用Blob下载Json文件</button>
+    </div>
+
+    <hr>
+    <div>
+        <h2>使用Blob下载图片</h2>
+        <button onclick="handleDownloadImage()">使用Blob下载图片</button>
+    </div>
+
+    <hr>
+    <div>
+        <h2>图片转Base64</h2>
+        <button onclick="testImageToBase64_1()">图片转Base64 方法一</button>
+        <button onclick="testImageToBase64_2()">图片转Base64 方法二</button>
+    </div>
+    <script>
+        const imageUrl1 = 'https://img1.baidu.com/it/u=4054598979,484321342&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1661274000&t=00719d872950c7439aa808f5584cc60e'
+        const imageUrl2 = './pig.png'
+
+        // 图片必须同源才可以下载
+        function handleDownload(url, filename = 'filename') {
+            const a = document.createElement('a')
+            a.href = url
+            a.download = filename
+            a.target = '__blank'
+
+            document.body.appendChild(a)
+            a.click()
+            document.body.removeChild(a)
+        }
+
+        // 通过Blob下载Json文件
+        function handleDownloadJson() {
+            const data = JSON.stringify({ message: '哈哈哈' })
+            const blob = new Blob([data], { type: "application/json" })
+
+            const url = window.URL.createObjectURL(blob)
+
+            handleDownload(url)
+
+            window.URL.revokeObjectURL(url)
+        }
+
+        // 通过Blob下载图片
+        function handleDownloadImage() {
+            const img = document.createElement('img')
+            img.src = imageUrl1
+            img.crossOrigin = 'anonymous'; // crossOrigin：anonymous  需要加上这个 不然会报错 `Failed to execute 'toDataURL' on 'HTMLCanvasElement'`
+            img.style.cssText = `
+                position: fixed;
+                left: -99999999px;
+                top:  -99999999px
+            `
+
+            img.onload = function () {
+                imgToBlob(img, 1, (_blob) => {
+                    document.body.removeChild(img)
+
+                    const blob = new Blob([_blob], { type: "image/*" })
+                    const url = window.URL.createObjectURL(blob)
+
+                    handleDownload(url)
+
+                    window.URL.revokeObjectURL(url)
+                })
+            }
+            document.body.appendChild(img)
+        }
+
+        // 图片转Base64 方法一： canvas
+        function imgToBase64_1(img) {
+            const canvas = document.createElement('canvas')
+            canvas.width = img.width
+            canvas.height = img.height
+
+            const ctx = canvas.getContext('2d')
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+            const base64 = canvas.toDataURL('image/*')
+            canvas.remove()
+
+            return base64
+        }
+
+        // 图片转Base64 方法二：FileReader
+        function imgToBase_2(file) {
+            return new Promise((resolve, reject) => {
+                const fileReader = new FileReader()
+                fileReader.readAsDataURL(file)
+                fileReader.onload = (e) => {
+                    resolve(e.target.result)
+                }
+            })
+        }
+
+        // 图片转Blob
+        function imgToBlob(img, quality = 1, callback) {
+            const canvas = document.createElement('canvas')
+            canvas.width = img.width
+            canvas.height = img.height
+            const ctx = canvas.getContext('2d')
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+
+            canvas.toBlob((blob) => {
+                callback(blob)
+            }, 'image/*', quality)
+        }
+
+
+
+        // 测试图片转Base64
+        function testImageToBase64_1() {
+            const img = document.createElement('img')
+            img.src = imageUrl1
+            // crossOrigin：anonymous  需要加上这个 不然会报错 `Failed to execute 'toDataURL' on 'HTMLCanvasElement'`
+            img.crossOrigin = 'anonymous'
+            img.style.cssText = `
+                position: fixed;
+                left: -99999999px;
+                top:  -99999999px
+            `
+
+            img.onload = function () {
+                const base64 = imgToBase64_1(img)
+                document.body.removeChild(img)
+                alert(base64)
+            }
+            document.body.appendChild(img)
+        }
+
+        // 测试图片转Base64
+        function testImageToBase64_2() {
+            const input = document.createElement('input')
+            const fileType = 'image/*'
+            input.setAttribute('type', 'file')
+            input.setAttribute('accept', 'fileType')
+            // input.setAttribute('webkitdirectory', 'true')
+            input.setAttribute('name', '附件')
+            input.setAttribute('placehold', '点击我上传文件')
+            input.onchange = (event) => {
+                const file = event.target.files[0]
+
+                imgToBase_2(file).then(base64 => {
+                    alert(base64)
+                }).finally(() => {
+                    document.body.removeChild(input)
+                })
+            }
+
+            document.body.appendChild(input)
+
+        }   
+    </script>
+</body>
+
+</html>

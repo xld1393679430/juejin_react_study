@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>iframe</p>
+    <button onclick="handleSend()">发送消息给window</button>
+    <div>
+        <span>window发来的消息：</span>
+        <span class="window-message"></span>
+    </div>
+
+    <script>
+        function handleSend() {
+            window.parent.postMessage('呵呵', "*")
+        }
+
+        window.addEventListener('message', (event) => {
+            console.log(event)
+            const messageBox = document.querySelector('.window-message')
+
+            messageBox.innerText = event.data
+        })
+    </script>
+
+</body>
+
+</html>

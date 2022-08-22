@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onclick="handleBodyClick()">
+    <input id="input" type="date" onchange="handleChane(event)" />
+
+    <hr>
+
+    <input type="text" onkeydown="handleKeyDown(event)" />
+    <div class="parent" data-name="parent">
+        <div data-name="child">child</div>
+    </div>
+
+
+    <div>
+        <button onclick="handleOnce(event)">一次监听事件</button>
+    </div>
+    <script>
+
+        // function handleChane() {
+        //     const input = document.getElementById('input')
+        //     console.log(input.value)
+
+        //     console.log(event.target.value)
+        // }
+
+        // function isDataInputSupported() {
+        //     const input = document.createElement('input')
+        //     const validValue = 'xxxx'
+        //     input.setAttribute('type', 'date')
+        //     input.setAttribute('value', validValue)
+
+        //     console.log('====================================');
+        //     console.log(input.value);
+        //     console.log('====================================');
+
+        //     return input.value !== validValue
+        // }
+
+        // isDataInputSupported()
+
+
+        const parent = document.querySelector('.parent')
+        const cloneParent1 = parent.cloneNode(true)
+        const cloneParent2 = parent.cloneNode(false)
+        console.log('====================================');
+        console.log(cloneParent1, cloneParent2);
+        console.log('====================================');
+
+        function handleKeyDown(event) {
+            // 检测大写是否打开
+            const isCapsLock = event.getModifierState('CapsLock')
+            console.log(isCapsLock, '--CapsLock--')
+        }
+
+        function handleOnce(event) {
+            alert("我只会执行一次事件")
+
+            console.log(event);
+
+            const fn = event.target.getAttribute('onclick')
+            event.target.setAttribute('onclick', "null")
+            event.target.setAttribute('aa', "bb")
+
+            setTimeout(() => {
+                console.log(fn)
+                event.target.setAttribute('onclick', fn)
+            }, 3000)
+            // event.target.setA
+        }
+
+        function handleBodyClick() {
+            const div = document.createElement('div')
+            const tagName = document.activeElement
+
+            console.log(tagName, '-tagName-');
+
+            div.innerText = '11'
+        }
+    </script>
+</body>
+
+</html>
