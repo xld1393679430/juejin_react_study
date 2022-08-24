@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea name="text" cols="30" rows="10" onkeydown="handleKeydown(event)" placeholder="Shift + Enter for a new line"></textarea>
+    <textarea id="input" name="text" cols="30" rows="10" placeholder="Shift + Enter for a new line"></textarea>
+    <script>
+      function handleKeydown(event) {
+        // console.log(event, 2222);
+        // const { keycode, which, shiftKey, preventDefault } = event;
+        // const code = keycode || which;
+        // if (keycode === 13 && shiftKey) {
+        //   preventDefault();
+        // }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const input = document.getElementById("input");
+
+        input.addEventListener("keydown", function () {
+          console.log(event, 3333);
+          //   const { keycode, which, shiftKey, preventDefault } = event;
+          //   const code = keycode || which;
+          //   if (keycode === 13 && shiftKey) {
+          //     preventDefault();
+          //   }
+        });
+      });
+    </script>
+  </body>
+</html>

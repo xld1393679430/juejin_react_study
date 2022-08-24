@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="input1" type="file" />
+    <img id="preview1" src="" alt="" />
+
+    <hr />
+
+    <input id="input2" type="file" />
+    <img id="preview2" src="" alt="" />
+
+    <script>
+      // 时间
+      //   createObjectURL 同步执行（立即）
+      //   FileReader.readAsDataURL 异步执行（一段时间后）
+      // 内存使用情况
+      //   createObjectURL 返回带有哈希值的 url，并将对象存储在内存中，直到文档触发卸载事件（例如文档关闭）或执行 revokeObjectURL
+      //   FileReader.readAsDataURL返回base64包含许多字符，并使用比 blob url 更多的内存，但在您不使用它时从内存中删除（通过垃圾收集器）
+      // 支持
+      //   createObjectURL 来自 IE 10 和所有现代浏览器
+      //   FileReader.readAsDataURL 来自 IE 10 和所有现代浏览器
+
+      // 对我来说，最好使用 blob url 的 (via createObjectURL)，它更高效、更快，但如果您使用许多对象 url，则需要通过revokeObjectURL(以释放内存)释放这些 url 。
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const preview1 = document.getElementById("preview1");
+        const input1 = document.getElementById("input1");
+
+        const preview2 = document.getElementById("preview2");
+        const input2 = document.getElementById("input2");
+
+        input1.addEventListener("change", function (event) {
+          const file = event.target.files[0];
+          const url = window.URL.createObjectURL(file);
+          preview1.src = url;
+
+          preview1.onload = function () {
+            console.log(url, 1)
+            
+            window.URL.revokeObjectURL(url);
+
+            console.log(url, 2)
+          };
+        });
+
+        input2.addEventListener("change", function (event) {
+          const file = event.target.files[0];
+          const reader = new FileReader();
+          reader.addEventListener("load", function (e) {
+            preview2.src = reader.result;
+          });
+
+          reader.readAsDataURL(file);
+        });
+      });
+    </script>
+  </body>
+</html>

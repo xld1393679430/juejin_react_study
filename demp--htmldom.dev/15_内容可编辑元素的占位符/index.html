@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .editable1,
+      .editable2 {
+        width: 200px;
+        height: 40px;
+        margin: 100px auto;
+        border: 1px solid skyblue;
+      }
+
+      .editable1:empty::before {
+        content: attr(data-placeholder);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="editable1" contenteditable="true" data-placeholder="Edit me"></div>
+
+    <hr />
+
+    <div class="editable2" id="editMe" contenteditable="true" data-placeholder="Edit me"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const ele = document.getElementById("editMe");
+
+        const placeholder = ele.getAttribute("data-placeholder");
+
+        if (ele.innerHTML === "") {
+          ele.innerHTML = placeholder;
+        }
+
+        ele.addEventListener("focus", function (e) {
+          const value = e.target.innerHTML;
+
+          console.log(placeholder, value, e.target, 222);
+          if (value === placeholder) {
+            e.target.innerHTML = "";
+          }
+        });
+
+        ele.addEventListener("blur", function (e) {
+          const value = e.target.innerHTML;
+          if (!value) {
+            e.target.innerHTML = placeholder;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

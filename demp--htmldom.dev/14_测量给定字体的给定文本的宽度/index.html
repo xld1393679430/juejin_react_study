@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <span>我是一串文本</span>
+    </div>
+    <button id="btn1">点我计算字符串的宽度(通过canvas)</button>
+    <button id="btn2">点我计算字符串的宽度(通过假元素)</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const text = '我是一串字符'
+            const btn1 = document.getElementById('btn1')
+            const btn2 = document.getElementById('btn2')
+
+
+            btn1.addEventListener('click', function () {
+                const width = handleWidth_1(text, 'normal 12px')
+                alert(width)
+            })
+
+            btn2.addEventListener('click', function () {
+                const width = handleWidth_2(text, 'normal')
+                alert(width)
+            })
+
+            function handleWidth_1(text, font = '') {
+                const canvas = document.createElement('canvas')
+                const context = canvas.getContext('2d')
+                context.font = font
+                const measure = context.measureText(text)
+                return measure.width
+            }
+
+            function handleWidth_2(text, font = '') {
+                const div = document.createElement('div')
+                div.style.cssText = `
+                    position: absolute;
+                    left: -999999999px;
+                    top: -9999999999px
+                    visibility: hidden;
+                `
+                
+                div.innerText = text
+
+                document.body.appendChild(div)
+
+                const width = window.getComputedStyle(div).width
+
+                document.body.removeChild(div)
+
+                return width;
+            }
+
+        })
+
+
+    </script>
+</body>
+
+</html>

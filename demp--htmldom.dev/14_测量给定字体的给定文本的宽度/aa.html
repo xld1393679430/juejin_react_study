@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contaienr">
+        <p>测试文字</p>
+        <img src="https://dimg.uat.qa.nt.ctripcorp.com/images/1i62612000004whig3853_C_400_300_R5.jpg_.webp?proc=source/trip"
+            alt="">
+
+        <hr>
+        <ul id="list">
+
+        </ul>
+    </div>
+
+    <script>
+        const Max = 10
+        const StorageName = '__cv__'
+        document.addEventListener('DOMContentLoaded', function () {
+            const list = document.getElementById('id')
+
+            const setStorage = function (list) {
+                try {
+                    const storageList = getStorage()
+                    if (!storageList) {
+                        localStorage.setItem(StorageName, JSON.stringify(list))
+                    } else if (storageList.length < Max) {
+                        storageList.unshift(list)
+                        localStorage.setItem(StorageName, JSON.stringify(storageList))
+                    } else {
+                        storageList.pop()
+                        storageList.unshift(list)
+                        localStorage.setItem(StorageName, JSON.stringify(storageList))
+                    }
+                } catch (error) {
+
+                }
+            }
+
+            const getStorage = function () {
+                try {
+                    const storageList = JSON.parse(localStorage.getItem(StorageName))
+                    return storageList
+                } catch (error) {
+                    return []
+                }
+            }
+
+            document.addEventListener('copy', function (e) {
+                e.preventDefault();
+
+                let text = ''
+                if (e.clipboardData) {
+                    const event = (e.orginalEvent || e)
+                    text = event.clipboardData.getData('text/plain')
+                    const text2 = event.clipboardData.getData('text')
+                    const text3 = event.clipboardData.getData('Text')
+                    console.log(111, text, text2, text3)
+                } else if (window.clipboardData) {
+                    text = window.clipboardData.getData('Text')
+                } else {
+                    text = ''
+                }
+
+                console.log(text)
+
+                // if (document.queryCommandSupported('insertText')) {
+                //     document.execCommand('insertText', false, text)
+                // } else {
+                //     const range = document.getSelection().getRangeAt(0);
+                //     range.deleteContents();
+
+                //     const textNode = document.createTextNode(text);
+                //     range.insertNode(textNode);
+                //     range.selectNodeContents(textNode);
+                //     range.collapse(false);
+
+                //     const selection = window.getSelection();
+                //     selection.removeAllRanges();
+                //     selection.addRange(range);
+                // }
+            })
+
+        })
+    </script>
+</body>
+
+</html>

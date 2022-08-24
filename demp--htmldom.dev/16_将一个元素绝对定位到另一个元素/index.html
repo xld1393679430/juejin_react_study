@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        margin: 100px;
+        /* display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; */
+      }
+
+      .text {
+        margin: 8px 0;
+      }
+
+      #target {
+        width: 300px;
+        height: 100px;
+        border: 1px solid skyblue;
+      }
+
+      #popover {
+        position: fixed;
+        left: -999999999px;
+        margin-top: 10px;
+        width: 80px;
+        text-align: center;
+        line-height: 28px;
+        border: 1px solid #ccc;
+        padding: 4px 10px;
+        background-color: #fff;
+      }
+
+      .arraw {
+        position: absolute;
+        border-left: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+        background: #fff;
+        height: 10px;
+        width: 10px;
+        transform: translate(-50%, -50%) rotate(45deg);
+        left: 50%;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="target">target</div>
+
+      <p class="text">我是内容 我是内容 我是内容 我是内容 我是内容</p>
+      <div id="popover">
+        <div class="arraw"></div>
+        <span>Popover</span>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const target = document.getElementById("target");
+        const popover = document.getElementById("popover");
+
+        const { bottom, left, width } = target.getBoundingClientRect();
+        const { width: pWidth } = popover.getBoundingClientRect();
+
+        popover.style.left = `${left + width / 2 - pWidth / 2}px`;
+        popover.style.top = `${bottom + 2}px`;
+        popover.style.display = "block";
+
+        
+      });
+    </script>
+  </body>
+</html>

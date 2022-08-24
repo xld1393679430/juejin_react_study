@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #list {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .draggable {
+            width: 10rem;
+            height: 4rem;
+
+            border: 1px solid skyblue;
+            line-height: 4rem;
+            text-align: center;
+
+            cursor: move;
+            user-select: none;
+        }
+
+        .draggable:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        .placeholder {
+            background-color: #edf2f7;
+            border: 1px dashed #cbd5e0;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="list">
+        <div class="draggable">1</div>
+        <div class="draggable">2</div>
+        <div class="draggable">3</div>
+        <div class="draggable">4</div>
+        <div class="draggable">5</div>
+    </div>
+
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Query the list element
+            const list = document.getElementById('list');
+
+            let draggingEle;
+            let placeholder;
+            let isDraggingStarted = false;
+
+            // The current position of mouse relative to the dragging element
+            let x = 0;
+            let y = 0;
+
+            // Swap two nodes
+            const swap = function (nodeA, nodeB) {
+                const parentA = nodeA.parentNode;
+                const siblingA = nodeA.nextSibling === nodeB ? nodeA : nodeA.nextSibling;
+
+                // Move `nodeA` to before the `nodeB`
+                nodeB.parentNode.insertBefore(nodeA, nodeB);
+
+                // Move `nodeB` to before the sibling of `nodeA`
+                parentA.insertBefore(nodeB, siblingA);
+            };
+
+            // Check if `nodeA` is above `nodeB`
+            const isAbove = function (nodeA, nodeB) {
+                // Get the bounding rectangle of nodes
+                const rectA = nodeA.getBoundingClientRect();
+                const rectB = nodeB.getBoundingClientRect();
+
+                return rectA.top + rectA.height / 2 < rectB.top + rectB.height / 2;
+            };
+
+            const mouseDownHandler = function (e) {
+                draggingEle = e.target;
+
+                // Calculate the mouse position
+                const rect = draggingEle.getBoundingClientRect();
+                x = e.pageX - rect.left;
+                y = e.pageY - rect.top;
+
+                // Attach the listeners to `document`
+                document.addEventListener('mousemove', mouseMoveHandler);
+                document.addEventListener('mouseup', mouseUpHandler);
+            };
+
+            const mouseMoveHandler = function (e) {
+                const draggingRect = draggingEle.getBoundingClientRect();
+
+                if (!isDraggingStarted) {
+                    isDraggingStarted = true;
+
+                    // Let the placeholder take the height of dragging element
+                    // So the next element won't move up
+                    placeholder = document.createElement('div');
+                    placeholder.classList.add('placeholder');
+                    draggingEle.parentNode.insertBefore(placeholder, draggingEle.nextSibling);
+                    placeholder.style.width = `${draggingRect.width}px`;
+                    placeholder.style.height = `${draggingRect.height}px`;
+                }
+
+                // Set position for dragging element
+                draggingEle.style.position = 'absolute';
+                draggingEle.style.top = `${e.pageY - y}px`;
+                draggingEle.style.left = `${e.pageX - x}px`;
+
+                // The current order
+                // prevEle
+                // draggingEle
+                // placeholder
+                // nextEle
+                const prevEle = draggingEle.previousElementSibling;
+                const nextEle = placeholder.nextElementSibling;
+
+                // The dragging element is above the previous element
+                // User moves the dragging element to the top
+                if (prevEle && isAbove(draggingEle, prevEle)) {
+                    // The current order    -> The new order
+                    // prevEle              -> placeholder
+                    // draggingEle          -> draggingEle
+                    // placeholder          -> prevEle
+                    swap(placeholder, draggingEle);
+                    swap(placeholder, prevEle);
+                    return;
+                }
+
+                // The dragging element is below the next element
+                // User moves the dragging element to the bottom
+                if (nextEle && isAbove(nextEle, draggingEle)) {
+                    // The current order    -> The new order
+                    // draggingEle          -> nextEle
+                    // placeholder          -> placeholder
+                    // nextEle              -> draggingEle
+                    swap(nextEle, placeholder);
+                    swap(nextEle, draggingEle);
+                }
+            };
+
+            const mouseUpHandler = function () {
+                // Remove the placeholder
+                placeholder && placeholder.parentNode.removeChild(placeholder);
+
+                draggingEle.style.removeProperty('top');
+                draggingEle.style.removeProperty('left');
+                draggingEle.style.removeProperty('position');
+
+                x = null;
+                y = null;
+                draggingEle = null;
+                isDraggingStarted = false;
+
+                // Remove the handlers of `mousemove` and `mouseup`
+                document.removeEventListener('mousemove', mouseMoveHandler);
+                document.removeEventListener('mouseup', mouseUpHandler);
+            };
+
+            // Query all items
+            [].slice.call(list.querySelectorAll('.draggable')).forEach(function (item) {
+                item.addEventListener('mousedown', mouseDownHandler);
+            });
+        });
+    </script> -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let draggingEle;
+            let placeholder;
+            let isDraggingStart = false;
+            let x = 0;
+            let y = 0;
+
+            const mouseDownHandler = (event) => {
+                draggingEle = event.target;
+
+                const { left, top } = draggingEle.getBoundingClientRect();
+
+                x = event.pageX - left;
+                y = event.pageY - top;
+
+                document.addEventListener("mousemove", mouseMoveHandler);
+                document.addEventListener("mouseup", mouseUpHandler);
+            };
+
+            const mouseMoveHandler = (event) => {
+                const draggingRect = draggingEle.getBoundingClientRect();
+                if (!isDraggingStart) {
+                    isDraggingStart = true;
+
+                    placeholder = document.createElement("div");
+                    placeholder.classList.add("placeholder");
+                    draggingEle.parentNode.insertBefore(placeholder, draggingEle.nextSibling);
+                    placeholder.style.width = `${draggingRect.width}px`;
+                    console.log(draggingRect, draggingRect.height, 222)
+                    placeholder.style.height = `${draggingRect.height}px`;
+                }
+
+                draggingEle.style.position = "absolute";
+                draggingEle.style.top = `${event.pageY - y}px`;
+                draggingEle.style.left = `${event.pageX - x}px`;
+
+                const prevEle = draggingEle.previousElementSibling;
+                const nextEle = placeholder.nextElementSibling;
+
+                if (prevEle && isAbove(draggingEle, prevEle)) {
+                    swap(placeholder, draggingEle);
+                    swap(placeholder, prevEle);
+                    return;
+                }
+
+                if (nextEle && isAbove(nextEle, draggingEle)) {
+                    swap(nextEle, placeholder);
+                    swap(nextEle, draggingEle);
+                    return;
+                }
+            };
+
+            const mouseUpHandler = (event) => {
+                // placeholder && placeholder.parentNode.removeChild(placeholder);
+
+                draggingEle.style.removeProperty("top");
+                draggingEle.style.removeProperty("left");
+                draggingEle.style.removeProperty("position");
+
+                x = null;
+                y = null;
+                draggingEle = null;
+                isDraggingStart = false;
+
+                document.removeEventListener("mousemove", mouseMoveHandler);
+                document.removeEventListener("mouseup", mouseUpHandler);
+            };
+
+            const isAbove = (nodeA, nodeB) => {
+                const rectA = nodeA.getBoundingClientRect();
+                const rectB = nodeB.getBoundingClientRect();
+
+                return rectA.top + rectA.height / 2 < rectB.top + rectB.height / 2;
+            };
+
+            const swap = (nodeA, nodeB) => {
+                const parentA = nodeA.parentNode;
+                const siblingA = nodeA.nextSibling === nodeB ? nodeA : nodeA.nextSibling;
+
+                nodeB.parentNode.insertBefore(nodeA, nodeB);
+
+                parentA.insertBefore(nodeB, siblingA);
+            };
+
+            const items = document.querySelectorAll(".draggable");
+            Array.from(items).forEach((item) => {
+                item.addEventListener("mousedown", mouseDownHandler);
+            });
+        });
+    </script>
+</body>
+
+</html>
