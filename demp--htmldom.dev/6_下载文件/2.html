@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const url = "https://i3.qumiaodong.com/1b154364a59a4d4c/1811436da7/434c103bf2d8151f/404a1032f5d5151c4c0f1a3bf6a10e7f.jpg";
+
+      function download(url) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", url);
+        xhr.responseType = "blob";
+        xhr.send();
+        xhr.onload = function () {
+          var fileBlob = xhr.response;
+          console.log(fileBlob);
+          var fileUrl = URL.createObjectURL(fileBlob);
+          //document.querySelector("img").setAttribute('src',fileUrl)
+          var addElement = document.createElement("a");
+          addElement.innerHTML = "点击";
+          addElement.href = fileUrl;
+          addElement.download = "a.png";
+          document.body.appendChild(addElement);
+        };
+      }
+
+      function downloadByData(url) {
+        let image = new Image(); //创建图片对象
+        image.setAttribute("crossOrigin", "anonymous"); //设置允许跨域
+        image.src = url; //赋值src
+        image.onload = () => {
+          //等待图片加载完成创建canvas
+          let canvas = document.createElement("canvas");
+          //将图片绘制到canvas画布上
+          canvas.width = image.width;
+          canvas.height = image.height;
+          let ctx = canvas.getContext("2d");
+          ctx.drawImage(image, 0, 0, image.width, image.height);
+          //获取图片文件格式  jpg/jpeg/png
+          let ext = image.src.substring(image.src.lastIndexOf(".") + 1).toLowerCase();
+          //导出画布快照  此时已越过跨域限制成功取到图片数据
+          let dataURL = canvas.toDataURL("image/" + ext);
+          //创建a标签
+          const a = document.createElement("a");
+          // 赋值a标签download属性值，标明该a标签提供下载功能，同时该属性指定了下载时的文件名称
+          a.download = this.downloadName;
+          //赋值a标签下载地址，即canvas导出的画布快照 base64格式的图片地址
+          a.href = dataURL;
+          //添加a标签到dom中
+          document.body.appendChild(a);
+          //触发a标签点击事件 触发下载
+          a.click();
+          //下载完成 删除多余的a标签  保持页面原有元素不动
+          document.removeChild(a);
+        };
+      }
+
+      function downloadByBlob(url) {
+        let image = new Image(); //创建图片对象
+        image.setAttribute("crossOrigin", "anonymous"); //设置允许跨域
+        image.src = url; //赋值src
+        image.onload = () => {
+          //等待图片加载完成创建canvas
+          let canvas = document.createElement("canvas");
+          //将图片绘制到canvas画布上
+          canvas.width = image.width;
+          canvas.height = image.height;
+          let ctx = canvas.getContext("2d");
+          ctx.drawImage(image, 0, 0, image.width, image.height);
+          //此处同样是利用canvas自带API将画布数据导出为bolb流格式
+          canvas.toBlob((blob) => {
+            let url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.download = this.downloadName;
+            // 直接将canvas导出的bolb:URL 格式赋值为a标签的href属性 同样进行点击触发下载
+            a.href = url;
+            document.body.appendChild(a);
+            a.click();
+            document.removeChild(a);
+            // 释放URL对象
+            URL.revokeObjectURL(url);
+          });
+        };
+      }
+
+      function downloadImage(imgsrc, name = "aaa") {
+        //下载图片地址和图片名
+        var image = new Image();
+        // 解决跨域 Canvas 污染问题,
+        // image.setAttribute("crossorigin", "anonymous");
+        // image.setAttribute("crossorigin", "use-credentials");
+
+        image.onload = function () {
+        //   var canvas = document.createElement("canvas");
+        //   canvas.width = image.width;
+        //   canvas.height = image.height;
+        //   var context = canvas.getContext("2d");
+        //   context.drawImage(image, 0, 0, image.width, image.height);
+        //   var url = canvas.toDataURL("image/png"); //将图片格式转为base64
+        //   var a = document.createElement("a"); // 生成一个a元素
+        //   var event = new MouseEvent("click"); // 创建一个单击事件
+        //   a.download = name || "myPhoto"; // 设置图片名称
+        //   a.href = url; // 将生成的URL设置为a.href属性
+        //   a.dispatchEvent(event); // 触发a的单击事件
+        };
+        image.src = imgsrc + "?time=" + Date.now(); //注意，这里是灵魂，否则依旧会产生跨域问题
+      }
+
+      downloadImage(url);
+    </script>
+  </body>
+</html>

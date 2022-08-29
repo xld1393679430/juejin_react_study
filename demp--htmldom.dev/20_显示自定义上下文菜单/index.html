@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        margin: 200px auto;
+        width: 200px;
+        height: 200px;
+        border: 1px solid skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="container"></div>
+
+    <div id="contextmenu" style="display: none">
+        <div>item1</div>
+        <div>item2</li>
+      </ul>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("container");
+        const contextmenu = document.getElementById("contextmenu");
+        container.addEventListener("contextmenu", function (event) {
+          event.preventDefault();
+          const { pageX, pageY } = event;
+
+          console.log(event, pageX, pageY, 2222);
+
+          contextmenu.style.cssText = `
+                    position: fixed;
+                    left: ${pageX}px;
+                    top: ${pageY}px;
+                    display: block;
+                    width: 160px;
+                    background: #eee;
+                `;
+        });
+        
+        document.addEventListener('click', function(event) {
+            console.log(event.target, contextmenu, event.target.contains(contextmenu))
+            if(!contextmenu.contains(event.target)) {
+                contextmenu.style.cssText = `display: none;`
+            }
+        })
+      });
+    </script>
+  </body>
+</html>

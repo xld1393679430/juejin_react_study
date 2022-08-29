@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="file" multiple id="input" />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const input = document.getElementById("input");
+        input.addEventListener("change", function (event) {
+          const files = event.target.files;
+
+          const formData = new FormData();
+
+          Array.from(files).map((file, index) => {
+            formData.append(`file-${index}`, file, file.name);
+          });
+
+          const req = new XMLHttpRequest();
+
+          req.open("POST", "https://my.qidian.com/ajax/headimage/uploadimg", true);
+
+          req.onload = function () {
+            if (req.status >= 200 && req.status < 400) {
+              console.log("success", req.responseText);
+            } else {
+              console.log("error");
+            }
+          };
+
+        //   req.send({
+        //     app_key: "66A82434E4E85315DB86DAD2B79E2AE7",
+        //     file: formData,
+        //   });
+
+        req.send(formData);
+        });
+      });
+    </script>
+  </body>
+</html>

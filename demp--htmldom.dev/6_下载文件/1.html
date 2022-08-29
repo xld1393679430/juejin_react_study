@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const url = "https://i3.qumiaodong.com/1b154364a59a4d4c/1811436da7/434c103bf2d8151f/404a1032f5d5151c4c0f1a3bf6a10e7f.jpg?a=1";
+
+      function handleDownloadImage(url) {
+        const img = document.createElement("img");
+        img.src = url;
+        // img.setAttribute('crossOrigin', 'use-credentials')
+        // img.setAttribute('crossOrigin', 'Anonymous')
+        // img.setAttribute('crossOrigin', 'anonymous')
+        // img.crossOrigin = 'Anonymous'
+
+
+        // img.crossOrigin = "anonymous"; // crossOrigin：anonymous  需要加上这个 不然会报错 `Failed to execute 'toDataURL' on 'HTMLCanvasElement'`
+        // img.style.cssText = `
+        //         position: fixed;
+        //         left: -99999999px;
+        //         top:  -99999999px
+        //     `;
+
+        img.onload = function () {
+          imgToBlob(img, 1, (_blob) => {
+            // document.body.removeChild(img);
+
+            const blob = new Blob([_blob], { type: "image/*" });
+            const url = window.URL.createObjectURL(blob);
+
+            handleDownload(url);
+
+            window.URL.revokeObjectURL(url);
+          });
+        };
+        document.body.appendChild(img);
+      }
+
+      function imgToBlob(img, quality = 1, callback) {
+            const canvas = document.createElement('canvas')
+            canvas.width = img.width
+            canvas.height = img.height
+            const ctx = canvas.getContext('2d')
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+
+            canvas.toBlob((blob) => {
+                callback(blob)
+            }, 'image/*', quality)
+        }
+
+      handleDownloadImage(url)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img id="img" src="./a.jpeg" alt="img" />
+    <button id="btn">打印图片</button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const imgEle = document.getElementById("img");
+
+        const createIframe = function () {};
+
+        btn.addEventListener("click", function () {
+          const iframe = document.createElement("iframe");
+
+          iframe.style.height = 0;
+          iframe.style.visibility = "hidden";
+          iframe.style.width = 0;
+
+          // Set the iframe's source
+          iframe.setAttribute("srcdoc", "<html><body></body></html>");
+
+          document.body.appendChild(iframe);
+
+          iframe.contentWindow.addEventListener("afterprint", function (event) {
+            alert('打印结束或者取消')
+            document.body.removeChild(iframe);
+          });
+
+          iframe.addEventListener("load", function () {
+            const cloneImg = imgEle.cloneNode();
+            cloneImg.style.maxWidth = "100%";
+            console.log(iframe.contentDocument.body, cloneImg, 3333);
+            iframe.contentDocument.body.appendChild(cloneImg);
+
+            cloneImg.addEventListener("load", function () {
+              iframe.contentWindow.print();
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

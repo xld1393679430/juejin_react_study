@@ -49,6 +49,9 @@
     <script>
         const imageUrl1 = 'https://img1.baidu.com/it/u=4054598979,484321342&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1661274000&t=00719d872950c7439aa808f5584cc60e'
         const imageUrl2 = './pig.png'
+        
+        // 这个图片跨域禁止下载
+        const imageUrl3 = 'https://i3.qumiaodong.com/1b154364a59a4d4c/1811436da7/434c103bf2d8151f/404a1032f5d5151c4c0f1a3bf6a10e7f.jpg' 
 
         // 图片必须同源才可以下载
         function handleDownload(url, filename = 'filename') {

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img id="img" src="./a.jpeg" alt="img" />
+    <button id="btn">打印图片</button>
+
+    <iframe id="iframe" src="./iframe.html" frameborder="0" style="width: 0; height: 0; visibility: hidden"></iframe>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const imgEle = document.getElementById("img");
+        const iframe = document.getElementById("iframe");
+
+        const createIframe = function () {};
+
+        btn.addEventListener("click", function () {
+          iframe.contentWindow.postMessage(
+            JSON.stringify({
+              tag: "img",
+              src: imgEle.src,
+            }),
+            "*"
+          );
+        });
+
+        window.addEventListener("message", function (event) {
+          console.log(event);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="handleFn1()">通过textarea处理html</button>
+
+    <button onclick="handleFn2()">通过DOMParser处理html</button>
+    <script>
+      function handleFn1() {
+        const span = `<span>222</span>`;
+
+        const getHtmlStr = function (html) {
+          const textarea = document.createElement("textarea");
+          textarea.innerHTML = html;
+          return textarea.textContent;
+        };
+
+        alert(getHtmlStr(span));
+      }
+
+      function handleFn2() {
+        const span = `<span>222</span>`;
+        const html = new DOMParser().parseFromString(span, 'text/html')
+
+        alert(html)
+      }
+    </script>
+  </body>
+</html>

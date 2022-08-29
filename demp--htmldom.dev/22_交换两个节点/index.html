@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <div>1</div>
+            <span id="nodeA">nodeA</span>
+            <div>2</div>
+        </div>
+        <div>
+            <p>
+                <div>3</div>
+                <span id="nodeB">nodeB</span>
+                <div>4</div>
+            </p>
+        </div>
+    </div>
+    <script>
+        // 交换两个元素的位置
+        // 1 先找到A的相邻的后一个元素C
+        // 2 将A插入的B的前面
+        // 3 将B插入到C的前面
+        document.addEventListener('DOMContentLoaded', function() {
+            const nodeA = document.getElementById('nodeA')
+            const nodeB = document.getElementById('nodeB')
+
+            const parentA = nodeA.parentNode
+            const siblingA = nodeA.nextElementSibling === nodeB ? nodeA : nodeA.nextElementSibling
+
+            nodeB.parentNode.insertBefore(nodeA, nodeB)
+
+            parentA.insertBefore(nodeB, siblingA)
+        })
+    </script>
+</body>
+</html>
