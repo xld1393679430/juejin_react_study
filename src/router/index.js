@@ -6,12 +6,14 @@ import Study_12_render2 from "@/pages/study_12_render2";
 import Study_13_large_data from "@/pages/study_13_large_data";
 import Study_15_event from "@/pages/study_15_event";
 
+// 其他技术杂谈
 import Node_splite from "@/pages/other-tech/node_splite";
 import Easy_coder from "@/pages/other-tech/easy_coder";
 import Drag from "@/pages/other-tech/drag";
 import SetState from "@/pages/other-tech/setState";
 import ReactDocgen from "@/pages/other-tech/react-docgen";
 import ReactRef from "@/pages/other-tech/react-ref";
+import Bytemd from "@/pages/other-tech/bytemd";
 
 const routers = [
   {
@@ -51,7 +53,7 @@ const routers = [
       },
       {
         key: "drag",
-        label: "Drag",
+        label: "拖拽",
         icon: <ToolOutlined />,
         component: Drag,
       },
@@ -61,9 +63,14 @@ const routers = [
         icon: <ToolOutlined />,
         component: Easy_coder,
       },
+      {
+        key: "bytemd",
+        label: "bytemd 编辑器",
+        icon: <ToolOutlined />,
+        component: Bytemd,
+      },
     ],
   },
-
   {
     key: "study_10_hoc",
     label: "10 基础篇-高阶组件",
