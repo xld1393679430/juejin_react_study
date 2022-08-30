@@ -8,9 +8,10 @@ import "./index.less";
 const { Header, Sider, Content } = Layout;
 
 const LayoutWrapper = ({ children }) => {
-  const [collapsed, setCollapsed] = useState(true);
-  let navigate = useNavigate();
-  let location = useLocation();
+  const [collapsed, setCollapsed] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const keys = location.pathname.split("/");
 
   return (
     <Layout id="layout-root">
@@ -19,10 +20,12 @@ const LayoutWrapper = ({ children }) => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={[location.pathname || routers[0].key]}
+          defaultSelectedKeys={[keys[keys.length - 1]]}
+          defaultOpenKeys={[keys[keys.length - 2]]}
           items={routers}
           onClick={(info) => {
-            navigate(info.key);
+            const path = info.keyPath.reverse().join("/");
+            navigate(path);
           }}
         />
       </Sider>

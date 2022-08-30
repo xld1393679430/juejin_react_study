@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 export default class componentName extends Component {
   componentDidMount() {
-    console.log(this.refs, "Wrapper - componentDidMount");
+    // console.log(this.refs, "Wrapper - componentDidMount");
   }
   render() {
     return (

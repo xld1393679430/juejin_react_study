@@ -8,6 +8,7 @@ module.exports = override(
     "@/imgs": path.resolve(__dirname, "src/static/imgs"),
     "@/http": path.resolve(__dirname, "src/http"),
     "@/package.json": path.resolve(__dirname, "package.json"),
+    "@/router": path.resolve(__dirname, "src/router"),
   }),
 
   fixBabelImports("import", {

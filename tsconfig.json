@@ -18,7 +18,8 @@
       "@/components": ["./src/components"],
       "@/imgs": ["./src/static/imgs"],
       "@/http": ["./src/http"],
-      "@/package.json": ["./package.json"]
+      "@/package.json": ["./package.json"],
+      "@/router": ["./src/router"],
     }
   }
 }
