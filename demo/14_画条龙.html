@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <canvas id="canvas"></canvas>
+
+      <img id="img" src="./static/long.png" alt="img" />
+    </div>
+    <div id="container"></div>
+    <script>
+      // 图片转Base64
+      function imgToBase64(img) {
+        const canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        const base64 = canvas.toDataURL("image/*");
+        canvas.remove();
+
+        return base64;
+      }
+
+      function drawImageData(canvas, ctx, image) {
+        const dragonContainer = document.getElementById("container");
+        dragonContainer.style.width = image.width + "px";
+        dragonContainer.style.height = image.height + "px";
+
+        let dragonScale = 2;
+        canvas.width = image.width;
+        canvas.height = image.height;
+
+        ctx.drawImage(image, 0, 0);
+
+        // 获取并裁剪画布的点阵信息
+        const imageData = ctx.getImageData(0, 0, image.width, image.height).data;
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, image.width, image.height);
+
+        const gap = 6;
+        for (let h = 0; h < image.height; h += gap) {
+          for (let w = 0; w < image.width; w += gap) {
+            const position = (image.width * h + w) * 4;
+            const r = imageData[position];
+            const g = imageData[position + 1];
+            const b = imageData[position + 2];
+
+            console.log(r, g, b, r + g + b, 999);
+            if (r + g + b === 0) {
+              ctx.fillStyle = "#000";
+              ctx.fillRect(w, h, 4, 4);
+
+              const bubble = document.createElement("img");
+              bubble.src = "./static/bubble.png";
+              bubble.setAttribute("class", "bubble");
+
+              const bubbleSize = Math.random() * 10 + 20;
+              bubble.style.left = w * dragonScale - bubbleSize / 2 + "px";
+              bubble.style.top = h * dragonScale - bubbleSize / 2 + "px";
+              bubble.style.width = bubble.style.height = bubbleSize + "px";
+              bubble.style.animationDuration = Math.random() * 6 + 4 + "s";
+
+              dragonContainer.appendChild(bubble);
+            }
+          }
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        const tempImg = document.getElementById("img");
+        tempImg.onload = function () {
+          const base64 = imgToBase64(tempImg);
+
+          const image = new Image();
+          image.src = base64;
+
+          image.onload = function () {
+            drawImageData(canvas, ctx, image);
+          };
+        };
+      });
+    </script>
+  </body>
+</html>
