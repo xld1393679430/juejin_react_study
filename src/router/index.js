@@ -14,6 +14,9 @@ import SetState from "@/pages/other-tech/setState";
 import ReactDocgen from "@/pages/other-tech/react-docgen";
 import ReactRef from "@/pages/other-tech/react-ref";
 import Bytemd from "@/pages/other-tech/bytemd";
+import ErrorBoundary from "@/pages/other-tech/errorBoundary";
+import WithErrorBoundary from "@/pages/other-tech/errorBoundary/test-with";
+import SpeechRecognition from "@/pages/other-tech/speechRecognition";
 
 const routers = [
   {
@@ -69,6 +72,25 @@ const routers = [
         icon: <ToolOutlined />,
         component: Bytemd,
       },
+      {
+        key: "errorBoundary",
+        label: "ErrorBoundary",
+        icon: <ToolOutlined />,
+        component: ErrorBoundary,
+      },
+      {
+        key: "withErrorBoundary",
+        label: "ErrorBoundary 高阶函数",
+        icon: <ToolOutlined />,
+        component: WithErrorBoundary,
+      },
+      {
+        key: "speechRecognition",
+        label: "SpeechRecognition 语言识别",
+        icon: <ToolOutlined />,
+        component: SpeechRecognition,
+      },
+      
     ],
   },
   {
