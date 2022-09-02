@@ -15,8 +15,11 @@ const LayoutWrapper = ({ children }) => {
 
   return (
     <Layout id="layout-root">
-      <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="logo" style={{ height: 40, background: "grey", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, fontWeight: 800 }}>
+      <Sider width={260} trigger={null} collapsible collapsed={collapsed}>
+        <div
+          className="logo"
+          style={{ height: 40, background: "grey", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, fontWeight: 800 }}
+        >
           Logo
         </div>
         <Menu
@@ -29,7 +32,7 @@ const LayoutWrapper = ({ children }) => {
             const path = info.keyPath.reverse().join("/");
             navigate(path);
           }}
-          style={{ "overflowY": "scroll", height: "inherit" }}
+          style={{ overflowY: "scroll", height: "inherit" }}
         />
       </Sider>
       <Layout id="layout-content">

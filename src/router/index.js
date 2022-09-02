@@ -19,6 +19,7 @@ import ReactDocgen from "@/pages/other-tech/8_react-docgen";
 import ReactRef from "@/pages/other-tech/9_react-ref";
 import SetState from "@/pages/other-tech/10_setState";
 import SpeechRecognition from "@/pages/other-tech/11_speechRecognition";
+import PageLifecycle from "@/pages/other-tech/12_pageLifecycle";
 
 const routers = [
   {
@@ -33,76 +34,82 @@ const routers = [
     icon: <ToolOutlined />,
     children: [
       {
-        key: "react-ref",
-        label: "react-ref",
+        key: "bytemd",
+        label: "1-bytemd 编辑器",
         icon: <ToolOutlined />,
-        component: ReactRef,
-      },
-      {
-        key: "react-docgen",
-        label: "react-docgen",
-        icon: <ToolOutlined />,
-        component: ReactDocgen,
-      },
-      {
-        key: "setState-sync",
-        label: "setState同步/异步",
-        icon: <ToolOutlined />,
-        component: SetState,
-      },
-      {
-        key: "node_splite",
-        label: "node切割文件",
-        icon: <ToolOutlined />,
-        component: Node_splite,
+        component: Bytemd,
       },
       {
         key: "drag",
-        label: "拖拽",
+        label: "2-拖拽",
         icon: <ToolOutlined />,
         component: Drag,
       },
       {
         key: "easy_coder",
-        label: "easy_coder",
+        label: "3-easy_coder",
         icon: <ToolOutlined />,
         component: Easy_coder,
       },
       {
-        key: "bytemd",
-        label: "bytemd 编辑器",
-        icon: <ToolOutlined />,
-        component: Bytemd,
-      },
-      {
         key: "errorBoundary",
-        label: "ErrorBoundary",
+        label: "4-ErrorBoundary",
         icon: <ToolOutlined />,
         component: ErrorBoundary,
       },
       {
         key: "withErrorBoundary",
-        label: "ErrorBoundary 高阶函数",
+        label: "4-ErrorBoundary 高阶函数",
         icon: <ToolOutlined />,
         component: WithErrorBoundary,
       },
       {
-        key: "speechRecognition",
-        label: "SpeechRecognition 语言识别",
+        key: "Fps",
+        label: "5-Fps",
         icon: <ToolOutlined />,
-        component: SpeechRecognition,
+        component: Fps,
       },
       {
         key: "testHooks",
-        label: "Hooks",
+        label: "6-Hooks",
         icon: <ToolOutlined />,
         component: TestHooks,
       },
       {
-        key: "Fps",
-        label: "Fps",
+        key: "node_splite",
+        label: "7-node切割文件",
         icon: <ToolOutlined />,
-        component: Fps,
+        component: Node_splite,
+      },
+      {
+        key: "react-docgen",
+        label: "8-react-docgen",
+        icon: <ToolOutlined />,
+        component: ReactDocgen,
+      },
+      {
+        key: "react-ref",
+        label: "9-react-ref",
+        icon: <ToolOutlined />,
+        component: ReactRef,
+      },
+      {
+        key: "setState-sync",
+        label: "10-setState同步/异步",
+        icon: <ToolOutlined />,
+        component: SetState,
+      },
+      {
+        key: "speechRecognition",
+        label: "11-SpeechRecognition 语言识别",
+        icon: <ToolOutlined />,
+        component: SpeechRecognition,
+      },
+      {
+        key: "PageLifecycle",
+        label: "12-PageLifecycle 无框架埋点体系",
+        icon: <ToolOutlined />,
+        component: PageLifecycle,
       },
     ],
   },
