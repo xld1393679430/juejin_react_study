@@ -17,6 +17,8 @@ import Bytemd from "@/pages/other-tech/bytemd";
 import ErrorBoundary from "@/pages/other-tech/errorBoundary";
 import WithErrorBoundary from "@/pages/other-tech/errorBoundary/test-with";
 import SpeechRecognition from "@/pages/other-tech/speechRecognition";
+import TestHooks from "@/pages/other-tech/hooks";
+import Fps from "@/pages/other-tech/fps";
 
 const routers = [
   {
@@ -89,6 +91,18 @@ const routers = [
         label: "SpeechRecognition 语言识别",
         icon: <ToolOutlined />,
         component: SpeechRecognition,
+      },
+      {
+        key: "testHooks",
+        label: "Hooks",
+        icon: <ToolOutlined />,
+        component: TestHooks,
+      },
+      {
+        key: "Fps",
+        label: "Fps",
+        icon: <ToolOutlined />,
+        component: Fps,
       },
       
     ],
