@@ -7,18 +7,18 @@ import Study_13_large_data from "@/pages/study_13_large_data";
 import Study_15_event from "@/pages/study_15_event";
 
 // 其他技术杂谈
-import Node_splite from "@/pages/other-tech/node_splite";
-import Easy_coder from "@/pages/other-tech/easy_coder";
-import Drag from "@/pages/other-tech/drag";
-import SetState from "@/pages/other-tech/setState";
-import ReactDocgen from "@/pages/other-tech/react-docgen";
-import ReactRef from "@/pages/other-tech/react-ref";
-import Bytemd from "@/pages/other-tech/bytemd";
-import ErrorBoundary from "@/pages/other-tech/errorBoundary";
-import WithErrorBoundary from "@/pages/other-tech/errorBoundary/test-with";
-import SpeechRecognition from "@/pages/other-tech/speechRecognition";
-import TestHooks from "@/pages/other-tech/hooks";
-import Fps from "@/pages/other-tech/fps";
+import Bytemd from "@/pages/other-tech/1_bytemd";
+import Drag from "@/pages/other-tech/2_drag";
+import Easy_coder from "@/pages/other-tech/3_easy_coder";
+import ErrorBoundary from "@/pages/other-tech/4_errorBoundary";
+import WithErrorBoundary from "@/pages/other-tech/4_errorBoundary/test-with";
+import Fps from "@/pages/other-tech/5_fps";
+import TestHooks from "@/pages/other-tech/6_hooks";
+import Node_splite from "@/pages/other-tech/7_node_splite";
+import ReactDocgen from "@/pages/other-tech/8_react-docgen";
+import ReactRef from "@/pages/other-tech/9_react-ref";
+import SetState from "@/pages/other-tech/10_setState";
+import SpeechRecognition from "@/pages/other-tech/11_speechRecognition";
 
 const routers = [
   {
@@ -104,7 +104,6 @@ const routers = [
         icon: <ToolOutlined />,
         component: Fps,
       },
-      
     ],
   },
   {
