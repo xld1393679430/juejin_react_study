@@ -14,12 +14,14 @@ import ErrorBoundary from "@/pages/other-tech/4_errorBoundary";
 import WithErrorBoundary from "@/pages/other-tech/4_errorBoundary/test-with";
 import Fps from "@/pages/other-tech/5_fps";
 import TestHooks from "@/pages/other-tech/6_hooks";
+import TestHooksCustom from "@/pages/other-tech/6_hooks-custom";
 import Node_splite from "@/pages/other-tech/7_node_splite";
 import ReactDocgen from "@/pages/other-tech/8_react-docgen";
 import ReactRef from "@/pages/other-tech/9_react-ref";
 import SetState from "@/pages/other-tech/10_setState";
 import SpeechRecognition from "@/pages/other-tech/11_speechRecognition";
 import PageLifecycle from "@/pages/other-tech/12_pageLifecycle";
+import Immutable from "@/pages/other-tech/13_immutable";
 
 const routers = [
   {
@@ -76,6 +78,13 @@ const routers = [
         component: TestHooks,
       },
       {
+        key: "TestHooksCustom",
+        label: "6_hooks-custom",
+        icon: <ToolOutlined />,
+        component: TestHooksCustom,
+      },
+      
+      {
         key: "node_splite",
         label: "7-node切割文件",
         icon: <ToolOutlined />,
@@ -110,6 +119,12 @@ const routers = [
         label: "12-PageLifecycle 无框架埋点体系",
         icon: <ToolOutlined />,
         component: PageLifecycle,
+      },
+      {
+        key: "Immutable",
+        label: "13-immutable",
+        icon: <ToolOutlined />,
+        component: Immutable,
       },
     ],
   },
