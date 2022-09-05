@@ -22,6 +22,8 @@ import SetState from "@/pages/other-tech/10_setState";
 import SpeechRecognition from "@/pages/other-tech/11_speechRecognition";
 import PageLifecycle from "@/pages/other-tech/12_pageLifecycle";
 import Immutable from "@/pages/other-tech/13_immutable";
+import MyReact from "@/pages/other-tech/14_myReact";
+import CssTransform from "@/pages/other-tech/15_css-transform";
 
 const routers = [
   {
@@ -126,6 +128,19 @@ const routers = [
         icon: <ToolOutlined />,
         component: Immutable,
       },
+      {
+        key: "MyReact",
+        label: "14_myReact",
+        icon: <ToolOutlined />,
+        component: MyReact,
+      },
+      {
+        key: "15_css-transform",
+        label: "15_css-transform",
+        icon: <ToolOutlined />,
+        component: CssTransform,
+      },
+      
     ],
   },
   {
