@@ -2,6 +2,13 @@
 @import url('./styles/iconfont/iconfont.css');
 /* @import url('~antd/dist/antd.less'); */
 
-html, body, #root {
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
     height: 100%;
 }

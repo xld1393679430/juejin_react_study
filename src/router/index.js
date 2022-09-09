@@ -25,6 +25,12 @@ import Immutable from "@/pages/other-tech/13_immutable";
 import MyReact from "@/pages/other-tech/14_myReact";
 import CssTransform from "@/pages/other-tech/15_css-transform";
 
+// PPT设计
+import RevealJs from "@/pages/ppt/1_reveal";
+
+// css相关
+import Sticky from '@/pages/other-css/1_sticky'
+
 const routers = [
   {
     key: "",
@@ -140,7 +146,32 @@ const routers = [
         icon: <ToolOutlined />,
         component: CssTransform,
       },
-      
+    ],
+  },
+  {
+    key: "ppt",
+    label: "ppt设计",
+    icon: <ToolOutlined />,
+    children: [
+      {
+        key: "RevealJs",
+        label: "1_reveal",
+        icon: <ToolOutlined />,
+        component: RevealJs,
+      },
+    ],
+  },
+  {
+    key: "Css",
+    label: "Css相关",
+    icon: <ToolOutlined />,
+    children: [
+      {
+        key: "Sticky",
+        label: "1_sticky",
+        icon: <ToolOutlined />,
+        component: Sticky,
+      },
     ],
   },
   {
