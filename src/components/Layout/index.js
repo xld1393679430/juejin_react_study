@@ -16,11 +16,8 @@ const LayoutWrapper = ({ children }) => {
   return (
     <Layout id="layout-root">
       <Sider width={260} trigger={null} collapsible collapsed={collapsed}>
-        <div
-          className="logo"
-          style={{ height: 40, background: "grey", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, fontWeight: 800 }}
-        >
-          Logo
+        <div className="logo">
+          <span class="logoText">Web Admin</span>
         </div>
         <Menu
           theme="dark"

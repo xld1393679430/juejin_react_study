@@ -30,6 +30,7 @@ import RevealJs from "@/pages/ppt/1_reveal";
 
 // css相关
 import Sticky from '@/pages/other-css/1_sticky'
+import Filter from '@/pages/other-css/2_filter'
 
 const routers = [
   {
@@ -162,15 +163,21 @@ const routers = [
     ],
   },
   {
-    key: "Css",
-    label: "Css相关",
+    key: "css",
+    label: "css相关",
     icon: <ToolOutlined />,
     children: [
       {
-        key: "Sticky",
+        key: "sticky",
         label: "1_sticky",
         icon: <ToolOutlined />,
         component: Sticky,
+      },
+      {
+        key: "filter",
+        label: "2_filter",
+        icon: <ToolOutlined />,
+        component: Filter,
       },
     ],
   },
