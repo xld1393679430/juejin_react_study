@@ -25,6 +25,9 @@ import Immutable from "@/pages/other-tech/13_immutable";
 import MyReact from "@/pages/other-tech/14_myReact";
 import CssTransform from "@/pages/other-tech/15_css-transform";
 
+// React相关
+import Memo from "@/pages/other-react/1_memo";
+
 // PPT设计
 import RevealJs from "@/pages/ppt/1_reveal";
 
@@ -147,6 +150,20 @@ const routers = [
         icon: <ToolOutlined />,
         component: CssTransform,
       },
+    ],
+  },
+  {
+    key: "other-react",
+    label: "react相关",
+    icon: <ToolOutlined />,
+    children: [
+      {
+        key: "1_memo",
+        label: "1_memo",
+        icon: <ToolOutlined />,
+        component: Memo,
+      },
+      
     ],
   },
   {
