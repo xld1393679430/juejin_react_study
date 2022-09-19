@@ -35,6 +35,12 @@ import RevealJs from "@/pages/ppt/1_reveal";
 import Sticky from '@/pages/other-css/1_sticky'
 import Filter from '@/pages/other-css/2_filter'
 
+// Babylon相关 学习视频的案例
+import BabylonBasics_Video from '@/pages/other-babylon-video/1_basic'
+
+// Babylon相关 学习视频的案例
+import BabylonBasics_Doc from '@/pages/other-babylon-doc/1_basic'
+
 const routers = [
   {
     key: "",
@@ -162,6 +168,34 @@ const routers = [
         label: "1_memo",
         icon: <ToolOutlined />,
         component: Memo,
+      },
+      
+    ],
+  },
+  {
+    key: "other-babylon-video",
+    label: "Babylon相关 video",
+    icon: <ToolOutlined />,
+    children: [
+      {
+        key: "1_basic",
+        label: "1_basic",
+        icon: <ToolOutlined />,
+        component: BabylonBasics_Video,
+      },
+      
+    ],
+  },
+  {
+    key: "other-babylon-doc",
+    label: "Babylon相关 doc",
+    icon: <ToolOutlined />,
+    children: [
+      {
+        key: "01_basic",
+        label: "01_basic",
+        icon: <ToolOutlined />,
+        component: BabylonBasics_Doc,
       },
       
     ],

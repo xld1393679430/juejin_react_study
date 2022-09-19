@@ -20,6 +20,7 @@
       "@/http": ["./src/http"],
       "@/package.json": ["./package.json"],
       "@/router": ["./src/router"],
+      "@/store": ["./src/store"],
     }
   }
 }

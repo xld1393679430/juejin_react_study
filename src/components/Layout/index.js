@@ -1,13 +1,14 @@
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Button } from "antd";
 import { useLocation, useNavigate, Outlet } from "react-router-dom";
 import React, { useState } from "react";
+import { observer, inject } from "mobx-react";
 import routers from "../../router/index";
 import "./index.less";
 
 const { Header, Sider, Content } = Layout;
 
-const LayoutWrapper = ({ children }) => {
+const LayoutWrapper = ({ children, lifecycleStore }) => {
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -17,7 +18,7 @@ const LayoutWrapper = ({ children }) => {
     <Layout id="layout-root">
       <Sider width={260} trigger={null} collapsible collapsed={collapsed}>
         <div className="logo">
-          <span class="logoText">Web Admin</span>
+          <span className="logoText">Web Admin</span>
         </div>
         <Menu
           theme="dark"
@@ -43,6 +44,7 @@ const LayoutWrapper = ({ children }) => {
             className: "trigger",
             onClick: () => setCollapsed(!collapsed),
           })}
+          <Button onClick={() => lifecycleStore?.toggleShow()}>{lifecycleStore.show ? "关闭" : "开启"}监听页面生命周期</Button>
         </Header>
         <Content
           className="site-layout-background"
@@ -58,4 +60,4 @@ const LayoutWrapper = ({ children }) => {
   );
 };
 
-export default LayoutWrapper;
+export default inject("lifecycleStore")(observer(LayoutWrapper));

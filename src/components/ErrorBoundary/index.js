@@ -1,6 +1,9 @@
 import React from "react";
 import { Result, Button } from "antd";
+import { observer, inject } from "mobx-react";
 
+@inject('lifecycleStore')
+@observer
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -29,6 +32,9 @@ class ErrorBoundary extends React.Component {
     const { error, errorMessage } = this.state;
     const { children, fallback } = this.props;
 
+    console.log('====================================');
+    console.log(this.props, '--ErrorBoundary--render--');
+    console.log('====================================');
     if (error !== null) {
       if (React.isValidElement(fallback)) {
         return fallback;

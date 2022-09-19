@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "mobx-react";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import "./index.css";
+import stores from "@/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(
@@ -12,7 +14,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // );
 
 // 开发环境使用StrictMode会导致render触发两次
-root.render(<App />);
+root.render(
+  <Provider {...stores}>
+    <App />
+  </Provider>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

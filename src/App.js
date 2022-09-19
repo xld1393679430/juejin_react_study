@@ -1,25 +1,27 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import lifecycle from "page-lifecycle";
-import { notification } from "antd";
+import { notification, Button } from "antd";
+import { observer, inject } from "mobx-react";
 import routers from "@/router";
 import NotFound from "@/components/NotFound";
 import Layout from "@/components/Layout";
 import Wrapper from "@/components/Wrapper";
 
-function App() {
+function App({ lifecycleStore }) {
   const InitComponent = routers[0].component;
+
   const mutationObserverRef = useRef(null);
 
-  const handleStateChange = (event) => {
+  const handleStateChange = useCallback((event) => {
     notification.open({
       message: "页面生命周期",
       description: `旧的生命周期: ${event.oldState}, 新的生命周期: ${event.newState}`,
       duration: 4,
     });
-  };
+  }, []);
 
-  const initMutationObserver = () => {
+  const initMutationObserver = useCallback(() => {
     mutationObserverRef.current = new MutationObserver((mutations, observer) => {
       mutations.forEach((mutation) => {
         console.log(mutation.target); // target: 发生
@@ -38,22 +40,35 @@ function App() {
       subtree: true, // 表示是否将该观察器应用于该节点的所有后代节点
       attributeOldValue: true, // 表示观察 attributes 变动时，是否需要记录变动前的属性值
       characterDataOldValue: true, // 表示观察 characterData 变动时，是否需要记录变动前的值。
-      attributeFilter: ['monitor-pv'], // 表示需要观察的特定属性，比如['class','src']
+      attributeFilter: ["monitor-pv"], // 表示需要观察的特定属性，比如['class','src']
     });
-  };
+  }, [mutationObserverRef]);
 
-  useEffect(() => {
+  const initPage = useCallback(() => {
     // 借助Google的pageLifecycle.js 监控页面的生命周期状态
     lifecycle.addEventListener("statechange", handleStateChange);
 
     // 借助MutationObserver监听DOM 结构变化
     initMutationObserver();
-    return () => {
-      lifecycle.addEventListener("statechange", handleStateChange);
-
-      mutationObserverRef.current?.disconnect(); // 用来停止观察。调用该方法后，DOM 再发生变动则不会触发观察器
-    };
   }, []);
+
+  const removeListener = useCallback(() => {
+    lifecycle.removeEventListener("statechange", handleStateChange);
+
+    mutationObserverRef.current?.disconnect(); // 用来停止观察。调用该方法后，DOM 再发生变动则不会触发观察器
+  }, [mutationObserverRef]);
+
+  useEffect(() => {
+    console.log(lifecycleStore?.show, "1--lifecycleStore?.show");
+    if (lifecycleStore?.show) {
+      initPage();
+    }
+
+    return () => {
+      console.log(lifecycleStore?.show, "2--lifecycleStore?.show");
+      removeListener();
+    };
+  }, [lifecycleStore?.show]);
 
   return (
     <BrowserRouter>
@@ -82,4 +97,4 @@ function App() {
   );
 }
 
-export default App;
+export default inject("lifecycleStore")(observer(App));

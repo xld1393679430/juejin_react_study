@@ -1,7 +1,8 @@
-const { override, fixBabelImports, addWebpackAlias, addLessLoader, adjustStyleLoaders } = require("customize-cra");
+const { override, fixBabelImports, addWebpackAlias, addLessLoader, adjustStyleLoaders, addDecoratorsLegacy } = require("customize-cra");
 const path = require("path");
 
 module.exports = override(
+  addDecoratorsLegacy(),
   addWebpackAlias({
     "@/pages": path.resolve(__dirname, "src/pages"),
     "@/components": path.resolve(__dirname, "src/components"),
@@ -9,6 +10,7 @@ module.exports = override(
     "@/http": path.resolve(__dirname, "src/http"),
     "@/package.json": path.resolve(__dirname, "package.json"),
     "@/router": path.resolve(__dirname, "src/router"),
+    "@/store": path.resolve(__dirname, "src/store"),
   }),
 
   fixBabelImports("import", {
@@ -20,7 +22,7 @@ module.exports = override(
     lessOptions: {
       modifyVars: { "@primary-color": "#9775fa" },
       javascriptEnabled: true,
-      localIdentName: '[local]--[hash:base64:5]'
+      localIdentName: "[local]--[hash:base64:5]",
     },
   }),
   // !!! Remember to put adjustStyleLoaders after addLessLoader in override chain.
