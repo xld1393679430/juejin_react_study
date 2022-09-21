@@ -24,6 +24,7 @@ import PageLifecycle from "@/pages/other-tech/12_pageLifecycle";
 import Immutable from "@/pages/other-tech/13_immutable";
 import MyReact from "@/pages/other-tech/14_myReact";
 import CssTransform from "@/pages/other-tech/15_css-transform";
+import WebRTC from "@/pages/other-tech/16_webRTC";
 
 // React相关
 import Memo from "@/pages/other-react/1_memo";
@@ -157,6 +158,13 @@ const routers = [
         icon: <ToolOutlined />,
         component: CssTransform,
       },
+      {
+        key: "16_webRTC",
+        label: "16_webRTC",
+        icon: <ToolOutlined />,
+        component: WebRTC,
+      },
+      
     ],
   },
   {
