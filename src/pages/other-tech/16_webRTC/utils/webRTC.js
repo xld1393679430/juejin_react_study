@@ -38,6 +38,8 @@ class WebRTC {
 
       this.mediaRecoder.start();
       console.log(this.mediaRecoder, "************开始录制************");
+    }).catch(() => {
+      alert("打开录制功能失败");
     });
   }
 

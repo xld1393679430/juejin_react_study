@@ -25,6 +25,7 @@ import Immutable from "@/pages/other-tech/13_immutable";
 import MyReact from "@/pages/other-tech/14_myReact";
 import CssTransform from "@/pages/other-tech/15_css-transform";
 import WebRTC from "@/pages/other-tech/16_webRTC";
+import RequestAnimationFrame from "@/pages/other-tech/17_requestAnimationFrame";
 
 // React相关
 import Memo from "@/pages/other-react/1_memo";
@@ -36,6 +37,7 @@ import RevealJs from "@/pages/ppt/1_reveal";
 // css相关
 import Sticky from '@/pages/other-css/1_sticky'
 import Filter from '@/pages/other-css/2_filter'
+import Sticky2 from '@/pages/other-css/3_sticky'
 
 // Babylon相关 学习视频的案例
 import BabylonBasics_Video from '@/pages/other-babylon-video/1_basic'
@@ -164,7 +166,12 @@ const routers = [
         icon: <ToolOutlined />,
         component: WebRTC,
       },
-      
+      {
+        key: "17_requestAnimationFrame",
+        label: "17_requestAnimationFrame",
+        icon: <ToolOutlined />,
+        component: RequestAnimationFrame,
+      },
     ],
   },
   {
@@ -244,6 +251,12 @@ const routers = [
         label: "2_filter",
         icon: <ToolOutlined />,
         component: Filter,
+      },
+      {
+        key: "sticky2",
+        label: "3_sticky",
+        icon: <ToolOutlined />,
+        component: Sticky2,
       },
     ],
   },
