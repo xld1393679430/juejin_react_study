@@ -27,6 +27,7 @@ import CssTransform from "@/pages/other-tech/15_css-transform";
 
 // React相关
 import Memo from "@/pages/other-react/1_memo";
+import React_SetState from "@/pages/other-react/2_setState";
 
 // PPT设计
 import RevealJs from "@/pages/ppt/1_reveal";
@@ -168,6 +169,12 @@ const routers = [
         label: "1_memo",
         icon: <ToolOutlined />,
         component: Memo,
+      },
+      {
+        key: "2_setState",
+        label: "2_setState",
+        icon: <ToolOutlined />,
+        component: React_SetState,
       },
       
     ],
