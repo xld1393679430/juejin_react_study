@@ -1,4 +1,4 @@
-const { override, fixBabelImports, addWebpackAlias, addLessLoader, adjustStyleLoaders, addDecoratorsLegacy } = require("customize-cra");
+const { override, fixBabelImports, addWebpackAlias, addLessLoader, adjustStyleLoaders, addDecoratorsLegacy, useBabelRc } = require("customize-cra");
 const path = require("path");
 
 module.exports = override(
@@ -12,7 +12,6 @@ module.exports = override(
     "@/router": path.resolve(__dirname, "src/router"),
     "@/store": path.resolve(__dirname, "src/store"),
   }),
-
   fixBabelImports("import", {
     libraryName: "antd",
     libraryDirectory: "es",
@@ -30,5 +29,6 @@ module.exports = override(
   adjustStyleLoaders(({ use: [, , postcss] }) => {
     const postcssOptions = postcss.options;
     postcss.options = { postcssOptions };
-  })
+  }),
+  useBabelRc(),
 );

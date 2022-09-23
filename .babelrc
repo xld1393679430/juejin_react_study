@@ -1,8 +1,20 @@
 {
   "presets": ["react-app"],
   "plugins": [
-    ["@babel/plugin-proposal-decorators", {
-      "legacy": true
-    }]
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "babel-plugin-styled-components", // 这样配置好像没生效...
+      {
+        "displayName": true,
+        "fileName": true,
+        "namespace": "xld2",
+        "meaninglessFileNames" : [ "index" , "styles" ]  
+      }
+    ]
   ]
 }
