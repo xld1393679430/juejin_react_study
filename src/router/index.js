@@ -39,6 +39,7 @@ import RevealJs from "@/pages/ppt/1_reveal";
 import Sticky from '@/pages/other-css/1_sticky'
 import Filter from '@/pages/other-css/2_filter'
 import Sticky2 from '@/pages/other-css/3_sticky'
+import TransitionStyle from '@/pages/other-css/4_transition-style'
 
 // Babylon相关 学习视频的案例
 import BabylonBasics_Video from '@/pages/other-babylon-video/1_basic'
@@ -273,6 +274,12 @@ const routers = [
         label: "3_sticky",
         icon: <ToolOutlined />,
         component: Sticky2,
+      },
+      {
+        key: "transition-style",
+        label: "4_transition-style",
+        icon: <ToolOutlined />,
+        component: TransitionStyle,
       },
     ],
   },

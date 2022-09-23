@@ -13061,6 +13061,11 @@ tr46@^2.1.0:
   dependencies:
     punycode "^2.1.1"
 
+transition-style@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/transition-style/-/transition-style-0.1.1.tgz#d892dbaee72798f260b1872bf468fb84e497b4bf"
+  integrity sha512-ZUSoAc9Z0Mk1yTz56seE7Hv7aY2Et8DZ9fINDl+KGr2pYJ5ExUFwRHHUzbM73Jvpjv3GjWtJRCD/G7JWDVghyQ==
+
 tree-kill@^1.2.2:
   version "1.2.2"
   resolved "http://registry.npm.release.ctripcorp.com/tree-kill/download/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
