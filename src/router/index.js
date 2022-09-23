@@ -45,12 +45,21 @@ import BabylonBasics_Video from '@/pages/other-babylon-video/1_basic'
 // Babylon相关 学习视频的案例
 import BabylonBasics_Doc from '@/pages/other-babylon-doc/1_basic'
 
+// 聊天室
+import ChatRoom from '@/pages/other-chatroom'
+
 const routers = [
   {
     key: "",
     label: "首页",
     icon: <ToolOutlined />,
     component: Home,
+  },
+  {
+    key: "chat-room",
+    label: "ChatRoom",
+    icon: <ToolOutlined />,
+    component: ChatRoom,
   },
   {
     key: "other-tech",
