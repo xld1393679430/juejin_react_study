@@ -25,6 +25,7 @@ import Immutable from "@/pages/other-tech/13_immutable";
 import MyReact from "@/pages/other-tech/14_myReact";
 import CssTransform from "@/pages/other-tech/15_css-transform";
 import WebRTC from "@/pages/other-tech/16_webRTC";
+import WebRTC2 from "@/pages/other-tech/16_webRTC2";
 import RequestAnimationFrame from "@/pages/other-tech/17_requestAnimationFrame";
 
 // React相关
@@ -174,6 +175,12 @@ const routers = [
         label: "16_webRTC",
         icon: <ToolOutlined />,
         component: WebRTC,
+      },
+      {
+        key: "16_webRTC2",
+        label: "16_webRTC2",
+        icon: <ToolOutlined />,
+        component: WebRTC2,
       },
       {
         key: "17_requestAnimationFrame",
