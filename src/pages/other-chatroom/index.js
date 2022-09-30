@@ -1,12 +1,12 @@
-import ChatRoom from './core/client'
+import ChatRoomV2 from './clientV2'
 
 const Index = () => {
   return (
     <div>
-      <p>聊天室</p>
+      <p>聊天室V2</p>
 
       <hr />
-      <ChatRoom />
+      <ChatRoomV2 />
     </div>
   );
 };

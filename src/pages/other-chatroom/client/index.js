@@ -1,10 +1,10 @@
 import React, { memo, useEffect, useState, useRef } from "react";
 import { io } from "socket.io-client";
 import { nanoid } from "nanoid"; // ID生成器
-import "./client.css";
+import "./index.css";
 
-const host = "192.168.0.108";
-const port = 3033;
+const host = "127.0.0.1";
+const port = 9999;
 
 const ChatRoom = () => {
   const [socket, setSocket] = useState(io());

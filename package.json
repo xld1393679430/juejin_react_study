@@ -52,6 +52,7 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "server": "node server/bin/www",
+    "server:socket": "node server-socket/bin/www",
     "dev": "concurrently \"npm start\" \"npm run server\"",
     "tips": "start启动前端项目；server启动express项目；dev同时启动前端和express项目",
     "cy:open": "cypress open"
