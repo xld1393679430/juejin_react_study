@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import lifecycle from "page-lifecycle";
 import { notification, Button } from "antd";
 import { observer, inject } from "mobx-react";
@@ -79,7 +79,7 @@ function App({ lifecycleStore }) {
   }, [lifecycleStore?.show]);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<SuspenseComponent Component={InitComponent} />} />
@@ -101,7 +101,7 @@ function App({ lifecycleStore }) {
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
