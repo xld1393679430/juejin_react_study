@@ -1,0 +1,7 @@
+.c1 {
+    font-size: max(12px, min(3.75vw, 26px));
+}
+
+.c2 {
+    font-size: clamp(12px, 3.75vw, 26px);
+}
