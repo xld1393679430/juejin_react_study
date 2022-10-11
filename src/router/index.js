@@ -27,6 +27,7 @@ import CssTransform from "@/pages/other-tech/15_css-transform";
 import WebRTC from "@/pages/other-tech/16_webRTC";
 import WebRTC2 from "@/pages/other-tech/16_webRTC2";
 import RequestAnimationFrame from "@/pages/other-tech/17_requestAnimationFrame";
+import DispatchEvent from "@/pages/other-tech/18_dispatchEvent";
 
 // React相关
 import Memo from "@/pages/other-react/1_memo";
@@ -36,19 +37,21 @@ import React_SetState from "@/pages/other-react/2_setState";
 import RevealJs from "@/pages/ppt/1_reveal";
 
 // css相关
-import Sticky from '@/pages/other-css/1_sticky'
-import Filter from '@/pages/other-css/2_filter'
-import Sticky2 from '@/pages/other-css/3_sticky'
-import TransitionStyle from '@/pages/other-css/4_transition-style'
+import Sticky from "@/pages/other-css/1_sticky";
+import Filter from "@/pages/other-css/2_filter";
+import Sticky2 from "@/pages/other-css/3_sticky";
+import TransitionStyle from "@/pages/other-css/4_transition-style";
+import Css_min_max_clamp from "@/pages/other-css/5_min_max_clamp";
+import Font_variation_settings from "@/pages/other-css/6_font-variation-settings";
 
 // Babylon相关 学习视频的案例
-import BabylonBasics_Video from '@/pages/other-babylon-video/1_basic'
+import BabylonBasics_Video from "@/pages/other-babylon-video/1_basic";
 
 // Babylon相关 学习视频的案例
-import BabylonBasics_Doc from '@/pages/other-babylon-doc/1_basic'
+import BabylonBasics_Doc from "@/pages/other-babylon-doc/1_basic";
 
 // 聊天室
-import ChatRoom from '@/pages/other-chatroom'
+import ChatRoom from "@/pages/other-chatroom";
 
 const routers = [
   {
@@ -116,7 +119,7 @@ const routers = [
         icon: <ToolOutlined />,
         component: TestHooksCustom,
       },
-      
+
       {
         key: "node_splite",
         label: "7-node切割文件",
@@ -189,6 +192,12 @@ const routers = [
         icon: <ToolOutlined />,
         component: RequestAnimationFrame,
       },
+      {
+        key: "18_dispatchEvent",
+        label: "18_dispatchEvent",
+        icon: <ToolOutlined />,
+        component: DispatchEvent,
+      },
     ],
   },
   {
@@ -208,7 +217,6 @@ const routers = [
         icon: <ToolOutlined />,
         component: React_SetState,
       },
-      
     ],
   },
   {
@@ -222,7 +230,6 @@ const routers = [
         icon: <ToolOutlined />,
         component: BabylonBasics_Video,
       },
-      
     ],
   },
   {
@@ -236,7 +243,6 @@ const routers = [
         icon: <ToolOutlined />,
         component: BabylonBasics_Doc,
       },
-      
     ],
   },
   {
@@ -280,6 +286,18 @@ const routers = [
         label: "4_transition-style",
         icon: <ToolOutlined />,
         component: TransitionStyle,
+      },
+      {
+        key: "css_min_max_clamp",
+        label: "5_min_max_clamp",
+        icon: <ToolOutlined />,
+        component: Css_min_max_clamp,
+      },
+      {
+        key: "font-variation-settings",
+        label: "6_font-variation-settings",
+        icon: <ToolOutlined />,
+        component: Font_variation_settings,
       },
     ],
   },

@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Anybody';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/61488/ETCAnybodyPB.woff2') format('woff2-variations');
+    font-display: block;
+    font-style: normal italic;
+    font-weight: 100 900;
+    font-stretch: 10% 400%;
+}
+
+.txt {
+    font-family: 'Anybody';
+    font-size: 36px;
+    animation: fontWeightChange 2s infinite alternate linear;
+}
+
+@keyframes fontWeightChange {
+    0% {
+        font-variation-settings: 'wght'100, 'wdth'60;
+        opacity: .5;
+    }
+
+    100% {
+        font-variation-settings: "wght"600, 'wdth'400;
+        opacity: 1;
+    }
+}
