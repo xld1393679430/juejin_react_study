@@ -13,7 +13,7 @@ const Index = () => {
     {
       title: "node切割文件",
       codeStr: "",
-      path: "src/pages/node_splite/demo1.tsx",
+      path: "src/pages/node_splite/demo1.jsx",
       component: Demo1,
     },
   ]);

@@ -2,6 +2,7 @@
   "name": "react_study",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@babel/plugin-proposal-decorators": "^7.19.1",
@@ -45,6 +46,7 @@
     "socket.io-client": "^4.5.2",
     "styled-components": "^5.3.5",
     "transition-style": "^0.1.1",
+    "typescript": "3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

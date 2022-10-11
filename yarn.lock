@@ -12731,6 +12731,11 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
+typescript@3:
+  version "3.9.10"
+  resolved "http://registry.npm.release.ctripcorp.com/typescript/download/typescript-3.9.10.tgz#70f3910ac7a51ed6bef79da7800690b19bf778b8"
+  integrity sha1-cPORCselHta+952ngAaQsZv3eLg=
+
 unbox-primitive@^1.0.2:
   version "1.0.2"
   resolved "http://registry.npm.release.ctripcorp.com/unbox-primitive/download/unbox-primitive-1.0.2.tgz#29032021057d5e6cdbd08c5129c226dff8ed6f9e"
