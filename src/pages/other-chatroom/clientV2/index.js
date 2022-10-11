@@ -18,14 +18,19 @@ const ChatRoom = () => {
   });
 
   useEffect(() => {
-    // 初始化 Socket
-    initSocket();
 
     // 初始化用户信息
     userInfo.current = {
       id: nanoid(),
       enterRoomTS: Date.now(),
     };
+
+    return () => {
+      if (socket) {
+        socket.close()
+        setSocket(null)
+      }
+    }
   }, []);
 
   useEffect(() => {
@@ -97,7 +102,9 @@ const ChatRoom = () => {
 
   const handleQuit = () => {
     // 断开链接
-    socket.disconnect();
+    if (socket) {
+      socket.disconnect();
+    }
   };
 
   return (
@@ -108,6 +115,9 @@ const ChatRoom = () => {
       <div className="ChatRoom">
         <div className="ChatRoom-header">
           <div>Chat Room · {userList.length}人</div>
+          <button className="" onClick={initSocket}>
+          initSocket
+          </button>
           <button className="ChatRoom-header-quit" onClick={handleQuit}>
             退出
           </button>

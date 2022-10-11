@@ -1,57 +1,61 @@
+import { lazy } from 'react'
 import { ToolOutlined } from "@ant-design/icons";
-import Home from "@/pages/home";
-import Study_10_hoc from "@/pages/study_10_hoc";
-import Study_11_render from "@/pages/study_11_render";
-import Study_12_render2 from "@/pages/study_12_render2";
-import Study_13_large_data from "@/pages/study_13_large_data";
-import Study_15_event from "@/pages/study_15_event";
+const Home = lazy(() => import(/* webpackChunkName: "Home" */  "@/pages/home"))
+
+
+const Study_10_hoc = lazy(() => import(/* webpackChunkName: "Study_10_hoc" */  "@/pages/study_10_hoc"))
+const Study_11_render = lazy(() => import(/* webpackChunkName: "Study_11_render" */  "@/pages/study_11_render"))
+const Study_12_render2 = lazy(() => import(/* webpackChunkName: "Study_12_render2" */  "@/pages/study_12_render2"))
+const Study_13_large_data = lazy(() => import(/* webpackChunkName: "Study_13_large_data" */  "@/pages/study_13_large_data"))
+const Study_15_event = lazy(() => import(/* webpackChunkName: "Study_15_event" */  "@/pages/study_15_event"))
 
 // 其他技术杂谈
-import Bytemd from "@/pages/other-tech/1_bytemd";
-import Drag from "@/pages/other-tech/2_drag";
-import Easy_coder from "@/pages/other-tech/3_easy_coder";
-import ErrorBoundary from "@/pages/other-tech/4_errorBoundary";
-import WithErrorBoundary from "@/pages/other-tech/4_errorBoundary/test-with";
-import Fps from "@/pages/other-tech/5_fps";
-import TestHooks from "@/pages/other-tech/6_hooks";
-import TestHooksCustom from "@/pages/other-tech/6_hooks-custom";
-import Node_splite from "@/pages/other-tech/7_node_splite";
-import ReactDocgen from "@/pages/other-tech/8_react-docgen";
-import ReactRef from "@/pages/other-tech/9_react-ref";
-import SetState from "@/pages/other-tech/10_setState";
-import SpeechRecognition from "@/pages/other-tech/11_speechRecognition";
-import PageLifecycle from "@/pages/other-tech/12_pageLifecycle";
-import Immutable from "@/pages/other-tech/13_immutable";
-import MyReact from "@/pages/other-tech/14_myReact";
-import CssTransform from "@/pages/other-tech/15_css-transform";
-import WebRTC from "@/pages/other-tech/16_webRTC";
-import WebRTC2 from "@/pages/other-tech/16_webRTC2";
-import RequestAnimationFrame from "@/pages/other-tech/17_requestAnimationFrame";
-import DispatchEvent from "@/pages/other-tech/18_dispatchEvent";
+const Bytemd = lazy(() => import(/* webpackChunkName: "Bytemd" */  "@/pages/other-tech/1_bytemd"))
+const Drag = lazy(() => import(/* webpackChunkName: "Drag" */  "@/pages/other-tech/2_drag"))
+const Easy_coder = lazy(() => import(/* webpackChunkName: "Easy_coder" */  "@/pages/other-tech/3_easy_coder"))
+const ErrorBoundary = lazy(() => import(/* webpackChunkName: "ErrorBoundary" */  "@/pages/other-tech/4_errorBoundary"))
+const WithErrorBoundary = lazy(() => import(/* webpackChunkName: "WithErrorBoundary" */  "@/pages/other-tech/4_errorBoundary/test-with"))
+const Fps = lazy(() => import(/* webpackChunkName: "Fps" */  "@/pages/other-tech/5_fps"))
+const TestHooks = lazy(() => import(/* webpackChunkName: "TestHooks" */  "@/pages/other-tech/6_hooks"))
+const TestHooksCustom = lazy(() => import(/* webpackChunkName: "TestHooksCustom" */  "@/pages/other-tech/6_hooks-custom"))
+const Node_splite = lazy(() => import(/* webpackChunkName: "Node_splite" */  "@/pages/other-tech/7_node_splite"))
+const ReactDocgen = lazy(() => import(/* webpackChunkName: "ReactDocgen" */  "@/pages/other-tech/8_react-docgen"))
+const ReactRef = lazy(() => import(/* webpackChunkName: "ReactRef" */  "@/pages/other-tech/9_react-ref"))
+const SetState = lazy(() => import(/* webpackChunkName: "SetState" */  "@/pages/other-tech/10_setState"))
+const SpeechRecognition = lazy(() => import(/* webpackChunkName: "SpeechRecognition" */  "@/pages/other-tech/11_speechRecognition"))
+const PageLifecycle = lazy(() => import(/* webpackChunkName: "PageLifecycle" */  "@/pages/other-tech/12_pageLifecycle"))
+const Immutable = lazy(() => import(/* webpackChunkName: "Immutable" */  "@/pages/other-tech/13_immutable"))
+const MyReact = lazy(() => import(/* webpackChunkName: "MyReact" */  "@/pages/other-tech/14_myReact"))
+const CssTransform = lazy(() => import(/* webpackChunkName: "CssTransform" */  "@/pages/other-tech/15_css-transform"))
+const WebRTC = lazy(() => import(/* webpackChunkName: "WebRTC" */  "@/pages/other-tech/16_webRTC"))
+const WebRTC2 = lazy(() => import(/* webpackChunkName: "WebRTC2" */  "@/pages/other-tech/16_webRTC2"))
+const RequestAnimationFrame = lazy(() => import(/* webpackChunkName: "RequestAnimationFrame" */  "@/pages/other-tech/17_requestAnimationFrame"))
+const DispatchEvent = lazy(() => import(/* webpackChunkName: "DispatchEvent" */  "@/pages/other-tech/18_dispatchEvent"))
 
 // React相关
-import Memo from "@/pages/other-react/1_memo";
-import React_SetState from "@/pages/other-react/2_setState";
+const Memo = lazy(() => import(/* webpackChunkName: "Memo" */  "@/pages/other-react/1_memo"))
+const React_SetState = lazy(() => import(/* webpackChunkName: "React_SetState" */  "@/pages/other-react/2_setState"))
 
 // PPT设计
-import RevealJs from "@/pages/ppt/1_reveal";
+const RevealJs = lazy(() => import(/* webpackChunkName: "RevealJs" */  "@/pages/ppt/1_reveal"))
 
 // css相关
-import Sticky from "@/pages/other-css/1_sticky";
-import Filter from "@/pages/other-css/2_filter";
-import Sticky2 from "@/pages/other-css/3_sticky";
-import TransitionStyle from "@/pages/other-css/4_transition-style";
-import Css_min_max_clamp from "@/pages/other-css/5_min_max_clamp";
-import Font_variation_settings from "@/pages/other-css/6_font-variation-settings";
+const Sticky = lazy(() => import(/* webpackChunkName: "Sticky" */  "@/pages/other-css/1_sticky"))
+const Filter = lazy(() => import(/* webpackChunkName: "Filter" */  "@/pages/other-css/2_filter"))
+const Sticky2 = lazy(() => import(/* webpackChunkName: "Sticky2" */  "@/pages/other-css/3_sticky"))
+const TransitionStyle = lazy(() => import(/* webpackChunkName: "TransitionStyle" */  "@/pages/other-css/4_transition-style"))
+const Css_min_max_clamp = lazy(() => import(/* webpackChunkName: "Css_min_max_clamp" */  "@/pages/other-css/5_min_max_clamp"))
+const Font_variation_settings = lazy(() => import(/* webpackChunkName: "Font_variation_settings" */  "@/pages/other-css/6_font-variation-settings"))
+const Translate3d = lazy(() => import(/* webpackChunkName: "Translate3d" */  "@/pages/other-css/7_translate3d"))
 
 // Babylon相关 学习视频的案例
-import BabylonBasics_Video from "@/pages/other-babylon-video/1_basic";
+const BabylonBasics_Video = lazy(() => import(/* webpackChunkName: "BabylonBasics_Video" */  "@/pages/other-babylon-video/1_basic"))
 
 // Babylon相关 学习视频的案例
-import BabylonBasics_Doc from "@/pages/other-babylon-doc/1_basic";
+const BabylonBasics_Doc = lazy(() => import(/* webpackChunkName: "BabylonBasics_Doc" */  "@/pages/other-babylon-doc/1_basic"))
 
 // 聊天室
-import ChatRoom from "@/pages/other-chatroom";
+const ChatRoom = lazy(() => import(/* webpackChunkName: "ChatRoom" */  "@/pages/other-chatroom"))
 
 const routers = [
   {
@@ -298,6 +302,12 @@ const routers = [
         label: "6_font-variation-settings",
         icon: <ToolOutlined />,
         component: Font_variation_settings,
+      },
+      {
+        key: "translate3d",
+        label: "7_font-variation-settings",
+        icon: <ToolOutlined />,
+        component: Translate3d,
       },
     ],
   },

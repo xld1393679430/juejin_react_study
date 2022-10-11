@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import lifecycle from "page-lifecycle";
 import { notification, Button } from "antd";
@@ -58,6 +58,14 @@ function App({ lifecycleStore }) {
     mutationObserverRef.current?.disconnect(); // 用来停止观察。调用该方法后，DOM 再发生变动则不会触发观察器
   }, [mutationObserverRef]);
 
+  const SuspenseComponent = useCallback(({ Component, ...rest }) => {
+    return (
+      <Suspense fallback={<div>Loading....</div>}>
+        <Component {...rest} />
+      </Suspense>
+    );
+  }, []);
+
   useEffect(() => {
     console.log(lifecycleStore?.show, "1--lifecycleStore?.show");
     if (lifecycleStore?.show) {
@@ -74,17 +82,17 @@ function App({ lifecycleStore }) {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<InitComponent />} />
+          <Route index element={<SuspenseComponent Component={InitComponent} />} />
           {routers.map((item, index) => {
             const Component = item.component;
             if (Component) {
-              return <Route key={`${item.key}---${index}`} path={item.key} element={<Component />} />;
+              return <Route key={`${item.key}---${index}`} path={item.key} element={<SuspenseComponent Component={Component} />} />;
             } else if (item.children?.length) {
               return (
                 <Route key={`${item.key}---${index}`} path={item.key} element={<Wrapper />}>
                   {item.children.map((sItem, sIndex) => {
                     const Component = sItem.component;
-                    return <Route key={`${sItem.key}---${sIndex}`} path={sItem.key} element={<Component />} />;
+                    return <Route key={`${sItem.key}---${sIndex}`} path={sItem.key} element={<SuspenseComponent Component={Component} />} />;
                   })}
                 </Route>
               );
