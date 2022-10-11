@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import BasicSccne from './BasicScene.ts'
+import BasicSccne from './BasicScene.js'
 import { Canvas } from './index.style'
 
 const Index = () => {

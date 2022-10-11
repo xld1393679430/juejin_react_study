@@ -336,7 +336,7 @@ const routers = [
     component: Study_13_large_data,
   },
   {
-    key: "study_15_large_data",
+    key: "study_15_event",
     label: "15 原理篇-事件原理",
     icon: <ToolOutlined />,
     component: Study_15_event,

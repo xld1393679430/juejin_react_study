@@ -3,8 +3,8 @@ import { List, Collapse } from "antd";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import http from "@/http";
-import Demo1 from "./demo1.tsx";
-import Demo2 from "./demo2.tsx";
+import Demo1 from "./demo1.jsx";
+import Demo2 from "./demo2.jsx";
 
 const { Panel } = Collapse;
 
