@@ -14,13 +14,13 @@ const Index = () => {
     {
       title: "时间分片",
       codeStr: "",
-      path: "src/pages/study_13_large_data/demo1.js",
+      path: "src/pages/juejin/study_13_large_data/demo1.js",
       component: Demo1,
     },
     {
       title: "虚拟列表",
       codeStr: "",
-      path: "src/pages/study_13_large_data/demo2.js",
+      path: "src/pages/juejin/study_13_large_data/demo2.js",
       component: Demo2,
     },
   ]);
