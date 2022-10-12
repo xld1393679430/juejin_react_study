@@ -51,27 +51,20 @@
         const parent = document.querySelector('.parent')
         const cloneParent1 = parent.cloneNode(true)
         const cloneParent2 = parent.cloneNode(false)
-        console.log('====================================');
-        console.log(cloneParent1, cloneParent2);
-        console.log('====================================');
 
         function handleKeyDown(event) {
             // 检测大写是否打开
             const isCapsLock = event.getModifierState('CapsLock')
-            console.log(isCapsLock, '--CapsLock--')
         }
 
         function handleOnce(event) {
             alert("我只会执行一次事件")
-
-            console.log(event);
 
             const fn = event.target.getAttribute('onclick')
             event.target.setAttribute('onclick', "null")
             event.target.setAttribute('aa', "bb")
 
             setTimeout(() => {
-                console.log(fn)
                 event.target.setAttribute('onclick', fn)
             }, 3000)
             // event.target.setA
@@ -80,8 +73,6 @@
         function handleBodyClick() {
             const div = document.createElement('div')
             const tagName = document.activeElement
-
-            console.log(tagName, '-tagName-');
 
             div.innerText = '11'
         }

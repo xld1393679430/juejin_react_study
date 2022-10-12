@@ -36,8 +36,6 @@
           event.preventDefault();
           const { pageX, pageY } = event;
 
-          console.log(event, pageX, pageY, 2222);
-
           contextmenu.style.cssText = `
                     position: fixed;
                     left: ${pageX}px;
@@ -49,7 +47,6 @@
         });
         
         document.addEventListener('click', function(event) {
-            console.log(event.target, contextmenu, event.target.contains(contextmenu))
             if(!contextmenu.contains(event.target)) {
                 contextmenu.style.cssText = `display: none;`
             }

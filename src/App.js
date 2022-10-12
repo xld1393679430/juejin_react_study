@@ -24,7 +24,6 @@ function App({ lifecycleStore }) {
   const initMutationObserver = useCallback(() => {
     mutationObserverRef.current = new MutationObserver((mutations, observer) => {
       mutations.forEach((mutation) => {
-        console.log(mutation.target); // target: 发生
         // notification.open({
         //   message: "Dom解构发生了改变",
         //   // description: `旧的生命周期: ${event.oldState}, 新的生命周期: ${event.newState}`,
@@ -67,13 +66,11 @@ function App({ lifecycleStore }) {
   }, []);
 
   useEffect(() => {
-    console.log(lifecycleStore?.show, "1--lifecycleStore?.show");
     if (lifecycleStore?.show) {
       initPage();
     }
 
     return () => {
-      console.log(lifecycleStore?.show, "2--lifecycleStore?.show");
       removeListener();
     };
   }, [lifecycleStore?.show]);

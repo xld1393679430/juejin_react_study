@@ -41,7 +41,6 @@
       // 监听父级应用发送过来的消息
       window.addEventListener('message', async (event) => {
         const message = event.data
-        console.log('sandbox receive mes', message)
         updateCodeModule(message, globalModuleGraph)
         StepTwo_Transpile(globalModuleGraph)
         StepThree_Evaluate(message, globalModuleGraph)

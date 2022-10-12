@@ -3,9 +3,6 @@ import Wrapper from "./components/Wrapper";
 import Person from "./components/Person";
 
 class Index extends Component {
-  componentDidMount() {
-    // console.log(this.refs, "Index -- componentDidMount");
-  }
 
   renderPerson = () => {
     return (

@@ -5,7 +5,6 @@ const Index = () => {
   const videoRef = useRef(null);
 
   const getLocalMediaStream = (mediaStream) => {
-    console.log(mediaStream, '---mediaStream')
     videoRef.current.srcObject = mediaStream;
   };
 

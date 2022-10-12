@@ -17,12 +17,10 @@ const Index = () => {
       params: { url: image },
     });
 
-    console.log(result, 222)
     // const blob = new Blob([result], { type: "image/*" });
     // const url = window.URL.createObjectURL(blob);
 
 
-    // console.log(result, url, 222)
     function handleDownload(url, filename = "1.jpg") {
       const a = document.createElement("a");
       a.href = url;

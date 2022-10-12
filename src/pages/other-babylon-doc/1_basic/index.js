@@ -43,7 +43,6 @@ const Index = () => {
   useEffect(() => {
     // !!! 这里配合Helmet通过cdn方式加载 需要setTimeout等待一会资源加载  有隐患
     setTimeout(() => {
-      console.log(window, window.BABYLON);
       const canvas = document.querySelector("canvas");
       const engine = new BABYLON.Engine(canvas);
       const scene = createScene(canvas, engine);

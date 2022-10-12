@@ -32,9 +32,6 @@ class Test extends React.Component {
 class Index extends React.Component {
 
   handleError = (error, stack) => {
-    // console.log('====================================');
-    // console.log(error, stack);
-    // console.log('====================================');
   }
 
   render() {

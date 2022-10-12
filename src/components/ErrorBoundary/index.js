@@ -14,7 +14,6 @@ class ErrorBoundary extends React.Component {
   }
 
   static getDerivedStateFromError(error) {
-    // console.log('======ErrorBoundary.getDerivedStateFromError:', error);
     return {
       error: error,
       errorMessage: error.message,
@@ -22,7 +21,6 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    // console.log('======ErrorBoundary.componentDidCatch:', error, errorInfo);
     const { onError } = this.props
 
     onError && onError(error, errorInfo.componentStack)
@@ -32,9 +30,6 @@ class ErrorBoundary extends React.Component {
     const { error, errorMessage } = this.state;
     const { children, fallback } = this.props;
 
-    console.log('====================================');
-    console.log(this.props, '--ErrorBoundary--render--');
-    console.log('====================================');
     if (error !== null) {
       if (React.isValidElement(fallback)) {
         return fallback;

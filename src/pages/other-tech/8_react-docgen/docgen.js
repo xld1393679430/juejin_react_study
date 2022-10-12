@@ -9,8 +9,6 @@ const filePath = path.resolve('./comonents/Person.js')
 const content = fs.readFileSync(filePath, 'utf-8');
 // 提取组件信息
 const componentInfo = reactDoc.parse(content)
-// 打印信息
-console.log(componentInfo)
 
 fs.writeFileSync(path.resolve('./comonents/Person.md'), commentToMarkdown(componentInfo))
 

@@ -40,10 +40,6 @@ function createTextElement(text) {
 function render(element, container) {
   const dom = element.type === "TEXT_ELEMENT" ? document.createTextNode("") : document.createElement(element.type);
 
-    console.log('====================================');
-    console.log(typeof element.props.children);
-    console.log('====================================');
-
   element.props.children?.forEach?.((child) => {
     render(child, dom);
   });

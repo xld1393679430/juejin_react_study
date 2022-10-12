@@ -85,7 +85,6 @@
             // 如果第一次点击两个tag名称中间空白地区，会出现额外渲染。
             // 配合data-disable进行判断
 
-            console.log(target.getAttribute('data-disable'), target.getAttribute('data-disable') == true, '---aa--')
             if (!isFalsy(target.getAttribute('data-disable'))) {
                 return;
             }

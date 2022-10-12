@@ -2,14 +2,10 @@ import { Button } from "antd";
 
 function useState(value) {
   const getter = () => {
-
-    console.log(value, '---value');
     return value
   };
   const setter = (newValue) => {
     value = newValue;
-
-    console.log(newValue, value, 222);
 
     return null;
   };
@@ -20,7 +16,6 @@ function useState(value) {
 const Index = () => {
   const [count, setCount] = useState(0);
 
-  console.log(count);
   return (
     <div>
       <p>useState</p>

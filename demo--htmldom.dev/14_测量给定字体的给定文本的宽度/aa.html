@@ -62,14 +62,11 @@
                     text = event.clipboardData.getData('text/plain')
                     const text2 = event.clipboardData.getData('text')
                     const text3 = event.clipboardData.getData('Text')
-                    console.log(111, text, text2, text3)
                 } else if (window.clipboardData) {
                     text = window.clipboardData.getData('Text')
                 } else {
                     text = ''
                 }
-
-                console.log(text)
 
                 // if (document.queryCommandSupported('insertText')) {
                 //     document.execCommand('insertText', false, text)

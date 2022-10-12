@@ -9,8 +9,6 @@ const Index = ({ count }) => {
   const handleShowCount = () => {
     setTimeout(() => {
       alert(count);
-      // console.log(countRef)
-      // alert(props.count)
     }, 2000);
   };
 

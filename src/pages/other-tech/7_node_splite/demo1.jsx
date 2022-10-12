@@ -29,7 +29,6 @@ class Index extends React.Component {
       worker.postMessage({ json: item });
       worker.addEventListener("message", function (e) {
         const { json, finished } = e.data;
-        console.log(finished, json, '4444');
         if (finished) {
           worker.terminate();
         }

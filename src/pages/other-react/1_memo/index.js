@@ -2,15 +2,6 @@ import { useEffect, useState, memo } from "react";
 import { Button } from "antd";
 
 const Test = ({ count }) => {
-  console.log(count, "1111");
-
-  useEffect(() => {
-    console.log(count, "222");
-
-    return () => {
-      console.log(count, "333");
-    };
-  }, [count]);
   return (
     <div>
       <p>Text Component</p>

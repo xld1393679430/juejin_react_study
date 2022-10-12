@@ -4,7 +4,6 @@ import withErrorBoundary from "@/components/ErrorBoundary/withErrorBoundary";
 class Test extends React.Component {
   render() {
     const a = undefined;
-    console.log(a.b);
     return (
       <div>
         <p>

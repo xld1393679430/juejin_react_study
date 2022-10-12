@@ -30,7 +30,6 @@ const Index = () => {
     initFps();
 
     return () => {
-      console.log('清除window.requestAnimationFrame');
       window.cancelAnimationFrame(requestId.current);
     };
   }, []);

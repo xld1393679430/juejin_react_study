@@ -40,12 +40,8 @@
           const url = window.URL.createObjectURL(file);
           preview1.src = url;
 
-          preview1.onload = function () {
-            console.log(url, 1)
-            
+          preview1.onload = function () {            
             window.URL.revokeObjectURL(url);
-
-            console.log(url, 2)
           };
         });
 
