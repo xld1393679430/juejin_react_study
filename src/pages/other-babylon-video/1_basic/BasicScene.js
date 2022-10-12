@@ -1,11 +1,9 @@
-import { Scene, Engine } from "babylonjs";
-
 class BasicScene {
-  scene: Scene;
-  engine: Engine;
+  scene;
+  engine;
 
-  constructor(canvas: HTMLCanvasElement) {
-    this.engine = new Engine(canvas, true);
+  constructor(canvas) {
+    this.engine = new BABYLON.Engine(canvas, true);
     this.scene = this.createScene();
 
     this.engine.runRenderLoop(() => {
@@ -13,8 +11,8 @@ class BasicScene {
     });
   }
 
-  createScene(): Scene {
-    const scene = new Scene(this.engine);
+  createScene() {
+    const scene = new BABYLON.Scene(this.engine);
     return scene;
   }
 }
