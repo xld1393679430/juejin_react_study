@@ -8,6 +8,7 @@ const {
   useBabelRc,
   addBundleVisualizer,
   addWebpackPlugin,
+  addWebpackExternals,
 } = require("customize-cra");
 const path = require("path");
 const CompressionPlugin = require("compression-webpack-plugin");
@@ -17,6 +18,10 @@ module.exports = override(
     config.devtool = false; //去掉map文件
     return config;
   },
+  addWebpackExternals({
+    react: "React",
+    "react-dom": "ReactDOM",
+  }),
   addDecoratorsLegacy(),
   addWebpackAlias({
     "@/pages": path.resolve(__dirname, "src/pages"),
