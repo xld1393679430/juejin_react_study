@@ -1,7 +1,22 @@
-const { override, fixBabelImports, addWebpackAlias, addLessLoader, adjustStyleLoaders, addDecoratorsLegacy, useBabelRc, addBundleVisualizer } = require("customize-cra");
+const {
+  override,
+  fixBabelImports,
+  addWebpackAlias,
+  addLessLoader,
+  adjustStyleLoaders,
+  addDecoratorsLegacy,
+  useBabelRc,
+  addBundleVisualizer,
+  addWebpackPlugin,
+} = require("customize-cra");
 const path = require("path");
+const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = override(
+  (config) => {
+    config.devtool = false; //去掉map文件
+    return config;
+  },
   addDecoratorsLegacy(),
   addWebpackAlias({
     "@/pages": path.resolve(__dirname, "src/pages"),
@@ -30,9 +45,21 @@ module.exports = override(
     const postcssOptions = postcss.options;
     postcss.options = { postcssOptions };
   }),
-  addBundleVisualizer({
-    "analyzerMode": "static",
-    "reportFilename": "report.html"
-  }, true),
-  useBabelRc(),
+  addBundleVisualizer(
+    {
+      analyzerMode: "static",
+      reportFilename: "report.html",
+    },
+    true
+  ),
+  addWebpackPlugin(
+    new CompressionPlugin({
+      filename: "[path][base].gz", // 目标资源名称。[file] 会被替换成原资源。[path] 会被替换成原资源路径，[query] 替换成原查询字符串
+      algorithm: "gzip", // 算法
+      test: new RegExp("\\.(js|css)$"), // 压缩 js 与 css
+      threshold: 10240, // 只处理比这个值大的资源。按字节计算
+      minRatio: 0.8, // 只有压缩率比这个值小的资源才会被处理
+    })
+  ),
+  useBabelRc()
 );

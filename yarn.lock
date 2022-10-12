@@ -2212,13 +2212,6 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/babylonjs@^2.4.1":
-  version "2.4.1"
-  resolved "http://registry.npm.release.ctripcorp.com/@types/babylonjs/download/@types/babylonjs-2.4.1.tgz#432e9a40777bca5aefec118af018ff57fb1098da"
-  integrity sha1-Qy6aQHd7ylrv7BGK8Bj/V/sQmNo=
-  dependencies:
-    babylonjs "*"
-
 "@types/body-parser@*":
   version "1.19.2"
   resolved "http://registry.npm.release.ctripcorp.com/@types/body-parser/download/@types/body-parser-1.19.2.tgz#aea2059e28b7658639081347ac4fab3de166e6f0"
@@ -3686,11 +3679,6 @@ babylon@^6.18.0:
   resolved "http://registry.npm.release.ctripcorp.com/babylon/download/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
   integrity sha1-ry87iPpvXB5MY00aD46sT1WzleM=
 
-babylonjs@*, babylonjs@^5.24.0:
-  version "5.27.0"
-  resolved "http://registry.npm.release.ctripcorp.com/babylonjs/download/babylonjs-5.27.0.tgz#0c2452d3e2f490877b941ca37e6f6cd252342bb3"
-  integrity sha1-DCRS0+L0kId7lByjfm9s0lI0K7M=
-
 bail@^2.0.0:
   version "2.0.2"
   resolved "http://registry.npm.release.ctripcorp.com/bail/download/bail-2.0.2.tgz#d26f5cd8fe5d6f832a31517b9f7c356040ba6d5d"
@@ -4399,6 +4387,14 @@ compressible@~2.0.16:
   integrity sha1-r1PMprBw1MPAdQ+9dyhqbXzEb7o=
   dependencies:
     mime-db ">= 1.43.0 < 2"
+
+compression-webpack-plugin@^10.0.0:
+  version "10.0.0"
+  resolved "http://registry.npm.release.ctripcorp.com/compression-webpack-plugin/download/compression-webpack-plugin-10.0.0.tgz#3496af1b0dc792e13efc474498838dbff915c823"
+  integrity sha1-NJavGw3HkuE+/EdEmIONv/kVyCM=
+  dependencies:
+    schema-utils "^4.0.0"
+    serialize-javascript "^6.0.0"
 
 compression@^1.7.4:
   version "1.7.4"
