@@ -1,4 +1,4 @@
-const { override, fixBabelImports, addWebpackAlias, addLessLoader, adjustStyleLoaders, addDecoratorsLegacy, useBabelRc } = require("customize-cra");
+const { override, fixBabelImports, addWebpackAlias, addLessLoader, adjustStyleLoaders, addDecoratorsLegacy, useBabelRc, addBundleVisualizer } = require("customize-cra");
 const path = require("path");
 
 module.exports = override(
@@ -30,5 +30,9 @@ module.exports = override(
     const postcssOptions = postcss.options;
     postcss.options = { postcssOptions };
   }),
+  addBundleVisualizer({
+    "analyzerMode": "static",
+    "reportFilename": "report.html"
+  }, true),
   useBabelRc(),
 );
