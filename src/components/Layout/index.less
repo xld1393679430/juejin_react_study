@@ -19,13 +19,14 @@
 }
 
 .logo {
+  padding: 12px 0;
+  background-color: #001529;
   text-align: center;
-  background-color: #000;
 }
 
 .logoText {
   font-size: 22px;
-  color: #FFFFFF;
+  color: #ffffff;
   animation: move-letter 1s linear forwards; //forwards当动画完成后，保持最后一帧的状态
 }
 @keyframes move-letter {
@@ -33,11 +34,11 @@
     letter-spacing: -6px;
     filter: blur(5px);
   }
-  
+
   50% {
     filter: blur(2px);
   }
-  
+
   100% {
     letter-spacing: 0px;
     filter: blur(0);

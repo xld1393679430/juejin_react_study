@@ -30,7 +30,7 @@ const LayoutWrapper = ({ children, lifecycleStore }) => {
             const path = info.keyPath.reverse().join("/");
             navigate(path);
           }}
-          style={{ overflowY: "scroll", height: "inherit" }}
+          style={{ overflowY: "scroll", height: "calc(100vh - 100px)" }}
         />
       </Sider>
       <Layout id="layout-content">
