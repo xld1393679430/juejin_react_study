@@ -1,0 +1,22 @@
+.g-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.g-item {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #000;
+    transform-origin: 50% 120px;
+    animation: rotate 3s infinite linear;
+    animation-delay: calc(var(--delay) * -1s);
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}

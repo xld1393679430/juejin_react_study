@@ -48,6 +48,8 @@ const Css_min_max_clamp = lazy(() => import(/* webpackChunkName: "Css_min_max_cl
 const Font_variation_settings = lazy(() => import(/* webpackChunkName: "Font_variation_settings" */ "@/pages/css/6_font-variation-settings"));
 const Translate3d = lazy(() => import(/* webpackChunkName: "Translate3d" */ "@/pages/css/7_translate3d"));
 const BackgroundClip = lazy(() => import(/* webpackChunkName: "BackgroundClip" */ "@/pages/css/8_background_clip"));
+const Calc = lazy(() => import(/* webpackChunkName: "Calc" */ "@/pages/css/9_calc"));
+
 
 // Babylon相关 学习视频的案例
 const BabylonBasics_Video = lazy(() => import(/* webpackChunkName: "BabylonBasics_Video" */ "@/pages/babylon-video/1_basic"));
@@ -181,6 +183,12 @@ const routers = [
         label: "8_background_clip",
         icon: <MenuOutlined />,
         component: BackgroundClip,
+      },
+      {
+        key: "9_calc",
+        label: "9_calc",
+        icon: <MenuOutlined />,
+        component: Calc,
       },
     ],
   },
