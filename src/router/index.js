@@ -30,6 +30,7 @@ const WebRTC2 = lazy(() => import(/* webpackChunkName: "WebRTC2" */ "@/pages/tec
 const RequestAnimationFrame = lazy(() => import(/* webpackChunkName: "RequestAnimationFrame" */ "@/pages/tech/17_requestAnimationFrame"));
 const DispatchEvent = lazy(() => import(/* webpackChunkName: "DispatchEvent" */ "@/pages/tech/18_dispatchEvent"));
 const ClassPrivateAttribute = lazy(() => import(/* webpackChunkName: "ClassPrivateAttribute" */ "@/pages/tech/19_class_private_attribute"));
+const Observer = lazy(() => import(/* webpackChunkName: "Observer" */ "@/pages/tech/20_observer"));
 
 // React相关
 const Memo = lazy(() => import(/* webpackChunkName: "Memo" */ "@/pages/react/1_memo"));
@@ -352,6 +353,13 @@ const routers = [
         icon: <MenuOutlined />,
         component: ClassPrivateAttribute,
       },
+      {
+        key: "20_observer",
+        label: "20_observer",
+        icon: <MenuOutlined />,
+        component: Observer,
+      },
+      
     ],
   },
   
