@@ -18,7 +18,6 @@ const Fps = lazy(() => import(/* webpackChunkName: "Fps" */ "@/pages/tech/5_fps"
 const TestHooks = lazy(() => import(/* webpackChunkName: "TestHooks" */ "@/pages/tech/6_hooks"));
 const TestHooksCustom = lazy(() => import(/* webpackChunkName: "TestHooksCustom" */ "@/pages/tech/6_hooks-custom"));
 const Node_splite = lazy(() => import(/* webpackChunkName: "Node_splite" */ "@/pages/tech/7_node_splite"));
-const ReactDocgen = lazy(() => import(/* webpackChunkName: "ReactDocgen" */ "@/pages/tech/8_react-docgen"));
 const ReactRef = lazy(() => import(/* webpackChunkName: "ReactRef" */ "@/pages/tech/9_react-ref"));
 const SetState = lazy(() => import(/* webpackChunkName: "SetState" */ "@/pages/tech/10_setState"));
 const SpeechRecognition = lazy(() => import(/* webpackChunkName: "SpeechRecognition" */ "@/pages/tech/11_speechRecognition"));
@@ -30,6 +29,7 @@ const WebRTC = lazy(() => import(/* webpackChunkName: "WebRTC" */ "@/pages/tech/
 const WebRTC2 = lazy(() => import(/* webpackChunkName: "WebRTC2" */ "@/pages/tech/16_webRTC2"));
 const RequestAnimationFrame = lazy(() => import(/* webpackChunkName: "RequestAnimationFrame" */ "@/pages/tech/17_requestAnimationFrame"));
 const DispatchEvent = lazy(() => import(/* webpackChunkName: "DispatchEvent" */ "@/pages/tech/18_dispatchEvent"));
+const ClassPrivateAttribute = lazy(() => import(/* webpackChunkName: "ClassPrivateAttribute" */ "@/pages/tech/19_class_private_attribute"));
 
 // React相关
 const Memo = lazy(() => import(/* webpackChunkName: "Memo" */ "@/pages/react/1_memo"));
@@ -69,140 +69,6 @@ const routers = [
     label: "ChatRoom",
     icon: <AppstoreOutlined />,
     component: ChatRoom,
-  },
-  {
-    key: "tech",
-    label: "技术杂谈",
-    icon: <AppstoreOutlined />,
-    children: [
-      {
-        key: "bytemd",
-        label: "1-bytemd 编辑器",
-        icon: <MenuOutlined />,
-        component: Bytemd,
-      },
-      {
-        key: "drag",
-        label: "2-拖拽",
-        icon: <MenuOutlined />,
-        component: Drag,
-      },
-      {
-        key: "easy_coder",
-        label: "3-easy_coder",
-        icon: <MenuOutlined />,
-        component: Easy_coder,
-      },
-      {
-        key: "errorBoundary",
-        label: "4-ErrorBoundary",
-        icon: <MenuOutlined />,
-        component: ErrorBoundary,
-      },
-      {
-        key: "withErrorBoundary",
-        label: "4-ErrorBoundary 高阶函数",
-        icon: <MenuOutlined />,
-        component: WithErrorBoundary,
-      },
-      {
-        key: "Fps",
-        label: "5-Fps",
-        icon: <MenuOutlined />,
-        component: Fps,
-      },
-      {
-        key: "testHooks",
-        label: "6-Hooks",
-        icon: <MenuOutlined />,
-        component: TestHooks,
-      },
-      {
-        key: "TestHooksCustom",
-        label: "6_hooks-custom",
-        icon: <MenuOutlined />,
-        component: TestHooksCustom,
-      },
-
-      {
-        key: "node_splite",
-        label: "7-node切割文件",
-        icon: <MenuOutlined />,
-        component: Node_splite,
-      },
-      {
-        key: "react-docgen",
-        label: "8-react-docgen",
-        icon: <MenuOutlined />,
-        component: ReactDocgen,
-      },
-      {
-        key: "react-ref",
-        label: "9-react-ref",
-        icon: <MenuOutlined />,
-        component: ReactRef,
-      },
-      {
-        key: "setState-sync",
-        label: "10-setState同步/异步",
-        icon: <MenuOutlined />,
-        component: SetState,
-      },
-      {
-        key: "speechRecognition",
-        label: "11-SpeechRecognition 语言识别",
-        icon: <MenuOutlined />,
-        component: SpeechRecognition,
-      },
-      {
-        key: "PageLifecycle",
-        label: "12-PageLifecycle 无框架埋点体系",
-        icon: <MenuOutlined />,
-        component: PageLifecycle,
-      },
-      {
-        key: "Immutable",
-        label: "13-immutable",
-        icon: <MenuOutlined />,
-        component: Immutable,
-      },
-      {
-        key: "MyReact",
-        label: "14_myReact",
-        icon: <MenuOutlined />,
-        component: MyReact,
-      },
-      {
-        key: "15_css-transform",
-        label: "15_css-transform",
-        icon: <MenuOutlined />,
-        component: CssTransform,
-      },
-      {
-        key: "16_webRTC",
-        label: "16_webRTC",
-        icon: <MenuOutlined />,
-        component: WebRTC,
-      },
-      {
-        key: "16_webRTC2",
-        label: "16_webRTC2",
-        icon: <MenuOutlined />,
-        component: WebRTC2,
-      },
-      {
-        key: "17_requestAnimationFrame",
-        label: "17_requestAnimationFrame",
-        icon: <MenuOutlined />,
-        component: RequestAnimationFrame,
-      },
-      {
-        key: "18_dispatchEvent",
-        label: "18_dispatchEvent",
-        icon: <MenuOutlined />,
-        component: DispatchEvent,
-      },
-    ],
   },
   {
     key: "react",
@@ -353,6 +219,140 @@ const routers = [
         component: Study_15_event,
       },
     ]
+  },
+  {
+    key: "tech",
+    label: "技术杂谈",
+    icon: <AppstoreOutlined />,
+    children: [
+      {
+        key: "bytemd",
+        label: "1-bytemd 编辑器",
+        icon: <MenuOutlined />,
+        component: Bytemd,
+      },
+      {
+        key: "drag",
+        label: "2-拖拽",
+        icon: <MenuOutlined />,
+        component: Drag,
+      },
+      {
+        key: "easy_coder",
+        label: "3-easy_coder",
+        icon: <MenuOutlined />,
+        component: Easy_coder,
+      },
+      {
+        key: "errorBoundary",
+        label: "4-ErrorBoundary",
+        icon: <MenuOutlined />,
+        component: ErrorBoundary,
+      },
+      {
+        key: "withErrorBoundary",
+        label: "4-ErrorBoundary 高阶函数",
+        icon: <MenuOutlined />,
+        component: WithErrorBoundary,
+      },
+      {
+        key: "Fps",
+        label: "5-Fps",
+        icon: <MenuOutlined />,
+        component: Fps,
+      },
+      {
+        key: "testHooks",
+        label: "6-Hooks",
+        icon: <MenuOutlined />,
+        component: TestHooks,
+      },
+      {
+        key: "TestHooksCustom",
+        label: "6_hooks-custom",
+        icon: <MenuOutlined />,
+        component: TestHooksCustom,
+      },
+
+      {
+        key: "node_splite",
+        label: "7-node切割文件",
+        icon: <MenuOutlined />,
+        component: Node_splite,
+      },
+      {
+        key: "react-ref",
+        label: "9-react-ref",
+        icon: <MenuOutlined />,
+        component: ReactRef,
+      },
+      {
+        key: "setState-sync",
+        label: "10-setState同步/异步",
+        icon: <MenuOutlined />,
+        component: SetState,
+      },
+      {
+        key: "speechRecognition",
+        label: "11-SpeechRecognition 语言识别",
+        icon: <MenuOutlined />,
+        component: SpeechRecognition,
+      },
+      {
+        key: "PageLifecycle",
+        label: "12-PageLifecycle 无框架埋点体系",
+        icon: <MenuOutlined />,
+        component: PageLifecycle,
+      },
+      {
+        key: "Immutable",
+        label: "13-immutable",
+        icon: <MenuOutlined />,
+        component: Immutable,
+      },
+      {
+        key: "MyReact",
+        label: "14_myReact",
+        icon: <MenuOutlined />,
+        component: MyReact,
+      },
+      {
+        key: "15_css-transform",
+        label: "15_css-transform",
+        icon: <MenuOutlined />,
+        component: CssTransform,
+      },
+      {
+        key: "16_webRTC",
+        label: "16_webRTC",
+        icon: <MenuOutlined />,
+        component: WebRTC,
+      },
+      {
+        key: "16_webRTC2",
+        label: "16_webRTC2",
+        icon: <MenuOutlined />,
+        component: WebRTC2,
+      },
+      {
+        key: "17_requestAnimationFrame",
+        label: "17_requestAnimationFrame",
+        icon: <MenuOutlined />,
+        component: RequestAnimationFrame,
+      },
+      {
+        key: "18_dispatchEvent",
+        label: "18_dispatchEvent",
+        icon: <MenuOutlined />,
+        component: DispatchEvent,
+      },
+      {
+        key: "19_class_private_attribute",
+        label: "19_class_private_attribute",
+        icon: <MenuOutlined />,
+        component: ClassPrivateAttribute,
+      },
+    ],
   },
   
 ];
