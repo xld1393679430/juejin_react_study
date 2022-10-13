@@ -1,0 +1,37 @@
+.img01 {
+    width: 600px;
+    height: 300px;
+    background-image: url('https://youimg1.tripcdn.com/target/0101m12000a1jcjzz0599.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* 需要加兼容前缀 */
+    -webkit-mask: linear-gradient(#f00000, transparent);
+    mask: linear-gradient(#f00000, transparent);
+}
+
+.img01_after {
+    position: relative;
+    width: 600px;
+    height: 300px;
+    background-image: url('https://youimg1.tripcdn.com/target/0101m12000a1jcjzz0599.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img01_after::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, #f00000, transparent);
+}
+
+.img02 {
+    width: 600px;
+    height: 300px;
+    background-image: url('https://youimg1.tripcdn.com/target/0101m12000a1jcjzz0599.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* 需要加兼容前缀 */
+    -webkit-mask: linear-gradient(90deg, transparent, #fff);
+    mask: linear-gradient(90deg, transparent, #fff);
+}
