@@ -50,6 +50,7 @@ const Translate3d = lazy(() => import(/* webpackChunkName: "Translate3d" */ "@/p
 const BackgroundClip = lazy(() => import(/* webpackChunkName: "BackgroundClip" */ "@/pages/css/8_background_clip"));
 const Calc = lazy(() => import(/* webpackChunkName: "Calc" */ "@/pages/css/9_calc"));
 const Mask = lazy(() => import(/* webpackChunkName: "Calc" */ "@/pages/css/10_mask"));
+const CssDrag = lazy(() => import(/* webpackChunkName: "CssDrag" */ "@/pages/css/11_drag"));
 
 // Babylon相关 学习视频的案例
 const BabylonBasics_Video = lazy(() => import(/* webpackChunkName: "BabylonBasics_Video" */ "@/pages/babylon-video/1_basic"));
@@ -196,6 +197,12 @@ const routers = [
         icon: <MenuOutlined />,
         component: Mask,
       },
+      {
+        key: "11_drag",
+        label: "11_drag",
+        icon: <MenuOutlined />,
+        component: CssDrag,
+      },
     ],
   },
   {
@@ -233,7 +240,7 @@ const routers = [
         icon: <MenuOutlined />,
         component: Study_15_event,
       },
-    ]
+    ],
   },
   {
     key: "tech",
@@ -373,10 +380,8 @@ const routers = [
         icon: <MenuOutlined />,
         component: Observer,
       },
-      
     ],
   },
-  
 ];
 
 export default routers;
