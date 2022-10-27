@@ -7,7 +7,7 @@ function sleep(ms) {
 }
 
 export default {
-  title: "PlayDemo",
+  title: "Day01/PlayDemo",
 };
 
 // const Template = (args) => <MyComponent {...args} />;

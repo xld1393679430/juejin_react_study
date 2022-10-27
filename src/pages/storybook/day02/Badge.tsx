@@ -1,11 +1,12 @@
 import React from "react";
 
 interface BadgeProps {
-  status: "success" | "error" | "default";
+  status: "positive" | "negative" | "warning" | "error" | "neutral";
   label: string;
 }
 
-const Badge: React.FC<BadgeProps> = ({ status, label }) => {
+const Badge: React.FC<BadgeProps> = (props) => {
+  const { status, label, ...rest } = props
   return (
     <div>
       <p>status: {status}</p>

@@ -2,7 +2,7 @@ import React from "react";
 import Page from "./Page";
 
 export default {
-  title: "Page组件",
+  title: "Day01/Page组件",
   component: Page,
   argTypes: {
     label: {

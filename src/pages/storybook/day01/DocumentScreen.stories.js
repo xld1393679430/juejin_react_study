@@ -31,7 +31,7 @@ function useFetchData() {
 }
 
 export default {
-  title: "DocumentScreen",
+  title: "Day01/DocumentScreen",
   component: Com,
 };
 

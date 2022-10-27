@@ -20,7 +20,7 @@ const List = ({ todos }) => {
 };
 
 export default {
-  title: "Loader",
+  title: "Day01/Loader",
 };
 
 export const LoaderComponent = (args, { loaded: { todos } }) => <List {...args} todos={todos} />;

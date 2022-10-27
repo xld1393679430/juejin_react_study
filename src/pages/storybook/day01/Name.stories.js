@@ -10,7 +10,7 @@ const ListItem = () => <div>ListItem</div>;
 const SubCom = () => <div>Sub 1</div>;
 
 export default {
-  title: "Name/Button",
+  title: "Day01/Name/Button",
   component: List,
   subcomponents: { SubCom },
 };

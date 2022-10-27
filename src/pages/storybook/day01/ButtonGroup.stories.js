@@ -4,7 +4,7 @@ import ButtonGroup from "./ButtonGroup";
 import * as ButtonStories from './Button.stories'
 
 export default {
-  title: "ButtonStories",
+  title: "Day01/ButtonGroup",
   component: ButtonGroup,
 };
 

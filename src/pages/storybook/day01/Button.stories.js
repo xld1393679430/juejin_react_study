@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./Button";
 
 export default {
-  title: "Button",
+  title: "Day01/Button",
   component: Button,
   parameters: {
     backgrounds: {

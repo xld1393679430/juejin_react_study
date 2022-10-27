@@ -1,0 +1,20 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import Button from "./Button";
+
+<Meta title="Day02/MDX/Button" component={Button} />
+
+export const Template = (args) => <Button {...args} />;
+
+# Button
+
+With `MDX`, we can define a story for `Button` right in the middle of our
+Markdown documentation.
+
+<Canvas>
+  <Story name="Button1" args={{ children: "btn1 -- 查看Docs" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Button2" args={{ children: "btn2 -- 查看Docs" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
