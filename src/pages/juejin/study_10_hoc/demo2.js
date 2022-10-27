@@ -15,7 +15,7 @@ class Son extends React.Component {
 }
 
 function HOC(Component) {
-  return class extends Component {
+  return class Wrapper extends Component {
     render() {
       const element = super.render();
 

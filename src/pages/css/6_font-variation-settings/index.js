@@ -4,7 +4,7 @@ const Index = () => {
   return (
     <div>
       <p>
-        <a href="https://zhuanlan.zhihu.com/p/473485760" target={"_blank"}>
+        <a href="https://zhuanlan.zhihu.com/p/473485760" target="_blank" rel="noreferrer">
           [来源]突破限制，CSS font-variation 可变字体的魅力
         </a>
       </p>

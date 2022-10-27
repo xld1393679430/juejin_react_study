@@ -7,7 +7,7 @@ class Index extends Component {
   renderPerson = () => {
     return (
       <Wrapper>
-        <div ref="divRef">divRef</div>
+        <div>divRef</div>
       </Wrapper>
     );
   };
