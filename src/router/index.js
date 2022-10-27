@@ -61,6 +61,9 @@ const BabylonBasics_Doc = lazy(() => import(/* webpackChunkName: "BabylonBasics_
 // 聊天室
 const ChatRoom = lazy(() => import(/* webpackChunkName: "ChatRoom" */ "@/pages/chatroom"));
 
+// StoryBook Demos
+const StoryBookDay01 = lazy(() => import(/* webpackChunkName: "StoryBookDay01" */ "@/pages/storybook/1_day01"));
+
 const routers = [
   {
     key: "",
@@ -379,6 +382,19 @@ const routers = [
         label: "20_observer",
         icon: <MenuOutlined />,
         component: Observer,
+      },
+    ],
+  },
+  {
+    key: "storybook",
+    label: "StoryBook",
+    icon: <AppstoreOutlined />,
+    children: [
+      {
+        key: "1_day01",
+        label: "1_day01",
+        icon: <MenuOutlined />,
+        component: StoryBookDay01,
       },
     ],
   },
