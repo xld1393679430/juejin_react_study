@@ -5,6 +5,9 @@ export default {
   title: "Day03/Button",
   component: Button,
   argTypes: {
+    onClick: {
+      action: "clicked"
+    },
     backgroundColor: {
       //   description: {
       // 	component: "啊啊啊啊啊"
@@ -38,6 +41,11 @@ export default {
       },
     },
   },
+  parameters: {
+    actions: {
+      handles: ["mouseover", "click"]
+    }
+  }
 };
 
 const Template = (args) => <Button {...args} />;

@@ -12,5 +12,12 @@ module.exports = {
   "framework": "@storybook/react",
   "core": {
     "builder": "@storybook/builder-webpack5"
+  },
+  "refs": {
+    "design-system": {
+      title: "ld_xu Online`s Storybook",
+      url: "https://635b759b38b662c9148cb6fe-qkoukcjyhr.chromatic.com",
+      expanded: false,
+    }
   }
 }
