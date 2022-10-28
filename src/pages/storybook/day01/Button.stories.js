@@ -36,7 +36,7 @@ export const Default = ButtonTemplate.bind({});
 Default.args = {
   btnType: "default",
   label: "Default Button",
-  children: "Default 按钮",
+  children: "Default 按钮1",
 };
 // 这里会覆盖上边default的parameters
 Default.parameters = {

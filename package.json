@@ -2,7 +2,7 @@
   "name": "react_study",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
+  "homepage": "http://./",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@babel/plugin-proposal-decorators": "^7.19.1",
@@ -53,7 +53,8 @@
     "cy:open": "cypress open",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "storybook-docs": "start-storybook --docs --no-manager-cache"
+    "storybook-docs": "start-storybook --docs --no-manager-cache",
+    "chromatic": "npx chromatic --project-token=3a6a81ae19d3"
   },
   "browserslist": {
     "production": [
@@ -87,6 +88,7 @@
     "babel-plugin-import": "^1.13.5",
     "babel-plugin-named-exports-order": "^0.0.2",
     "babel-plugin-styled-components": "^2.0.7",
+    "chromatic": "^6.11.2",
     "compression-webpack-plugin": "^10.0.0",
     "customize-cra": "^1.0.0",
     "eslint": "^8.26.0",
@@ -109,5 +111,7 @@
         }
       }
     ]
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "react_study@0.1.0"
 }
