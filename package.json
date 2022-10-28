@@ -52,7 +52,8 @@
     "tips": "start启动前端项目；server启动express项目；dev同时启动前端和express项目",
     "cy:open": "cypress open",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "storybook-docs": "start-storybook --docs --no-manager-cache"
   },
   "browserslist": {
     "production": [

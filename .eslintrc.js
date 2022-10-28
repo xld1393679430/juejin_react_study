@@ -21,5 +21,6 @@ module.exports = {
     "no-empty": 0,
     "no-mixed-spaces-and-tabs": 0,
     "no-unreachable": 0,
+    "react/no-unescaped-entities": 0,
   },
 };
