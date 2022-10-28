@@ -49,8 +49,10 @@ const Font_variation_settings = lazy(() => import(/* webpackChunkName: "Font_var
 const Translate3d = lazy(() => import(/* webpackChunkName: "Translate3d" */ "@/pages/css/7_translate3d"));
 const BackgroundClip = lazy(() => import(/* webpackChunkName: "BackgroundClip" */ "@/pages/css/8_background_clip"));
 const Calc = lazy(() => import(/* webpackChunkName: "Calc" */ "@/pages/css/9_calc"));
-const Mask = lazy(() => import(/* webpackChunkName: "Calc" */ "@/pages/css/10_mask"));
+const Mask = lazy(() => import(/* webpackChunkName: "Mask" */ "@/pages/css/10_mask"));
 const CssDrag = lazy(() => import(/* webpackChunkName: "CssDrag" */ "@/pages/css/11_drag"));
+const FireWork = lazy(() => import(/* webpackChunkName: "FireWork" */ "@/pages/css/12_firework"));
+const FireWorkColorful = lazy(() => import(/* webpackChunkName: "FireWorkColorful" */ "@/pages/css/13_firework_colorful"));
 
 // Babylon相关 学习视频的案例
 const BabylonBasics_Video = lazy(() => import(/* webpackChunkName: "BabylonBasics_Video" */ "@/pages/babylon-video/1_basic"));
@@ -205,6 +207,18 @@ const routers = [
         label: "11_drag",
         icon: <MenuOutlined />,
         component: CssDrag,
+      },
+      {
+        key: "12_firework",
+        label: "12_firework",
+        icon: <MenuOutlined />,
+        component: FireWork,
+      },
+      {
+        key: "13_firework_colorful",
+        label: "13_firework_colorful",
+        icon: <MenuOutlined />,
+        component: FireWorkColorful,
       },
     ],
   },

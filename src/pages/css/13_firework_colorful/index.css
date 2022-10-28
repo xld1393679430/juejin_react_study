@@ -1,0 +1,66 @@
+@keyframes fireworks {
+	to {
+		-webkit-mask-position: 100%;
+	}
+}
+
+@keyframes random {
+	25% {
+		transform: translate(200%, 50%) scale(0.8);
+	}
+
+	36% {
+		transform: translate(120%, 70%) scale(1.2);
+	}
+
+	50% {
+		transform: translate(80%, 80%) scale(1.6);
+	}
+
+	75% {
+		transform: translate(20%, 60%) scale(0.65);
+	}
+}
+
+@keyframes random_color {
+	0% {
+		background-color: #ffefad;
+	}
+
+	25% {
+		background-color: #ffadad;
+	}
+
+	50% {
+		background-color: #aeadff;
+	}
+
+	75% {
+		background-color: #adffd9;
+	}
+}
+
+.container {
+	position: relative;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 1);
+}
+
+.fireworks {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	background-color: #ffadc4;
+	-webkit-mask: url("./1.png");
+	-webkit-mask-size: auto 150px;
+	background-repeat: no-repeat;
+	background-size: auto 150px;
+	animation: fireworks 2s steps(24) infinite, random 8s steps(1) infinite, random_color 1s infinite;
+}
+
+@media screen and (prefers-reduced-motion) {
+	/* 禁用不必要的动画 */
+	/* .fireworks {
+		animation: none;
+	} */
+}

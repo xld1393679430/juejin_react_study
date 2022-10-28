@@ -1,0 +1,35 @@
+@keyframes fireworks {
+	to {
+		background-position: 100%;
+	}
+}
+
+@keyframes random {
+	25% {
+		transform: translate(200%, 50%) scale(0.8);
+	}
+
+	50% {
+		transform: translate(80%, 80%) scale(1.2);
+	}
+
+	75% {
+		transform: translate(20%, 60%) scale(0.65);
+	}
+}
+
+.container {
+	position: relative;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 1);
+}
+
+.fireworks {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	background-image: url("./1.png");
+	background-repeat: no-repeat;
+	background-size: auto 150px;
+	animation: fireworks 1s steps(24) infinite, random 4s steps(1) infinite;
+}
