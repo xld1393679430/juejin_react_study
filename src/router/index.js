@@ -53,6 +53,7 @@ const Mask = lazy(() => import(/* webpackChunkName: "Mask" */ "@/pages/css/10_ma
 const CssDrag = lazy(() => import(/* webpackChunkName: "CssDrag" */ "@/pages/css/11_drag"));
 const FireWork = lazy(() => import(/* webpackChunkName: "FireWork" */ "@/pages/css/12_firework"));
 const FireWorkColorful = lazy(() => import(/* webpackChunkName: "FireWorkColorful" */ "@/pages/css/13_firework_colorful"));
+const CssAddeventListener = lazy(() => import(/* webpackChunkName: "CssAddeventListener" */ "@/pages/css/14_css_addeventListener"));
 
 // Babylon相关 学习视频的案例
 const BabylonBasics_Video = lazy(() => import(/* webpackChunkName: "BabylonBasics_Video" */ "@/pages/babylon-video/1_basic"));
@@ -219,6 +220,12 @@ const routers = [
         label: "13_firework_colorful",
         icon: <MenuOutlined />,
         component: FireWorkColorful,
+      },
+      {
+        key: "14_css_addeventListener",
+        label: "14_css_addeventListener",
+        icon: <MenuOutlined />,
+        component: CssAddeventListener,
       },
     ],
   },
