@@ -16,25 +16,25 @@ const Index = () => {
     {
       title: "1，渲染劫持",
       codeStr: "",
-      path: "src/pages/study_10_hoc/demo1.js",
+      path: "src/pages/juejin/study_10_hoc/demo1.js",
       component: Demo1,
     },
     {
       title: "2,修改渲染树",
       codeStr: "",
-      path: "src/pages/study_10_hoc/demo2.js",
+      path: "src/pages/juejin/study_10_hoc/demo2.js",
       component: Demo2,
     },
     {
       title: "3,事件监控",
       codeStr: "",
-      path: "src/pages/study_10_hoc/demo3.js",
+      path: "src/pages/juejin/study_10_hoc/demo3.js",
       component: Demo3,
     },
     {
       title: "4,HOC权限控制",
       codeStr: "",
-      path: "src/pages/study_10_hoc/demo4.js",
+      path: "src/pages/juejin/study_10_hoc/demo4.js",
       component: Demo4,
     },
   ]);

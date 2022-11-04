@@ -13,7 +13,7 @@ const Index = () => {
     {
       title: "memo模拟缓存React.element对象",
       codeStr: "",
-      path: "src/pages/study_11_render/demo1.js",
+      path: "src/pages/juejin/study_11_render/demo1.js",
       component: Demo1,
     },
     

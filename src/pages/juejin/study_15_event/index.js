@@ -14,19 +14,19 @@ const Index = () => {
     {
       title: "冒泡阶段和捕获阶段",
       codeStr: "",
-      path: "src/pages/study_15_event/demo1.js",
+      path: "src/pages/juejin/study_15_event/demo1.js",
       component: Demo1,
     },
     {
       title: "setState",
       codeStr: "",
-      path: "src/pages/study_15_event/demo2.js",
+      path: "src/pages/juejin/study_15_event/demo2.js",
       component: Demo2,
     },
     {
       title: "setState",
       codeStr: "",
-      path: "src/pages/study_15_event/demo3.js",
+      path: "src/pages/juejin/study_15_event/demo3.js",
       component: Demo3,
     },
   ]);

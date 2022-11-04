@@ -12,7 +12,7 @@ const Index = () => {
     {
       title: "React.lazy和Suspense & getDerivedStateFromError",
       codeStr: "",
-      path: "src/pages/study_12_render2/demo1.js",
+      path: "src/pages/juejin/study_12_render2/demo1.js",
       component: Demo1,
     },
   ]);
