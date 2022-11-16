@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      if (navigator.xr) {
+        // 1. 检查是否支持 immersive-vr 模式
+        navigator.xr.isSessionSupported("immersive-vr").then((supported) => {
+          if (supported) {
+            const btn = document.createElement("button");
+            btn.textContent = "进入 VR";
+            btn.onclick = onBtnClick;
+            document.body.appendChild(btn);
+          }
+        });
+      }
+
+      let gl;
+      function onBtnClick() {
+        navigator.xr.requestSession("immersive-vr").then((session) => {
+          // 2. 请求 VR 会话
+
+          const canvas = document.createElement("canvas");
+          gl = canvas.getContext("webgl", { xrCompatible: true });
+          // 3. 与创建普通 WebGL 不同，这里需要设置 xrCompatible 参数
+
+          session.updateRenderState({ baseLayer: new XRWebGLLayer(session, gl) });
+          // 更新会话的渲染层，后续渲染会渲染在该层上
+
+          session.requestAnimationFrame(onXRFrame);
+        });
+      }
+
+      function onXRFrame(time, frame) {
+        const session = frame.session;
+        // 4. 这个 session 是上面请求的 session
+
+        // 需要使用 session 上的 requestAnimationFrame
+        // 而不是 window 上的
+        session.requestAnimationFrame(onXRFrame);
+        const glLayer = session.renderState.baseLayer;
+
+        // 绑定 framebuffer
+        gl.bindFramebuffer(gl.FRAMEBUFFER, glLayer.framebuffer);
+
+        // 随着时间变化清除色
+        gl.clearColor(Math.cos(time / 2000), Math.cos(time / 4000), Math.cos(time / 6000), 1.0);
+
+        gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+      }
+    </script>
+  </body>
+</html>

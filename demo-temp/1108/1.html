@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        yearOfBirth: new Date().getFullYear(),
+        getAge: () => {
+          console.log(this, 22222);
+          return new Date().getFullYear() - person.yearOfBirth;
+        },
+      };
+
+    //   person.yearOfBirth = 2000;
+      var age =  person.getAge.apply(person);
+	  console.log("age:", age)
+    </script>
+  </body>
+</html>
