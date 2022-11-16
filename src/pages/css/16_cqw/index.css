@@ -1,0 +1,38 @@
+.avator {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 8px;
+	background: bisque;
+	color: rgb(250, 84, 28);
+	white-space: nowrap;
+}
+
+.avator-inner {
+	position: relative;
+}
+
+.avator-inner::before {
+	content: attr(alt);
+	visibility: hidden;
+	font-size: 40px;
+}
+
+.avator-container {
+	position: absolute;
+	inset: 0;
+	container-type: inline-size;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.avator-container span {
+	font-size: calc(24px - 10cqw);
+	overflow: hidden;
+	max-width: 40px;
+	/* text-overflow: ellipsis; */
+}
