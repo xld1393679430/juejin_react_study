@@ -9,6 +9,8 @@ var usersRouter = require('./routes/users');
 var jsReviewRouter = require('./routes/js_review');
 var codeSplitRouter = require('./routes/code_split');
 var downloadImage = require('./routes/downloadImage');
+var easyAgentSDK = require('./routes/easyAgentSDK');
+
 var app = express();
 
 // view engine setup
@@ -27,6 +29,7 @@ app.use('/api/user', usersRouter);
 app.use('/api/js_review', jsReviewRouter);
 app.use('/api/code_split', codeSplitRouter);
 app.use('/api/downloadImage', downloadImage);
+app.use('/api/easyAgentSDK', easyAgentSDK);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

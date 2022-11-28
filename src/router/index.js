@@ -71,6 +71,9 @@ const ChatRoom = lazy(() => import(/* webpackChunkName: "ChatRoom" */ "@/pages/c
 // StoryBook Demos
 const StoryBookDay01 = lazy(() => import(/* webpackChunkName: "StoryBookDay01" */ "@/pages/storybook/day01"));
 
+// utils Demos
+const EasyAgentSDK = lazy(() => import(/* webpackChunkName: "EasyAgentSDK" */ "@/pages/utils/easyAgentSDK"));
+
 const routers = [
   {
     key: "",
@@ -445,6 +448,19 @@ const routers = [
         label: "day01",
         icon: <MenuOutlined />,
         component: StoryBookDay01,
+      },
+    ],
+  },
+  {
+    key: "utils",
+    label: "utils",
+    icon: <AppstoreOutlined />,
+    children: [
+      {
+        key: "EasyAgentSDK",
+        label: "EasyAgentSDK",
+        icon: <MenuOutlined />,
+        component: EasyAgentSDK,
       },
     ],
   },
