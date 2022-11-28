@@ -2,6 +2,8 @@ import { lazy } from "react";
 import { AppstoreOutlined, MenuOutlined } from "@ant-design/icons";
 const Home = lazy(() => import(/* webpackChunkName: "Home" */ "@/pages/home"));
 
+const Blog20221028 = lazy(() => import(/* webpackChunkName: "Blog20221028" */ "@/pages/blogs/2022-10-28"));
+
 const Study_10_hoc = lazy(() => import(/* webpackChunkName: "Study_10_hoc" */ "@/pages/juejin/study_10_hoc"));
 const Study_11_render = lazy(() => import(/* webpackChunkName: "Study_11_render" */ "@/pages/juejin/study_11_render"));
 const Study_12_render2 = lazy(() => import(/* webpackChunkName: "Study_12_render2" */ "@/pages/juejin/study_12_render2"));
@@ -31,6 +33,7 @@ const RequestAnimationFrame = lazy(() => import(/* webpackChunkName: "RequestAni
 const DispatchEvent = lazy(() => import(/* webpackChunkName: "DispatchEvent" */ "@/pages/tech/18_dispatchEvent"));
 const ClassPrivateAttribute = lazy(() => import(/* webpackChunkName: "ClassPrivateAttribute" */ "@/pages/tech/19_class_private_attribute"));
 const Observer = lazy(() => import(/* webpackChunkName: "Observer" */ "@/pages/tech/20_observer"));
+const IntersectionObserver = lazy(() => import(/* webpackChunkName: "IntersectionObserver" */ "@/pages/tech/21_intersectionObserver"));
 
 // React相关
 const Memo = lazy(() => import(/* webpackChunkName: "Memo" */ "@/pages/react/1_memo"));
@@ -74,6 +77,19 @@ const routers = [
     label: "首页",
     icon: <AppstoreOutlined />,
     component: Home,
+  },
+  {
+    key: "Blogs",
+    label: "Blogs相关",
+    icon: <AppstoreOutlined />,
+    children: [
+      {
+        key: "Blog20221028",
+        label: "Blog20221028",
+        icon: <MenuOutlined />,
+        component: Blog20221028,
+      }
+    ]
   },
   {
     key: "chat-room",
@@ -410,6 +426,12 @@ const routers = [
         label: "20_observer",
         icon: <MenuOutlined />,
         component: Observer,
+      },
+      {
+        key: "21_intersectionObserver",
+        label: "21_intersectionObserver",
+        icon: <MenuOutlined />,
+        component: IntersectionObserver,
       },
     ],
   },

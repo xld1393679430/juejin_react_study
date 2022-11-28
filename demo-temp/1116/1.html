@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .demo1 {
+        mask: linear-gradient(90deg, #fff, transparent);
+      }
+
+      .demo2 {
+        position: relative;
+        width: 400px;
+      }
+
+      .demo2 a {
+        background: linear-gradient(90deg, transparent, transparent 70%, #fff);
+        background-repeat: no-repeat;
+        cursor: pointer;
+        color: transparent;
+      }
+      .demo2 a::before {
+        content: "Mollitia nostrum placeat consequatur deserunt velit ducimus possimus commodi temporibus debitis quam";
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #000;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="demo1">Lorem ipsum dolor sit amet consectetur.</p>
+
+    <hr />
+    <p class="demo2">
+      <a>Mollitia nostrum placeat consequatur deserunt velit ducimus possimus commodi temporibus debitis quam</a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        firstName: "Foo",
+        lastName: "Bar",
+        age: 42,
+      };
+
+      // TypeError: `person` is not iterable
+      //   for (let k in person) {
+      //     console.log(k);
+      //   }
+
+      const msg = "Hell😀 W😀rld";
+
+      // for ... in
+      for (let i of msg) {
+        console.log(i, msg[i]);
+      }
+    </script>
+  </body>
+</html>
