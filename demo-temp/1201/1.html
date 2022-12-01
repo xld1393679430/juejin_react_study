@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<img src="https://dimg.uat.qa.nt.ctripcorp.com/images/0104512000004sbumE6E7_C_880_350_R5.png?proc=source%2ftrip" onerror="handleImgError(event)" alt="">
+	<script>
+
+		function handleImgError(event) {
+			console.log(event, 2222)
+		}
+		function add(...nums) {
+			return new Promise(resolve => {
+				const total = nums.reduce((prev, next) => prev + next, 0)
+				resolve(total)
+			})
+		}
+		add(1, 2, 3, 4).then(sum => console.log(sum)) // 6
+
+	</script>
+</body>
+</html>

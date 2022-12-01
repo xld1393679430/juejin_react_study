@@ -1,4 +1,5 @@
-import React, { useState, useEffect, FC, ReactNode, memo, ChangeEventHandler, useCallback, EventHandler, ChangeEvent } from "react";
+import React, { FC, ReactNode, memo, ChangeEventHandler, useCallback, ChangeEvent } from "react";
+import Test from './Test'
 
 interface IProps {
   title?: string;
@@ -15,12 +16,20 @@ const Index: FC<IProps> = ({ title, children }) => {
     console.log(event.target.value, 22)
   }
 
+  const handleImgError = (event) => {
+    console.log(event, 33444)
+  }
+
   return (
     <div>
       <p>DefaultProps1</p>
       <p>title: {title}</p>
       <input type="text" onChange={handleChange1} />
       <input type="text" onChange={handleChange2} />
+      <hr />
+      <Test />
+      <hr />
+      <img style={{ width: 50, height: 50, backgroundColor: '#ccc' }} src="https://dimg.uat.qa.nt.ctripcorp.com/images/0104512000004sbumE6E7_C_880_350_R5.png?proc=source%2ftrip" onError={handleImgError} alt="" />
     </div>
   );
 };
