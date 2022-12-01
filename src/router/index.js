@@ -38,6 +38,7 @@ const IntersectionObserver = lazy(() => import(/* webpackChunkName: "Intersectio
 // React相关
 const Memo = lazy(() => import(/* webpackChunkName: "Memo" */ "@/pages/react/1_memo"));
 const React_SetState = lazy(() => import(/* webpackChunkName: "React_SetState" */ "@/pages/react/2_setState"));
+const DefaultProps = lazy(() => import(/* webpackChunkName: "DefaultProps" */ "@/pages/react/3_defaultProps"));
 
 // PPT设计
 const RevealJs = lazy(() => import(/* webpackChunkName: "RevealJs" */ "@/pages/ppt/1_reveal"));
@@ -117,6 +118,13 @@ const routers = [
         icon: <MenuOutlined />,
         component: React_SetState,
       },
+      {
+        key: "3_defaultProps",
+        label: "3_defaultProps",
+        icon: <MenuOutlined />,
+        component: DefaultProps,
+      },
+      
     ],
   },
   {
