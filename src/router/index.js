@@ -62,6 +62,7 @@ const CssAddeventListener = lazy(() => import(/* webpackChunkName: "CssAddeventL
 const Cqw = lazy(() => import(/* webpackChunkName: "Cqw" */ "@/pages/css/16_cqw"));
 const CssVariables = lazy(() => import(/* webpackChunkName: "CssVariables" */ "@/pages/css/17_css_variables"));
 const ImageFlipping = lazy(() => import(/* webpackChunkName: "ImageFlipping" */ "@/pages/css/18_image-flipping"));
+const Progress = lazy(() => import(/* webpackChunkName: "Progress" */ "@/pages/css/19_progress"));
 
 // Babylon相关 学习视频的案例
 const BabylonBasics_Video = lazy(() => import(/* webpackChunkName: "BabylonBasics_Video" */ "@/pages/babylon-video/1_basic"));
@@ -283,6 +284,12 @@ const routers = [
         label: "18_image-flipping",
         icon: <MenuOutlined />,
         component: ImageFlipping,
+      },
+      {
+        key: "19_progress",
+        label: "19_progress",
+        icon: <MenuOutlined />,
+        component: Progress,
       },
     ],
   },
