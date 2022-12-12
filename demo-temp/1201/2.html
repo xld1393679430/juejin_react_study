@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class People {
+        username = "xx";
+      }
+
+      class Student extends People {
+		age = 10
+	  }
+
+      const stu = new Student(0);
+
+      const s1 = Object.keys(stu);
+
+      const s2 = "username" in stu;
+
+      const s3 = stu.hasOwnProperty("username");
+      console.log(stu, s1, s2, s3);
+    </script>
+  </body>
+</html>
