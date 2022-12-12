@@ -3,6 +3,7 @@ import { AppstoreOutlined, MenuOutlined } from "@ant-design/icons";
 const Home = lazy(() => import(/* webpackChunkName: "Home" */ "@/pages/home"));
 
 const Blog20221028 = lazy(() => import(/* webpackChunkName: "Blog20221028" */ "@/pages/blogs/2022-10-28"));
+const Blog20221202 = lazy(() => import(/* webpackChunkName: "Blog20221202" */ "@/pages/blogs/2022-12-02"));
 
 const Study_10_hoc = lazy(() => import(/* webpackChunkName: "Study_10_hoc" */ "@/pages/juejin/study_10_hoc"));
 const Study_11_render = lazy(() => import(/* webpackChunkName: "Study_11_render" */ "@/pages/juejin/study_11_render"));
@@ -59,6 +60,8 @@ const FireWork = lazy(() => import(/* webpackChunkName: "FireWork" */ "@/pages/c
 const FireWorkColorful = lazy(() => import(/* webpackChunkName: "FireWorkColorful" */ "@/pages/css/13_firework_colorful"));
 const CssAddeventListener = lazy(() => import(/* webpackChunkName: "CssAddeventListener" */ "@/pages/css/14_css_addeventListener"));
 const Cqw = lazy(() => import(/* webpackChunkName: "Cqw" */ "@/pages/css/16_cqw"));
+const CssVariables = lazy(() => import(/* webpackChunkName: "CssVariables" */ "@/pages/css/17_css_variables"));
+const ImageFlipping = lazy(() => import(/* webpackChunkName: "ImageFlipping" */ "@/pages/css/18_image-flipping"));
 
 // Babylon相关 学习视频的案例
 const BabylonBasics_Video = lazy(() => import(/* webpackChunkName: "BabylonBasics_Video" */ "@/pages/babylon-video/1_basic"));
@@ -71,6 +74,9 @@ const ChatRoom = lazy(() => import(/* webpackChunkName: "ChatRoom" */ "@/pages/c
 
 // StoryBook Demos
 const StoryBookDay01 = lazy(() => import(/* webpackChunkName: "StoryBookDay01" */ "@/pages/storybook/day01"));
+
+// utils Demos
+const Interface = lazy(() => import(/* webpackChunkName: "Interface" */ "@/pages/typescript/1_interface"));
 
 // utils Demos
 const EasyAgentSDK = lazy(() => import(/* webpackChunkName: "EasyAgentSDK" */ "@/pages/utils/easyAgentSDK"));
@@ -92,7 +98,12 @@ const routers = [
         label: "Blog20221028",
         icon: <MenuOutlined />,
         component: Blog20221028,
-      }
+      }, {
+        key: "Blog20221202",
+        label: "Blog20221202",
+        icon: <MenuOutlined />,
+        component: Blog20221202,
+      },
     ]
   },
   {
@@ -260,6 +271,18 @@ const routers = [
         label: "16_cqw",
         icon: <MenuOutlined />,
         component: Cqw,
+      },
+      {
+        key: "17_css_variables",
+        label: "17_css_variables",
+        icon: <MenuOutlined />,
+        component: CssVariables,
+      },
+      {
+        key: "18_image-flipping",
+        label: "18_image-flipping",
+        icon: <MenuOutlined />,
+        component: ImageFlipping,
       },
     ],
   },
@@ -456,6 +479,21 @@ const routers = [
         label: "day01",
         icon: <MenuOutlined />,
         component: StoryBookDay01,
+      },
+    ],
+  },
+
+  
+  {
+    key: "Typescript",
+    label: "Typescript",
+    icon: <AppstoreOutlined />,
+    children: [
+      {
+        key: "Interface",
+        label: "Interface",
+        icon: <MenuOutlined />,
+        component: Interface,
       },
     ],
   },
