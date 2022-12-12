@@ -1,6 +1,5 @@
 import React from 'react'
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Code from '../components/Code'
 
 const Index = () => {
 
@@ -18,9 +17,9 @@ const Index = () => {
 				DOMContentLoadedIE 8 和旧版本的 IE 不支持该事件。
 				为了支持旧版本 IE 中的行为，我们可以使用该readyState属性来检查文档是否已完全加载：
 			</div>
-			<SyntaxHighlighter language="javascript" style={vscDarkPlus}>
+			<Code>
 				{code1}
-			</SyntaxHighlighter>
+			</Code>
 		</div>
 	)
 }

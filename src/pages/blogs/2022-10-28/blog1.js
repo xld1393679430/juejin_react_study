@@ -1,36 +1,31 @@
-import React from 'react'
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import React from "react";
+import Code from '../components/Code'
 
 const Index = () => {
-	const code1 = `
+  const code1 = `
 		const car = { branch: 'Audi' };
 		const a4 = Object.create(car);
 		console.log(a4.branch); // 'Audi'
 
 		delete a4.branch;
 		console.log(a4.branch); // 'Audi'
-	`
+	`;
 
-	const code2 = `
+  const code2 = `
 		a4.branch = undefined;
 		console.log(a4.branch); // undefined
-	`
+	`;
 
-	return (
-		<div>
-			<h2>1, delete无法删除继承的属性</h2>
-			
-			<SyntaxHighlighter language="javascript" style={vscDarkPlus}>
-				{code1}
-			</SyntaxHighlighter>
-			
-			<div>在这种情况下，我们必须将属性设置为undefined：</div>
-			<SyntaxHighlighter language="javascript" style={vscDarkPlus}>
-				{code2}
-			</SyntaxHighlighter>
-		</div>
-	)
-}
+  return (
+    <div>
+      <h2>1, delete无法删除继承的属性</h2>
 
-export default Index
+      <Code>{code1}</Code>
+
+      <div>在这种情况下，我们必须将属性设置为undefined：</div>
+      <Code>{code2}</Code>
+    </div>
+  );
+};
+
+export default Index;
