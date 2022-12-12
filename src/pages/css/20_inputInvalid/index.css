@@ -1,0 +1,22 @@
+@keyframes shake {
+	0% {
+		transform: translateX(0);
+	}
+
+	40%, 80% {
+		transform: translateX(-10px);
+	}
+
+	20%, 60% {
+		transform: translateX(10px);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+.input--invalid {
+	animation: shake 1s;
+	outline-color: #ef4444;
+}
