@@ -1,7 +1,6 @@
 import React, { useState, memo } from "react";
 import { List, Collapse } from "antd";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Code from '@/components/Code'
 import http from "@/http";
 import Demo1 from "./demo1";
 import Demo2 from "./demo2";
@@ -54,9 +53,7 @@ const Index = () => {
             <Collapse destroyInactivePanel={true} style={{ width: "100%" }} onChange={() => handleChange(item)}>
               <Panel header={item.title} key={item.path}>
                 <Component />
-                <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
-                  {item.codeStr}
-                </SyntaxHighlighter>
+                <Code>{item.codeStr}</Code>
               </Panel>
             </Collapse>
           </List.Item>

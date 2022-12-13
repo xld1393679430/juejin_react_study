@@ -1,7 +1,6 @@
 import React, { useEffect, useCallback } from "react";
 import { message, Button } from "antd";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Code from '@/components/Code'
 
 function initDispatchEventSetItem() {
   // 事件派发
@@ -49,9 +48,7 @@ const Index = () => {
       <Button onClick={handleClick1}>调用localStorage.setItem（不需要监听）</Button>
       <Button onClick={handleClick2}>调用localStorage.setItem（需要监听）</Button>
 
-      <SyntaxHighlighter showLineNumbers language="jsx" style={vscDarkPlus}>
-        {String(initDispatchEventSetItem)}
-      </SyntaxHighlighter>
+      <Code>{String(initDispatchEventSetItem)}</Code>
     </div>
   );
 };

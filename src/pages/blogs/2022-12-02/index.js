@@ -1,10 +1,11 @@
 import React, { Fragment, useEffect } from "react";
-import Code from "../components/Code";
+import { Alert } from 'antd'
+import Code from '@/components/Code'
 
 const Index = () => {
   const code = `
 	 1, 对象只接受字符串和符号键。其他类型将自动转换为字符串。Map另一方面接受任何类型的密钥。
-	 2,	我们可以迭代Map直接使用forEachorfor ... of语句的属性：
+	 2,我们可以迭代Map直接使用forEachorfor ... of语句的属性：
 		const styles = new Map();
 		styles.set('color', 'blue');
 		styles.set('fontSize', '12px');
@@ -48,11 +49,11 @@ const Index = () => {
 
   return (
     <div>
-      <p>1，Map和Object差异</p>
-      <Code>{code}</Code>
+	  <Alert message="1，Map和Object差异" type="success"></Alert>
+      <Code tab={true}>{code}</Code>
 
       <hr />
-      <p>2，JSON.stringify省略undefined，但保留null：</p>
+	  <Alert message="2，JSON.stringify省略undefined，但保留null：" type="success"></Alert>
       <Code>{code2}</Code>
 
       {"奥术大师大所大 \n 222".split("\\n").map((item, index) => {

@@ -1,5 +1,6 @@
 import React from "react";
-import Code from '../components/Code'
+import { Alert } from 'antd'
+import Code from '@/components/Code'
 
 const Index = () => {
   const code1 = `
@@ -18,12 +19,11 @@ const Index = () => {
 
   return (
     <div>
-      <h2>1, delete无法删除继承的属性</h2>
+      <Alert message="1, delete无法删除继承的属性" type="success"></Alert>
+      <Code tab={true}>{code1}</Code>
 
-      <Code>{code1}</Code>
-
-      <div>在这种情况下，我们必须将属性设置为undefined：</div>
-      <Code>{code2}</Code>
+      <Alert message="在这种情况下，我们必须将属性设置为undefined：" type="warning"></Alert>
+      <Code tab={true}>{code2}</Code>
     </div>
   );
 };

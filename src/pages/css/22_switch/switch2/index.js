@@ -16,9 +16,9 @@ const Index = () => {
 				switchRef.current.classList.add('switch--off');
 			}
 		}
-		checkboxRef.current.addEventListener('change', handleChange);
+		checkboxRef.current?.addEventListener('change', handleChange);
 		return () => {
-			checkboxRef.current.removeEventListener('change', handleChange);
+			checkboxRef.current?.removeEventListener('change', handleChange);
 
 		}
 	}, [])
