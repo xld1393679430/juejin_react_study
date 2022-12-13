@@ -64,6 +64,7 @@ const CssVariables = lazy(() => import(/* webpackChunkName: "CssVariables" */ "@
 const ImageFlipping = lazy(() => import(/* webpackChunkName: "ImageFlipping" */ "@/pages/css/18_image-flipping"));
 const Progress = lazy(() => import(/* webpackChunkName: "Progress" */ "@/pages/css/19_progress"));
 const InputInvalid = lazy(() => import(/* webpackChunkName: "InputInvalid" */ "@/pages/css/20_inputInvalid"));
+const CssLoading = lazy(() => import(/* webpackChunkName: "CssLoading" */ "@/pages/css/21_loading"));
 
 // Babylon相关 学习视频的案例
 const BabylonBasics_Video = lazy(() => import(/* webpackChunkName: "BabylonBasics_Video" */ "@/pages/babylon-video/1_basic"));
@@ -297,6 +298,12 @@ const routers = [
         label: "20_inputInvalid",
         icon: <MenuOutlined />,
         component: InputInvalid,
+      },
+      {
+        key: "21_loading",
+        label: "21_loading",
+        icon: <MenuOutlined />,
+        component: CssLoading,
       },
     ],
   },
