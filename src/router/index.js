@@ -65,6 +65,7 @@ const ImageFlipping = lazy(() => import(/* webpackChunkName: "ImageFlipping" */ 
 const Progress = lazy(() => import(/* webpackChunkName: "Progress" */ "@/pages/css/19_progress"));
 const InputInvalid = lazy(() => import(/* webpackChunkName: "InputInvalid" */ "@/pages/css/20_inputInvalid"));
 const CssLoading = lazy(() => import(/* webpackChunkName: "CssLoading" */ "@/pages/css/21_loading"));
+const CssSwitch = lazy(() => import(/* webpackChunkName: "CssSwitch" */ "@/pages/css/22_switch"));
 
 // Babylon相关 学习视频的案例
 const BabylonBasics_Video = lazy(() => import(/* webpackChunkName: "BabylonBasics_Video" */ "@/pages/babylon-video/1_basic"));
@@ -305,6 +306,13 @@ const routers = [
         icon: <MenuOutlined />,
         component: CssLoading,
       },
+      {
+        key: "22_switch",
+        label: "22_switch",
+        icon: <MenuOutlined />,
+        component: CssSwitch,
+      },
+      
     ],
   },
   {

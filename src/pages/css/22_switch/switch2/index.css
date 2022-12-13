@@ -1,0 +1,38 @@
+.switch {
+	position: relative;
+    cursor: pointer;
+    border-radius: 9999px;
+    width: 4rem;
+    height: 2rem;
+}
+
+.switch__input {
+    display: none;
+}
+
+.switch__circle {
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    background-color: #fff;
+	transition: transform 200ms;
+}
+
+.switch--off {
+    background-color: #d1d5db;
+}
+.switch--off .switch__circle {
+    border: 1px solid #d1d5db;
+    transform: translateX(0%);
+}
+
+.switch--on {
+    background-color: #357edd;
+}
+.switch--on .switch__circle {
+    border: 1px solid #357edd;
+    transform: translateX(100%);
+}

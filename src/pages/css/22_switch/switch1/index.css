@@ -1,0 +1,23 @@
+.switch {
+	position: relative;
+	display: flex;
+	width: 140px;
+	height: 36px;
+	border-radius: 24px;
+	background-color: beige;
+}
+
+.switch-item {
+	font-size: 14px;
+	display: flex;
+	flex: 1;
+    align-items: center;
+    justify-content: center;
+	cursor: pointer;
+}
+
+.active {
+	background-color: rgb(38, 0, 255);
+	color: #fff;
+	border-radius: 24px;
+}
