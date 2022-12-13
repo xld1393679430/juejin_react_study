@@ -11,7 +11,7 @@ const Index = () => {
 	}
 
 	return (
-		<div className="switch">
+		<div className="switch1">
 		{
 			list.map((item, index) => {
 				return <div key={index} className={`switch-item ${idx === index ? "active" : null}`} data-idx={index} onClick={handleChange}>{item}</div>

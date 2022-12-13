@@ -1,9 +1,11 @@
 .switch {
 	position: relative;
+	display: flex;
     cursor: pointer;
     border-radius: 9999px;
     width: 4rem;
     height: 2rem;
+    background-color: beige;
 }
 
 .switch__input {
