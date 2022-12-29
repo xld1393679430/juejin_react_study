@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div>
+      <p class="content">asdasdasdasda</p>
+    </div>
+    <script>
+      // function Foo() {
+      //   getName = function () { alert(1); };
+      //   return this;
+      // }
+      // Foo.getName = function () { alert(2); };
+      // Foo.prototype.getName = function () { alert(3); };
+      // var getName = function () { alert(4); };
+      // function getName() { alert(5); }
+
+      /**
+       * 一， 变量提升后的顺序
+       * 1, function函数提升， var变量提升
+       * 2, var getName和function getName提升后重名了， function getName会覆盖掉var getName
+       * 3, alert(4)的getName和alert(5)的getName
+        **/
+
+      function Foo() {
+        getName = function () { alert(1); };
+        return this;
+      }
+      function getName() { alert(5); }
+      Foo.getName = function () { alert(2); };
+      Foo.prototype.getName = function () { alert(3); };
+      getName = function () { alert(4); };
+
+      
+
+      // Foo.getName(); // 2
+
+      // getName()
+
+      // Foo().getName();
+
+      // getName();
+
+      // new Foo.getName()
+
+      // new Foo().getName()
+
+      // new new Foo().getName()
+    </script>
+  </body>
+</html>

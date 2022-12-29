@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="layout">layout</div>
+    <script>
+      function throttle(func, delay) {
+        let previous = 0;
+        return function () {
+          let now = +new Date();
+          let context = this;
+          let args = arguments;
+          if (now - previous > delay) {
+            func.call(context, args);
+            previous = now;
+          }
+        };
+      }
+
+      (function () {
+        let node = document.getElementById("layout");
+        let count = 0;
+        function gtUserAction(e) {
+          console.log(this, e, count, 1111);
+          node.innerHTML = `count: ${count++}`;
+        }
+        node.onclick = throttle(gtUserAction, 1000);
+      })();
+    </script>
+  </body>
+</html>
