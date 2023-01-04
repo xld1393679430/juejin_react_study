@@ -1,0 +1,39 @@
+.animation-banner {
+	margin: 1.6vw 3.333vw 0 3.333vw;
+	padding: 1.6vw 2.133vw 2vw 2.133vw;
+	background: linear-gradient(
+	  90deg,
+	  rgb(37, 105, 204) 0%,
+	  rgb(0, 65, 159) 100%
+	);
+	border-radius: 3.2vw;
+	.img-box {
+	  width: 100%;
+	  height: 6.267vw;
+	  img {
+		display: block;
+		height: 100%;
+	  }
+	}
+	.text-box {
+	  width: 100%;
+	  white-space: nowrap;
+	  overflow: hidden;
+	}
+	.text {
+	  width: fit-content; 
+	  color: #ffffff;
+	  font-size: 2.933vw;
+	  font-weight: 600;
+	  line-height: 3.733vw;
+	}
+	@keyframes move {
+	  0% {
+		transform: translateX(0);
+	  }
+	  100% {
+		transform: translateX(-100%);
+	  }
+	}
+  }
+  
