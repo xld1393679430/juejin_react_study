@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { Alert } from 'antd'
 import Code from '@/components/Code'
 
 const Index = () => {
-
 	const toObject = (arr, key) => Object.fromEntries(arr.map((it) => [it[key], it]));
 
 	const code1 = `
@@ -26,8 +25,6 @@ const Index = () => {
 		const toObject = (arr, key) => Object.fromEntries(arr.map((it) => [it[key], it]));
 	`
 
-	
-
 	useEffect(() => {
 		const result = toObject(
 			[
@@ -37,7 +34,6 @@ const Index = () => {
 			],
 			'id'
 		)
-
 		console.log(result)
 	}, [])
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<fieldset style="width: 100px">
+		<legend>Login</legend>
+	
+		<p>
+			<input type="text" placeholder="Username" />
+		</p>
+		<p>
+			<input type="password" placeholder="Password" />
+		</p>
+	</fieldset>
+
+	<hr>
+	<input list="demo__list" />
+	<datalist id="demo__list">
+		<option value="javascript" />
+		<option value="css" />
+		<option value="html" />
+	</datalist>
+
+	<script>
+		// 从数组中找到最接近的数字
+		const near = (array, num) => {
+			return array.find(item => Math.abs(item - num) <= 1) || null
+		}
+
+		const closest = (arr, n) => arr.reduce((prev, curr) => (Math.abs(curr - n) < Math.abs(prev - n) ? curr : prev));
+
+
+		console.log(near([1, 5, 7, 9], 6));
+
+		console.log(closest([1, 5, 7, 9], 2))
+
+	</script>
+</body>
+</html>

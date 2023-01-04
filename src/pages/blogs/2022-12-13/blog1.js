@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react'
 import { Alert } from 'antd'
 import Code from '@/components/Code'
 
@@ -13,8 +12,6 @@ const Index = () => {
 		}
 
 		console.log(isEqual([1, 2, 3], [1, '2', 3])); // false	
-
-		
 	`
 
 	return (

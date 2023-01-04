@@ -1,5 +1,5 @@
-import React, { Fragment, useEffect } from "react";
-import { Alert } from 'antd'
+import { Fragment } from 'react'
+import { Alert, Divider } from 'antd'
 import Code from '@/components/Code'
 
 const Index = () => {
@@ -48,11 +48,12 @@ const Index = () => {
 	`;
 
   return (
-    <div>
+    <>
 	  <Alert message="1，Map和Object差异" type="success"></Alert>
       <Code tab={true}>{code}</Code>
 
-      <hr />
+      <Divider />
+
 	  <Alert message="2，JSON.stringify省略undefined，但保留null：" type="success"></Alert>
       <Code>{code2}</Code>
 
@@ -64,7 +65,7 @@ const Index = () => {
           </Fragment>
         );
       })}
-    </div>
+    </>
   );
 };
 

@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react'
 import { Alert } from 'antd'
 import Code from '@/components/Code'
 

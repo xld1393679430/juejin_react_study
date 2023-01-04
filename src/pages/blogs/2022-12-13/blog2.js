@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { Alert } from 'antd'
 import Code from '@/components/Code'
 
 const Index = () => {
-
 	const toObject = (array, key) => array.reduce((a, b) => ({ ...a, [b[key]]: b }), {})
 
 	const code1 = `
@@ -37,7 +36,6 @@ const Index = () => {
 			],
 			'id'
 		)
-
 		console.log(result)
 	}, [])
 

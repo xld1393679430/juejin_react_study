@@ -1,9 +1,7 @@
-import React from 'react'
 import { Alert } from 'antd'
 import Code from '@/components/Code'
 
 const Index = () => {
-
 	const code1 = `
 		const ready = (cb) => {
 			return document.readyState === 'loading' ? document.addEventListener("DOMContentLoaded", cb) : cb()
