@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        height: 00px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+    <div class="btn-top">up</div>
+    <div class="btn-bottom">down</div>
+    <script>
+      const up = document.querySelector(".btn-top");
+      const down = document.querySelector(".btn-bottom");
+      const test = document.querySelector(".container");
+      up.addEventListener("click", function () {
+        test.scrollIntoView(true);
+      });
+      down.addEventListener("click", function () {
+        test.scrollIntoView(false);
+      });
+    </script>
+    <script>
+      const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      const fn1 = () => {
+        const a = array.find((item) => item === 1);
+        const b = array.find((item) => item === 2);
+      };
+
+      const fn2 = () => {
+        let a, b;
+        for (let i = 0; i < array.length; i++) {
+          const item = array[i];
+          if (item === 1) {
+            a = item;
+          }
+          if (item === 2) {
+            b = item;
+          }
+        }
+      };
+
+      console.time("fn1");
+      fn1();
+      console.timeEnd("fn1");
+
+      console.time("fn2");
+      fn2();
+      console.timeEnd("fn2");
+    </script>
+  </body>
+</html>
