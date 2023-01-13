@@ -1311,70 +1311,6 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@codemirror/autocomplete@^6.0.0":
-  version "6.4.0"
-  resolved "http://registry.npm.release.ctripcorp.com/@codemirror/autocomplete/download/@codemirror/autocomplete-6.4.0.tgz#76ac9a2a411a4cc6e13103014dba5e0fe601da5a"
-  integrity sha1-dqyaKkEaTMbhMQMBTbpeD+YB2lo=
-  dependencies:
-    "@codemirror/language" "^6.0.0"
-    "@codemirror/state" "^6.0.0"
-    "@codemirror/view" "^6.6.0"
-    "@lezer/common" "^1.0.0"
-
-"@codemirror/commands@^6.0.0":
-  version "6.1.3"
-  resolved "http://registry.npm.release.ctripcorp.com/@codemirror/commands/download/@codemirror/commands-6.1.3.tgz#401d0b6d18e7d5eb9a96f6c8ae4ea56a08e8fd06"
-  integrity sha1-QB0LbRjn1eualvbIrk6lagjo/QY=
-  dependencies:
-    "@codemirror/language" "^6.0.0"
-    "@codemirror/state" "^6.2.0"
-    "@codemirror/view" "^6.0.0"
-    "@lezer/common" "^1.0.0"
-
-"@codemirror/language@^6.0.0":
-  version "6.4.0"
-  resolved "http://registry.npm.release.ctripcorp.com/@codemirror/language/download/@codemirror/language-6.4.0.tgz#803990e0f07bbb619e915651d3a57d143765dbcc"
-  integrity sha1-gDmQ4PB7u2GekVZR06V9FDdl28w=
-  dependencies:
-    "@codemirror/state" "^6.0.0"
-    "@codemirror/view" "^6.0.0"
-    "@lezer/common" "^1.0.0"
-    "@lezer/highlight" "^1.0.0"
-    "@lezer/lr" "^1.0.0"
-    style-mod "^4.0.0"
-
-"@codemirror/lint@^6.0.0":
-  version "6.1.0"
-  resolved "http://registry.npm.release.ctripcorp.com/@codemirror/lint/download/@codemirror/lint-6.1.0.tgz#f006142d3a580fdb8ffc2faa3361b2232c08e079"
-  integrity sha1-8AYULTpYD9uP/C+qM2GyIywI4Hk=
-  dependencies:
-    "@codemirror/state" "^6.0.0"
-    "@codemirror/view" "^6.0.0"
-    crelt "^1.0.5"
-
-"@codemirror/search@^6.0.0":
-  version "6.2.3"
-  resolved "http://registry.npm.release.ctripcorp.com/@codemirror/search/download/@codemirror/search-6.2.3.tgz#fab933fef1b1de8ef40cda275c73d9ac7a1ff40f"
-  integrity sha1-+rkz/vGx3o70DNonXHPZrHof9A8=
-  dependencies:
-    "@codemirror/state" "^6.0.0"
-    "@codemirror/view" "^6.0.0"
-    crelt "^1.0.5"
-
-"@codemirror/state@^6.0.0", "@codemirror/state@^6.1.4", "@codemirror/state@^6.2.0":
-  version "6.2.0"
-  resolved "http://registry.npm.release.ctripcorp.com/@codemirror/state/download/@codemirror/state-6.2.0.tgz#a0fb08403ced8c2a68d1d0acee926bd20be922f2"
-  integrity sha1-oPsIQDztjCpo0dCs7pJr0gvpIvI=
-
-"@codemirror/view@^6.0.0", "@codemirror/view@^6.6.0":
-  version "6.7.3"
-  resolved "http://registry.npm.release.ctripcorp.com/@codemirror/view/download/@codemirror/view-6.7.3.tgz#be2f9d0e6fc8882fb192041bf78425ca04999827"
-  integrity sha1-vi+dDm/IiC+xkgQb94QlygSZmCc=
-  dependencies:
-    "@codemirror/state" "^6.1.4"
-    style-mod "^4.0.0"
-    w3c-keyname "^2.2.4"
-
 "@colors/colors@1.5.0":
   version "1.5.0"
   resolved "http://registry.npm.release.ctripcorp.com/@colors/colors/download/@colors/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
@@ -2030,25 +1966,6 @@
   version "2.0.4"
   resolved "http://registry.npm.release.ctripcorp.com/@leichtgewicht/ip-codec/download/@leichtgewicht/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
   integrity sha1-sqxibWy5yHGKtFkWbUu0Bbj/p4s=
-
-"@lezer/common@^1.0.0":
-  version "1.0.2"
-  resolved "http://registry.npm.release.ctripcorp.com/@lezer/common/download/@lezer/common-1.0.2.tgz#8fb9b86bdaa2ece57e7d59e5ffbcb37d71815087"
-  integrity sha1-j7m4a9qi7OV+fVnl/7yzfXGBUIc=
-
-"@lezer/highlight@^1.0.0":
-  version "1.1.3"
-  resolved "http://registry.npm.release.ctripcorp.com/@lezer/highlight/download/@lezer/highlight-1.1.3.tgz#bf5a36c2ee227f526d74997ac91f7777e29bd25d"
-  integrity sha1-v1o2wu4if1JtdJl6yR93d+Kb0l0=
-  dependencies:
-    "@lezer/common" "^1.0.0"
-
-"@lezer/lr@^1.0.0":
-  version "1.3.0"
-  resolved "http://registry.npm.release.ctripcorp.com/@lezer/lr/download/@lezer/lr-1.3.0.tgz#37a52fd8e7ca2ad1d897c1de832dcbd65b361de8"
-  integrity sha1-N6Uv2OfKKtHYl8Hegy3L1ls2Heg=
-  dependencies:
-    "@lezer/common" "^1.0.0"
 
 "@mdx-js/mdx@^1.6.22":
   version "1.6.22"
@@ -6380,18 +6297,10 @@ coa@^2.0.2:
     chalk "^2.4.1"
     q "^1.1.2"
 
-codemirror@^6.0.1:
-  version "6.0.1"
-  resolved "http://registry.npm.release.ctripcorp.com/codemirror/download/codemirror-6.0.1.tgz#62b91142d45904547ee3e0e0e4c1a79158035a29"
-  integrity sha1-YrkRQtRZBFR+4+Dg5MGnkVgDWik=
-  dependencies:
-    "@codemirror/autocomplete" "^6.0.0"
-    "@codemirror/commands" "^6.0.0"
-    "@codemirror/language" "^6.0.0"
-    "@codemirror/lint" "^6.0.0"
-    "@codemirror/search" "^6.0.0"
-    "@codemirror/state" "^6.0.0"
-    "@codemirror/view" "^6.0.0"
+codemirror@5.65.11:
+  version "5.65.11"
+  resolved "http://registry.npm.release.ctripcorp.com/codemirror/download/codemirror-5.65.11.tgz#c818edc3274788c008f636520c5490a1f7009b4f"
+  integrity sha1-yBjtwydHiMAI9jZSDFSQofcAm08=
 
 codepage@~1.10.1:
   version "1.10.2"
@@ -6858,11 +6767,6 @@ create-require@^1.1.0:
   version "1.1.1"
   resolved "http://registry.npm.release.ctripcorp.com/create-require/download/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
   integrity sha1-wdfo8eX2z8n/ZfnNNS03NIdWwzM=
-
-crelt@^1.0.5:
-  version "1.0.5"
-  resolved "http://registry.npm.release.ctripcorp.com/crelt/download/crelt-1.0.5.tgz#57c0d52af8c859e354bace1883eb2e1eb182bb94"
-  integrity sha1-V8DVKvjIWeNUus4Yg+suHrGCu5Q=
 
 cross-spawn@^6.0.0:
   version "6.0.5"
@@ -14733,6 +14637,11 @@ react-beforeunload@^2.5.3:
     prop-types "^15.8.1"
     tiny-invariant "^1.2.0"
 
+react-codemirror2@^7.2.1:
+  version "7.2.1"
+  resolved "http://registry.npm.release.ctripcorp.com/react-codemirror2/download/react-codemirror2-7.2.1.tgz#38dab492fcbe5fb8ebf5630e5bb7922db8d3a10c"
+  integrity sha1-ONq0kvy+X7jr9WMOW7eSLbjToQw=
+
 react-data-grid@^5.0.5:
   version "5.0.5"
   resolved "http://registry.npm.release.ctripcorp.com/react-data-grid/download/react-data-grid-5.0.5.tgz#529f5acd4750ae0461e9da66f9f30d6f597eed76"
@@ -16519,11 +16428,6 @@ style-loader@^3.3.1:
   resolved "http://registry.npm.release.ctripcorp.com/style-loader/download/style-loader-3.3.1.tgz#057dfa6b3d4d7c7064462830f9113ed417d38575"
   integrity sha1-BX36az1NfHBkRigw+RE+1BfThXU=
 
-style-mod@^4.0.0:
-  version "4.0.0"
-  resolved "http://registry.npm.release.ctripcorp.com/style-mod/download/style-mod-4.0.0.tgz#97e7c2d68b592975f2ca7a63d0dd6fcacfe35a01"
-  integrity sha1-l+fC1otZKXXyynpj0N1vys/jWgE=
-
 style-to-object@0.3.0, style-to-object@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/style-to-object/-/style-to-object-0.3.0.tgz#b1b790d205991cc783801967214979ee19a76e46"
@@ -17599,11 +17503,6 @@ w3c-hr-time@^1.0.2:
   integrity sha1-ConN9cwVgi35w2BUNnaWPgzDCM0=
   dependencies:
     browser-process-hrtime "^1.0.0"
-
-w3c-keyname@^2.2.4:
-  version "2.2.6"
-  resolved "http://registry.npm.release.ctripcorp.com/w3c-keyname/download/w3c-keyname-2.2.6.tgz#8412046116bc16c5d73d4e612053ea10a189c85f"
-  integrity sha1-hBIEYRa8FsXXPU5hIFPqEKGJyF8=
 
 w3c-xmlserializer@^2.0.0:
   version "2.0.0"

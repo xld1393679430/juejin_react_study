@@ -94,6 +94,9 @@ const Interface = lazy(() => import(/* webpackChunkName: "Interface" */ "@/pages
 // utils Demos
 const EasyAgentSDK = lazy(() => import(/* webpackChunkName: "EasyAgentSDK" */ "@/pages/utils/easyAgentSDK"));
 
+// 编辑器相关
+const Editor = lazy(() => import(/* webpackChunkName: "Editor" */ "@/pages/editor/index"));
+
 const routers = [
   {
     key: "",
@@ -592,6 +595,12 @@ const routers = [
         component: EasyAgentSDK,
       },
     ],
+  },
+  {
+    key: "editor",
+    label: "editor",
+    icon: <AppstoreOutlined />,
+    component: Editor
   },
 ];
 
