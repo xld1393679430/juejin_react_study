@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button } from "antd";
 import "./index.css";
 
 const Index = () => {
   const [text, setText] = useState("侦探");
-
-  useEffect(() => {}, []);
 
   const handleToggle = () => {
     setText(text === "侦探" ? "窗前明月光" : "侦探");

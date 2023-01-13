@@ -1,5 +1,7 @@
 import { useEffect } from "react";
-import { myReact } from "./myReact";
+import { Alert } from 'antd'
+import Code from '@/components/Code'
+import { myReact, code } from "./myReact";
 
 const Index = () => {
   useEffect(() => {
@@ -16,8 +18,8 @@ const Index = () => {
 
   return (
     <div>
-      <p>react</p>
-
+      <Alert message="React.render" type="success"></Alert>
+			<Code>{code}</Code>
       <div id="my-react"></div>
     </div>
   );

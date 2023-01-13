@@ -21,7 +21,7 @@ const Study_13_large_data = lazy(() => import(/* webpackChunkName: "Study_13_lar
 const Study_15_event = lazy(() => import(/* webpackChunkName: "Study_15_event" */ "@/pages/juejin/study_15_event"));
 
 // 其他技术杂谈
-const Bytemd = lazy(() => import(/* webpackChunkName: "Bytemd" */ "@/pages/tech/1_bytemd"));
+const IntersectionObserver = lazy(() => import(/* webpackChunkName: "IntersectionObserver" */ "@/pages/tech/1_intersectionObserver"));
 const Drag = lazy(() => import(/* webpackChunkName: "Drag" */ "@/pages/tech/2_drag"));
 const Easy_coder = lazy(() => import(/* webpackChunkName: "Easy_coder" */ "@/pages/tech/3_easy_coder"));
 const ErrorBoundary = lazy(() => import(/* webpackChunkName: "ErrorBoundary" */ "@/pages/tech/4_errorBoundary"));
@@ -43,15 +43,11 @@ const RequestAnimationFrame = lazy(() => import(/* webpackChunkName: "RequestAni
 const DispatchEvent = lazy(() => import(/* webpackChunkName: "DispatchEvent" */ "@/pages/tech/18_dispatchEvent"));
 const ClassPrivateAttribute = lazy(() => import(/* webpackChunkName: "ClassPrivateAttribute" */ "@/pages/tech/19_class_private_attribute"));
 const Observer = lazy(() => import(/* webpackChunkName: "Observer" */ "@/pages/tech/20_observer"));
-const IntersectionObserver = lazy(() => import(/* webpackChunkName: "IntersectionObserver" */ "@/pages/tech/21_intersectionObserver"));
 
 // React相关
 const Memo = lazy(() => import(/* webpackChunkName: "Memo" */ "@/pages/react/1_memo"));
 const React_SetState = lazy(() => import(/* webpackChunkName: "React_SetState" */ "@/pages/react/2_setState"));
 const DefaultProps = lazy(() => import(/* webpackChunkName: "DefaultProps" */ "@/pages/react/3_defaultProps"));
-
-// PPT设计
-const RevealJs = lazy(() => import(/* webpackChunkName: "RevealJs" */ "@/pages/ppt/1_reveal"));
 
 // css相关
 const Sticky = lazy(() => import(/* webpackChunkName: "Sticky" */ "@/pages/css/1_sticky"));
@@ -60,24 +56,19 @@ const Sticky2 = lazy(() => import(/* webpackChunkName: "Sticky2" */ "@/pages/css
 const TransitionStyle = lazy(() => import(/* webpackChunkName: "TransitionStyle" */ "@/pages/css/4_transition-style"));
 const Css_min_max_clamp = lazy(() => import(/* webpackChunkName: "Css_min_max_clamp" */ "@/pages/css/5_min_max_clamp"));
 const Font_variation_settings = lazy(() => import(/* webpackChunkName: "Font_variation_settings" */ "@/pages/css/6_font-variation-settings"));
-const Translate3d = lazy(() => import(/* webpackChunkName: "Translate3d" */ "@/pages/css/7_translate3d"));
-const BackgroundClip = lazy(() => import(/* webpackChunkName: "BackgroundClip" */ "@/pages/css/8_background_clip"));
+const CssSwitch = lazy(() => import(/* webpackChunkName: "CssSwitch" */ "@/pages/css/7_switch"));
+const CssLoading = lazy(() => import(/* webpackChunkName: "CssLoading" */ "@/pages/css/8_loading"));
 const Calc = lazy(() => import(/* webpackChunkName: "Calc" */ "@/pages/css/9_calc"));
 const Mask = lazy(() => import(/* webpackChunkName: "Mask" */ "@/pages/css/10_mask"));
 const CssDrag = lazy(() => import(/* webpackChunkName: "CssDrag" */ "@/pages/css/11_drag"));
 const FireWork = lazy(() => import(/* webpackChunkName: "FireWork" */ "@/pages/css/12_firework"));
 const FireWorkColorful = lazy(() => import(/* webpackChunkName: "FireWorkColorful" */ "@/pages/css/13_firework_colorful"));
 const CssAddeventListener = lazy(() => import(/* webpackChunkName: "CssAddeventListener" */ "@/pages/css/14_css_addeventListener"));
+const InputInvalid = lazy(() => import(/* webpackChunkName: "InputInvalid" */ "@/pages/css/15_inputInvalid"));
 const Cqw = lazy(() => import(/* webpackChunkName: "Cqw" */ "@/pages/css/16_cqw"));
 const CssVariables = lazy(() => import(/* webpackChunkName: "CssVariables" */ "@/pages/css/17_css_variables"));
 const ImageFlipping = lazy(() => import(/* webpackChunkName: "ImageFlipping" */ "@/pages/css/18_image-flipping"));
 const Progress = lazy(() => import(/* webpackChunkName: "Progress" */ "@/pages/css/19_progress"));
-const InputInvalid = lazy(() => import(/* webpackChunkName: "InputInvalid" */ "@/pages/css/20_inputInvalid"));
-const CssLoading = lazy(() => import(/* webpackChunkName: "CssLoading" */ "@/pages/css/21_loading"));
-const CssSwitch = lazy(() => import(/* webpackChunkName: "CssSwitch" */ "@/pages/css/22_switch"));
-
-// Babylon相关 学习视频的案例
-const BabylonBasics_Video = lazy(() => import(/* webpackChunkName: "BabylonBasics_Video" */ "@/pages/babylon-video/1_basic"));
 
 // Babylon相关 学习视频的案例
 const BabylonBasics_Doc = lazy(() => import(/* webpackChunkName: "BabylonBasics_Doc" */ "@/pages/babylon-doc/1_basic"));
@@ -200,19 +191,6 @@ const routers = [
     ],
   },
   {
-    key: "babylon-video",
-    label: "Babylon相关 video",
-    icon: <AppstoreOutlined />,
-    children: [
-      {
-        key: "1_basic",
-        label: "1_basic",
-        icon: <MenuOutlined />,
-        component: BabylonBasics_Video,
-      },
-    ],
-  },
-  {
     key: "babylon-doc",
     label: "Babylon相关 doc",
     icon: <AppstoreOutlined />,
@@ -222,19 +200,6 @@ const routers = [
         label: "01_basic",
         icon: <MenuOutlined />,
         component: BabylonBasics_Doc,
-      },
-    ],
-  },
-  {
-    key: "ppt",
-    label: "ppt设计",
-    icon: <AppstoreOutlined />,
-    children: [
-      {
-        key: "RevealJs",
-        label: "1_reveal",
-        icon: <MenuOutlined />,
-        component: RevealJs,
       },
     ],
   },
@@ -280,16 +245,16 @@ const routers = [
         component: Font_variation_settings,
       },
       {
-        key: "translate3d",
-        label: "7_font-variation-settings",
+        key: "7_switch",
+        label: "7_switch",
         icon: <MenuOutlined />,
-        component: Translate3d,
+        component: CssSwitch,
       },
       {
-        key: "8_background_clip",
-        label: "8_background_clip",
+        key: "8_loading",
+        label: "8_loading",
         icon: <MenuOutlined />,
-        component: BackgroundClip,
+        component: CssLoading,
       },
       {
         key: "9_calc",
@@ -328,6 +293,12 @@ const routers = [
         component: CssAddeventListener,
       },
       {
+        key: "15_inputInvalid",
+        label: "15_inputInvalid",
+        icon: <MenuOutlined />,
+        component: InputInvalid,
+      },
+      {
         key: "16_cqw",
         label: "16_cqw",
         icon: <MenuOutlined />,
@@ -351,25 +322,6 @@ const routers = [
         icon: <MenuOutlined />,
         component: Progress,
       },
-      {
-        key: "20_inputInvalid",
-        label: "20_inputInvalid",
-        icon: <MenuOutlined />,
-        component: InputInvalid,
-      },
-      {
-        key: "21_loading",
-        label: "21_loading",
-        icon: <MenuOutlined />,
-        component: CssLoading,
-      },
-      {
-        key: "22_switch",
-        label: "22_switch",
-        icon: <MenuOutlined />,
-        component: CssSwitch,
-      },
-      
     ],
   },
   {
@@ -415,10 +367,10 @@ const routers = [
     icon: <AppstoreOutlined />,
     children: [
       {
-        key: "bytemd",
-        label: "1-bytemd 编辑器",
+        key: "1_intersectionObserver",
+        label: "1_intersectionObserver",
         icon: <MenuOutlined />,
-        component: Bytemd,
+        component: IntersectionObserver,
       },
       {
         key: "drag",
@@ -546,12 +498,6 @@ const routers = [
         label: "20_observer",
         icon: <MenuOutlined />,
         component: Observer,
-      },
-      {
-        key: "21_intersectionObserver",
-        label: "21_intersectionObserver",
-        icon: <MenuOutlined />,
-        component: IntersectionObserver,
       },
     ],
   },

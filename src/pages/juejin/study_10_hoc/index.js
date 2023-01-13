@@ -1,53 +1,36 @@
 import React, { useState, memo } from "react";
 import { List, Collapse } from "antd";
 import Code from '@/components/Code'
-import http from "@/http";
-import Demo1 from "./demo1";
-import Demo2 from "./demo2";
-import Demo3 from "./demo3";
-import Demo4 from "./demo4";
+import Demo1, { code as code1 } from "./demo1";
+import Demo2, { code as code2 } from "./demo2";
+import Demo3, { code as code3 } from "./demo3";
+import Demo4, { code as code4 } from "./demo4";
 
-// const path = require('path')
 const { Panel } = Collapse;
 
 const Index = () => {
   const [list, setList] = useState([
     {
       title: "1，渲染劫持",
-      codeStr: "",
-      path: "src/pages/juejin/study_10_hoc/demo1.js",
+      codeStr: code1,
       component: Demo1,
     },
     {
       title: "2,修改渲染树",
-      codeStr: "",
-      path: "src/pages/juejin/study_10_hoc/demo2.js",
+      codeStr: code2,
       component: Demo2,
     },
     {
       title: "3,事件监控",
-      codeStr: "",
-      path: "src/pages/juejin/study_10_hoc/demo3.js",
+      codeStr: code3,
       component: Demo3,
     },
     {
       title: "4,HOC权限控制",
-      codeStr: "",
-      path: "src/pages/juejin/study_10_hoc/demo4.js",
+      codeStr: code4,
       component: Demo4,
     },
   ]);
-
-  const handleChange = async (item) => {
-    if (!item.codeStr) {
-      const codeStr = await http("/api/js_review", {
-        params: { path: item.path },
-      });
-      const index = list.findIndex((i) => i.path === item.path);
-      list[index].codeStr = codeStr;
-      setList([...list]);
-    }
-  };
 
   return (
     <List
@@ -58,7 +41,7 @@ const Index = () => {
         const Component = item.component;
         return (
           <List.Item key={item.path}>
-            <Collapse destroyInactivePanel={true} style={{ width: "100%" }} onChange={() => handleChange(item)}>
+            <Collapse destroyInactivePanel={true} style={{ width: "100%" }}>
               <Panel header={item.title} key={item.path}>
                 <Component />
                 <Code>{item.codeStr}</Code>

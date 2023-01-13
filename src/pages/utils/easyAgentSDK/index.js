@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
-import EasyAgentSDK from './lib/index'
+import { Alert } from 'antd'
+import Code from '@/components/Code'
+import EasyAgentSDK, { code } from './lib/index'
 
 const Index = () => {
 
 	useEffect(() => {
 		window.SDK = new EasyAgentSDK({
 			appId: '123456789',
-			baseUrl: '/api/easyAgentSDK',
+			baseUrl: `${process.env.REACT_APP_BASE_URL}/api/easyAgentSDK`,
 			onPageShow() {
 				console.log("onPageShow")
 			}
@@ -20,7 +22,8 @@ const Index = () => {
 
 	return (
 		<div>
-			<p>Page</p>
+			<Alert message="监控平台" type="success"></Alert>
+      		<Code>{code}</Code>
 		</div>
 	)
 }

@@ -38,9 +38,9 @@ const Index = () => {
   };
 
   useEffect(() => {
-    btn.current.addEventListener("transitionend", handleHover);
+    btn.current?.addEventListener("transitionend", handleHover);
     return () => {
-      btn.current.removeEventListener("transitionend", handleHover);
+      btn.current?.removeEventListener("transitionend", handleHover);
     };
   }, [btn.current]);
 

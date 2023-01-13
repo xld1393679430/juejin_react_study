@@ -1,9 +1,8 @@
 import React, { useState, memo } from "react";
 import { List, Collapse } from "antd";
 import Code from '@/components/Code'
-import http from "@/http";
-import Demo1 from "./demo1";
-import Demo2 from "./demo2";
+import Demo1, { code as code1 } from "./demo1";
+import Demo2, { code as code2 } from "./demo2";
 
 
 const { Panel } = Collapse;
@@ -12,28 +11,15 @@ const Index = () => {
   const [list, setList] = useState([
     {
       title: "时间分片",
-      codeStr: "",
-      path: "src/pages/juejin/juejin/study_13_large_data/demo1.js",
+      codeStr: code1,
       component: Demo1,
     },
     {
       title: "虚拟列表",
-      codeStr: "",
-      path: "src/pages/juejin/juejin/study_13_large_data/demo2.js",
+      codeStr: code2,
       component: Demo2,
     },
   ]);
-
-  const handleChange = async (item) => {
-    if (!item.codeStr) {
-      const codeStr = await http("/api/js_review", {
-        params: { path: item.path },
-      });
-      const index = list.findIndex((i) => i.path === item.path);
-      list[index].codeStr = codeStr;
-      setList([...list]);
-    }
-  };
 
   return (
     <List
@@ -44,7 +30,7 @@ const Index = () => {
         const Component = item.component;
         return (
           <List.Item>
-            <Collapse style={{ width: "100%" }} destroyInactivePanel={true} onChange={() => handleChange(item)}>
+            <Collapse style={{ width: "100%" }} destroyInactivePanel={true}>
               <Panel header={item.title} key={item.path}>
                 <Component />
                 <Code>{item.codeStr}</Code>

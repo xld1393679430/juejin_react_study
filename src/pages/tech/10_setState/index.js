@@ -1,40 +1,25 @@
 import React, { useState, memo } from "react";
 import { List, Collapse, Button } from "antd";
 import Code from '@/components/Code'
-import http from "@/http";
-import CountFn from "./count_fn";
-import CountClass from "./count_class";
+import CountFn, { code as code1 } from "./count_fn";
+import CountClass, { code as code2 } from "./count_class";
 
-// const path = require('path')
 const { Panel } = Collapse;
 
 const Index = () => {
   const [list, setList] = useState([
     {
       title: "1,count_fn",
-      codeStr: "",
-      path: "src/pages/setState/count_fn.js",
+      codeStr: code1,
       component: CountFn,
     },
     {
       title: "2,count_class",
-      codeStr: "",
-      path: "src/pages/setState/count_class.js",
+      codeStr: code2,
       component: CountClass,
     },
   ]);
   const [count, setCount] = useState(0);
-
-  const handleChange = async (item) => {
-    if (!item.codeStr) {
-      const codeStr = await http("/api/js_review", {
-        params: { path: item.path },
-      });
-      const index = list.findIndex((i) => i.path === item.path);
-      list[index].codeStr = codeStr;
-      setList([...list]);
-    }
-  };
 
   return (
     <div>
@@ -47,7 +32,7 @@ const Index = () => {
           const Component = item.component;
           return (
             <List.Item key={item.path}>
-              <Collapse destroyInactivePanel={true} style={{ width: "100%" }} onChange={() => handleChange(item)}>
+              <Collapse destroyInactivePanel={true} style={{ width: "100%" }}>
                 <Panel header={item.title} key={item.path}>
                   <Component count={count} />
                   <Code>{item.codeStr}</Code>
