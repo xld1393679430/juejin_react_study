@@ -70,6 +70,7 @@ const Cqw = lazy(() => import(/* webpackChunkName: "Cqw" */ "@/pages/css/16_cqw"
 const CssVariables = lazy(() => import(/* webpackChunkName: "CssVariables" */ "@/pages/css/17_css_variables"));
 const ImageFlipping = lazy(() => import(/* webpackChunkName: "ImageFlipping" */ "@/pages/css/18_image-flipping"));
 const Progress = lazy(() => import(/* webpackChunkName: "Progress" */ "@/pages/css/19_progress"));
+const FramerMotion = lazy(() => import(/* webpackChunkName: "FramerMotion" */ "@/pages/css/20_framer-motion"));
 
 // Babylon相关 学习视频的案例
 const BabylonBasics_Doc = lazy(() => import(/* webpackChunkName: "BabylonBasics_Doc" */ "@/pages/babylon-doc/1_basic"));
@@ -328,7 +329,14 @@ const routers = [
         label: "19_progress",
         icon: <MenuOutlined />,
         component: Progress,
+      }, 
+      {
+        key: "20_framer-motion",
+        label: "20_framer-motion",
+        icon: <MenuOutlined />,
+        component: FramerMotion,
       },
+      
     ],
   },
   {

@@ -21,6 +21,7 @@
     "cypress": "^10.5.0",
     "dedent": "^0.7.0",
     "formik": "^2.2.9",
+    "framer-motion": "^8.4.3",
     "immutable": "^4.1.0",
     "install": "^0.13.0",
     "mobx": "6.1.0",
