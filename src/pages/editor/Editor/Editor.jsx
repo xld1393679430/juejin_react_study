@@ -11,17 +11,18 @@ import 'codemirror/mode/css/css';
 import 'codemirror/addon/edit/closetag';
 import 'codemirror/addon/edit/closebrackets';
 import { Controlled as ControlledEditorComponent } from 'react-codemirror2';
-
+import "./Editor.css"
 
 const Editor = ({ language, value, setEditorState }) => {
+  const themeArray = ['dracula', 'material', 'mdn-like', 'the-matrix', 'night']
   const [theme, setTheme] = useState("dracula")
+
   const handleChange = (editor, data, value) => {
     setEditorState(value);
   }
-  const themeArray = ['dracula', 'material', 'mdn-like', 'the-matrix', 'night']
   
   return (
-    <div className="editor-container">
+    <>
       <div style={{marginBottom: "10px"}}>
         <label htmlFor="themes">Choose a theme: </label>
         <select name="theme" onChange={(el) => {
@@ -48,7 +49,8 @@ const Editor = ({ language, value, setEditorState }) => {
           autoCloseBrackets: true,
         }}
       />
-    </div>
+    </>
   )
 }
+
 export default Editor

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.lg\:flex {
+			color: red
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<div class="lg:flex">hello</div>
+	</div>
+	<script>
+		const required = () => {
+			throw new Error('Missing parameter');
+		};
+
+		const getAges = (yearOfBirth = required()) => new Date().getFullYear() - yearOfBirth;
+
+		const aa = getAges()
+
+		console.log(aa);
+	</script>
+</body>
+
+</html>
