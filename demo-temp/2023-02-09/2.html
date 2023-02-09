@@ -10,12 +10,19 @@
 		.lg\:flex {
 			color: red
 		}
+
+		img:not([alt]),
+		img[alt=''] {
+			outline: 8px solid red;
+		}
 	</style>
 </head>
 
 <body>
 	<div>
 		<div class="lg:flex">hello</div>
+		<p>hello a <mark>ssss</mark></p>
+		<img src="https://youimg1.tripcdn.com/target/100e0h0000008rp39A12F_C_880_350_R5.jpg?proc=source%2ftrip"  />
 	</div>
 	<script>
 		const required = () => {

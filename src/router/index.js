@@ -91,6 +91,9 @@ const EasyAgentSDK = lazy(() => import(/* webpackChunkName: "EasyAgentSDK" */ "@
 // 编辑器相关
 const Editor = lazy(() => import(/* webpackChunkName: "Editor" */ "@/pages/editor/index"));
 
+// Mac小技巧
+const Mac = lazy(() => import(/* webpackChunkName: "Mac" */ "@/pages/mac/index"));
+
 const routers = [
   {
     key: "",
@@ -535,8 +538,6 @@ const routers = [
       },
     ],
   },
-
-  
   {
     key: "Typescript",
     label: "Typescript",
@@ -569,6 +570,13 @@ const routers = [
     icon: <AppstoreOutlined />,
     component: Editor
   },
+  {
+    key: "mac",
+    label: "mac",
+    icon: <AppstoreOutlined />,
+    component: Mac
+  },
+  
 ];
 
 export default routers;

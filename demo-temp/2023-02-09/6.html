@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		h3 {
+			counter-reset: h4;
+		}
+
+		h4 {
+			counter-reset: h5;
+		}
+
+		h4::before {
+			counter-increment: h4;
+			content: counter(h2) '.' counter(h3) '.' counter(h4) '. ';
+		}
+
+		h5::before {
+			counter-increment: h5;
+			content: counter(h2) '.' counter(h3) '.' counter(h4) '.' counter(h5) '. ';
+		}
+	</style>
+</head>
+
+<body>
+	<h2>Chapter 1</h2>
+
+<h3>Section 1</h3>
+<h4>Sub section A</h4>
+
+<h3>Section 2</h3>
+<h4>Sub section A</h4>
+<h4>Sub section B</h4>
+
+<h2>Chapter 2</h2>
+	<script>
+		const formatYmd = date => (console.log(date.toISOString()), date.toISOString().slice(0, 10));
+
+		var aa = formatYmd(new Date())
+	</script>
+</body>
+
+</html>
