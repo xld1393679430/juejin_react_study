@@ -1,0 +1,11 @@
+.card {
+	width: 375px;
+	height: 140px;
+	background: url('award.jpg');
+	background-size: 375px 140px;
+}
+
+.card canvas {
+	width: 375px;
+	height: 140px;
+}
