@@ -92,6 +92,9 @@ const EasyAgentSDK = lazy(() => import(/* webpackChunkName: "EasyAgentSDK" */ "@
 // 编辑器相关
 const Editor = lazy(() => import(/* webpackChunkName: "Editor" */ "@/pages/editor/index"));
 
+// 面试相关
+const Interview = lazy(() => import(/* webpackChunkName: "Interview" */ "@/pages/interview/index"));
+
 // Mac小技巧
 const Mac = lazy(() => import(/* webpackChunkName: "Mac" */ "@/pages/mac/index"));
 
@@ -575,6 +578,12 @@ const routers = [
     label: "editor",
     icon: <AppstoreOutlined />,
     component: Editor
+  },
+  {
+    key: "interview",
+    label: "interview",
+    icon: <AppstoreOutlined />,
+    component: Interview
   },
   {
     key: "mac",
