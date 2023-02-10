@@ -97,6 +97,8 @@ const Interview = lazy(() => import(/* webpackChunkName: "Interview" */ "@/pages
 
 // 作品相关
 const Work1 = lazy(() => import(/* webpackChunkName: "Work1" */ "@/pages/works/w1/index"));
+const Work2 = lazy(() => import(/* webpackChunkName: "Work2" */ "@/pages/works/w2/index"));
+
 
 // Mac小技巧
 const Mac = lazy(() => import(/* webpackChunkName: "Mac" */ "@/pages/mac/index"));
@@ -592,6 +594,11 @@ const routers = [
         label: "刮刮卡效果",
         icon: <MenuOutlined />,
         component: Work1,
+      }, {
+        key: "work2",
+        label: "弹幕效果",
+        icon: <MenuOutlined />,
+        component: Work2,
       },
     ],
   },
