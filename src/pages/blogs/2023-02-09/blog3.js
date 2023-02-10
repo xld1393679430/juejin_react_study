@@ -37,6 +37,7 @@ const Index = () => {
 	return (
 		<>
 			<Alert message="使用MessageChannel深拷贝" type="success" />
+			<Alert message="tips：新版也可以使用structuredClone()来进行深拷贝" type="warning" />
 			<Editor title={"使用MessageChannel深拷贝"} jsContent={code} showIframe={false} />
 		</>
 	)

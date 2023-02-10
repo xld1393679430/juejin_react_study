@@ -21,8 +21,8 @@ const BtnList = {
   }
 }
 
-function Index({ title, cssContent, jsContent, showIframe = true }) {
-  const [openedEditor, setOpenedEditor] = useState("html");
+function Index({ title, cssContent, jsContent, showIframe = true, showRun = true, }) {
+  const [openedEditor, setOpenedEditor] = useState(BtnList.js.value);
   const [html, setHtml] = useState(`
     <html>
       <head></head>
@@ -108,9 +108,12 @@ function Index({ title, cssContent, jsContent, showIframe = true }) {
       )
     }
 
-    return (
-      <Button>{BtnList.run.title}</Button>
-    )
+    if (showRun) {
+      return (
+        <Button>{BtnList.run.title}</Button>
+      )
+    }
+    return null
   }
 
   return (
@@ -138,13 +141,18 @@ function Index({ title, cssContent, jsContent, showIframe = true }) {
           }}
         />
 
-        <Button
-          title={BtnList.run.title}
-          onClick={() => {
-            const iframe = document.getElementById('editor-iframe')
-            iframe.contentWindow.run()
-          }}
-        />
+        {
+          showRun ? (
+            <Button
+              title={BtnList.run.title}
+              onClick={() => {
+                const iframe = document.getElementById('editor-iframe')
+                iframe.contentWindow.run(iframe)
+              }}
+            />
+          ) : null
+        }
+
       </div>
 
       <iframe

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const stripHtml = (html) => new DOMParser().parseFromString(html, 'text/html').body.textContent || '';
+
+		var html = `
+			<font style="vertical-align: inherit;">
+				<font style="vertical-align: inherit;">从给定文本中剥离 HTML</font>
+				<font style="vertical-align: inherit;">从给定文本中剥离 HTML</font>
+			</font>
+		`
+
+		var r = stripHtml(html).trim()
+
+		console.log(r);
+	</script>
+</body>
+</html>
