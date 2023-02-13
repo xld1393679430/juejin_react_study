@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		// const unary = (fn) => (arg) => {
+		// 	console.log(arg, fn, 2222);
+		// 	return fn(arg)
+		// };
+
+		// const ss = ['1', '2', '3', '4', '5'].map(unary(parseInt)); //
+
+		// console.log(ss);
+
+		// function once(fn) {
+		// 	let flag = true
+		// 	return function (...args) {
+		// 		if (flag) {
+		// 			flag = false
+		// 			return fn(...args)
+		// 		}
+
+		// 	}
+		// }
+
+		// let n = 0;
+		// const incOnce = once(() => ++n);
+		// incOnce(); // n = 1
+		// incOnce(); // n = 1
+		// incOnce(); // n = 1
+
+		// console.log(n);
+
+		// function partial(sum, ...args) {
+		// 	return function(...n) {
+		// 		return sum(...args, ...n)
+		// 	}
+		// }
+
+		// const sum = (x, y) => x + y;
+		// const inc = partial(sum, 1);
+		// const s = inc(9); // 1
+		// console.log(s);
+
+		// function memoize(fn) {
+		// 	return function fibo(n) {
+		// 		return fn(n)
+		// 	}
+		// }
+
+		// const memoize = (fn) => (cache = Object.create(null)) =>
+		// 	(arg) =>
+		// 		cache[arg] || (cache[arg] = fn(arg));
+
+		// const memoize = (fn) =>
+		// 	(
+		// 		(cache = Object.create(null)) => (arg) => cache[arg] || (cache[arg] = fn(arg))
+		// 	)();
+
+		// const fibo = memoize((n) => (n <= 2 ? 1 : fibo(n - 1) + fibo(n - 2)));
+
+		// var s1 = fibo(1); // 1
+		// var s2 = fibo(2); // 1
+		// var s3 = fibo(3); // 2
+		// var s4 = fibo(4); // 3
+		// var s5 = fibo(5); // 5
+		// var s6 = fibo(6); // 8
+
+		// console.log(s1, s2, s3, s4, s5, s6);
+
+
+		// const roundNearest = function(num, a) {
+		// 	const b = a - num % a
+		// 	return Math.min(num - b, num + b)
+		// }
+
+		// var s1 = roundNearest(100, 30); // 90
+		// var s2 = roundNearest(200, 30); // 210
+		// var s3 = roundNearest(200, 40); // 200
+
+		// console.log(s1, s2, s3);
+
+		// function toFullHexColor(str = '') {
+		// 	let result = '#'
+		// 	str.split('').forEach(s => {
+		// 		if (s !== '#') {
+		// 			result += `${s}${s}`
+		// 		}
+		// 	})
+		// 	return result
+		// }
+
+		// var s1 = toFullHexColor('123'); // '#112233'
+		// var s2 = toFullHexColor('#123'); // '#112233'
+		// var s3 = toFullHexColor('#abc'); // '#aabbcc'
+		// console.log(s1, s2, s3);
+
+		// const decode = (token) => {
+		// 	const a1 = token.split('.')[1].replace('-', '+').replace('_', '/')
+		// 	const a2 = atob(a1)
+
+		// 	console.log(a2, typeof a2);
+		// 	return decodeURIComponent(
+		// 			a2
+		// 			.split('')
+		// 			.map((c) => {
+		// 				const s1 = c.charCodeAt(0).toString(16);
+		// 				const s2 = ('00' + s1).slice(-2);
+
+		// 				console.log(s1, s2);
+		// 				return `%${s2}`
+		// 			})
+		// 			.join('')
+		// 	);
+		// }
+
+		// var ss = decode(`
+		// 	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+		// 	eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0I
+		// 	joxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+		// `);
+
+		// console.log(ss);
+
+		// function omit(obj, keys = []) {
+		// 	let result = {}
+		// 	Object.keys(obj).filter(key => {
+		// 		if (!keys.includes(key)) {
+		// 			result[key] = obj[key]
+		// 		}
+		// 	})
+
+		// 	return result
+		// }
+
+		// function omit(obj, keys = []) {
+		// 	return Object.keys(obj).filter(key => !keys.includes(key)).reduce((res, key) => ( Object.assign(res, { [key]: obj[key] }) ), {})
+
+		// }
+
+
+
+		// var ss = omit({ a: '1', b: '2', c: '3', d: 4 }, ['a', 'b']); // { c: '3' }
+		// console.log(ss);
+
+		// function invert(obj) {
+		// 	return Object.keys(obj).reduce((res, key) => (Object.assign(res, { [obj[key]]: key })), {})
+		// }
+
+		// var ss = invert({ a: '1', b: '2', c: '3' }); // { 1: 'a', 2: 'b', 3: 'c' }
+		// console.log(ss);
+
+		function randomInteger(min, max) {
+			return Math.floor(min + Math.random() * (max - min + 1))
+		}
+
+		const ss = randomInteger(4, 10)
+		console.log(ss);
+	</script>
+</body>
+
+</html>

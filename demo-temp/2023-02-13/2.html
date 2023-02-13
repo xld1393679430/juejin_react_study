@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		const curry = (fn, ...args) => {
+			console.log(fn, fn.length, args);
+			if (fn.length <= args.length) {
+				return fn(...args)
+			}
+			return curry.bind(null, fn, ...args)
+		};
+
+		const sum = (a, b, c, d) => a + b + c + d;
+		var a1 = curry(sum)(1)(2)(3)(4); // 6
+		// var a2 = curry(sum)(1, 2, 3)(4); // 6
+		// var a3 = curry(sum, 1)(2, 3)(4); // 6
+		// var a4 = curry(sum, 1)(2)(3)(4); // 6
+		// var a5 = curry(sum, 1, 2)(3)(4); // 6
+		// var a6 = curry(sum, 1, 2, 3)(4); // 6
+
+		// console.log(a1, a2, a3, a4, a5, a6);
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+		// function pipe(...fns) {
+		// 	return function (params) {
+		// 		let result = params;
+		// 		fns.forEach(fn => {
+		// 			result = fn(result)
+		// 		})
+		// 		return result
+		// 	}
+		// }
+
+		function pipe(...fns) {
+			return function(params) {
+				fns.reduce((x, f) => {
+					console.log(x, f);
+					return f(x)
+				}, params)
+			}
+		}
+
+		const lowercase = (str) => str.toLowerCase();
+		const capitalize = (str) => `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
+		const reverse = (str) => str.split('').reverse().join('');
+
+		const fn = pipe(lowercase, capitalize, reverse);
+
+		// Hello World -> hello world -> Hello world > dlrow olleH
+		// We will execute `lowercase`, `capitalize` and `reverse` in order
+		const ss = fn('Hello World') // 'dlrow olleH';
+
+		console.log(ss);
+	</script>
+</body>
+
+</html>
