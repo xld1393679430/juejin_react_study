@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+		// function prefixWithZeros(number, digit) {
+		// 	return String(number).padStart(5, '0')
+
+		// }
+		// var ss = prefixWithZeros(123442, 5); // '00042'
+		// console.log(ss);
+
+
+		// function round(number, decimals) {
+		// 	if (Number.isNaN(number) || Number.isNaN(decimals)) {
+		// 		return number
+		// 	}
+		// 	// 先放大倍数 -> 四舍五入有 -> 缩小倍数
+		// 	const n = Math.round(`${number}e${decimals}`)
+		// 	return Number(`${n}e-${decimals}`)
+		// }
+		// var ss = round(1.234567, 3);
+		// console.log(ss);
+
+
+		// const format2 = (str, ...vals) => vals.reduce((s, v, i) => s.replace(new RegExp('\\{' + i + '\\}', 'g'), v), str);
+
+
+		// const format = (str, ...vals) => {
+		// 	return vals.reduce((s, v, i) => {
+		// 		return s.replace(new RegExp(`\\{${i}\\}`, 'g'), v)
+		// 	}, str)
+		// };
+		// const template = 'My name is {0} and I am {1} years old';
+
+		// var ss = format(template, 'John', 30);
+		// console.log(ss);
+
+
+		// const mask = (number, digit, symbol) => String(number).slice(digit).padStart(String(number).length, symbol)
+		// function mask(number, digit, symbol) {
+		// 	// return String(number).replace(/^[0-9]{3}/, symbol.repeat(digit))
+		// 	const _number = String(number)
+		// 	const _digit = digit >= _number.length ?  _number.length : digit
+
+		// 	console.log(_digit, digit, _number.length);
+		// 	return _number.replace(new RegExp(`^[0-9]{${_digit}}`), symbol.repeat(_digit))
+		// }
+		// var ss = mask(89, 3, '*'); // ***4567890
+		// console.log(ss);
+
+
+		const truncate = (str, max, suffix) => {
+			if (str.length < max) {
+				return str
+			}
+			console.log(str.substr(0, max - suffix.length), 222)
+			const end = str.substr(0, max - suffix.length).lastIndexOf(' ')
+			return `${str.substr(0, end)}${suffix}`
+		};
+
+		var ss = truncate('This is a long message', 15, '...'); // 'This is a long...'
+		console.log(ss);
+
+	</script>
+</body>
+
+</html>
