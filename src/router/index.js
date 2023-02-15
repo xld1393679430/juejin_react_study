@@ -606,12 +606,13 @@ const routers = [
         label: "刮刮卡效果",
         icon: <MenuOutlined />,
         component: Work1,
-      }, {
+      },{
         key: "work2",
-        label: "弹幕效果",
+        label: "拖拽效果",
         icon: <MenuOutlined />,
         component: Work2,
       },
+      
     ],
   },
   

@@ -42,7 +42,7 @@ const Index = () => {
 
 	return (
 		<>
-			<Alert message="1，函数的形参" type="success"></Alert>
+			<Alert message="下载文件" type="success"></Alert>
 			<Button onClick={handleDownload}>下载 csv</Button>
 			<Code tab>{code}</Code>
 		</>
