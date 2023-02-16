@@ -44,6 +44,7 @@
     "socket.io": "^4.5.2",
     "socket.io-client": "^4.5.2",
     "styled-components": "^5.3.5",
+    "tesseract.js": "^4.0.2",
     "transition-style": "^0.1.1",
     "typescript": "3",
     "web-vitals": "^3.1.0",
