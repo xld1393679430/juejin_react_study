@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<button id="openModal">Bring focus</button>
+	<div style="height: 1000px">xxx</div>
+	<div id="modal" role="dialog" tabindex="-1">
+		<h2>Modal content</h2>
+	</div>
+
+	<script>
+		const button = document.querySelector("#openModal");
+		modal = document.querySelector("#modal")
+
+		button.addEventListener("click", () => {
+			modal.focus()
+
+			button.setAttribute("hidden", true)
+
+		})
+	</script>
+</body>
+
+</html>

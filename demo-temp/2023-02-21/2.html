@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<p>If you need to check more information, check here
+		<span class="toggletip-container">
+			<button class="toggletip-button">
+				<span class="toggletip-icon" aria-hidden="true">?</span>
+				<div class="sr-only">Más información</div>
+			</button>
+			<span role="status" class="toggletip-info"></span>
+		</span>
+	</p>
+
+	<script>
+
+		const toggletipButton = document.getElementsByClassName('toggletip-button')[0]
+		const toggletipInfo = document.getElementsByClassName('toggletip-info')[0]
+		// const toggletipContent = document.getElementsByClassName()
+
+		toggletipButton.addEventListener("click", () => {
+			toggletipInfo.innerHTML = "";
+			setTimeout(() => {
+				toggletipInfo.innerHTML = 'toggletipContent';
+			}, 100);
+		});
+
+	</script>
+</body>
+
+</html>
