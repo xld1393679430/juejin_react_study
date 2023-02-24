@@ -102,6 +102,7 @@ const Interview = lazy(() => import(/* webpackChunkName: "Interview" */ "@/pages
 const Work1 = lazy(() => import(/* webpackChunkName: "Work1" */ "@/pages/works/w1/index"));
 const Work2 = lazy(() => import(/* webpackChunkName: "Work2" */ "@/pages/works/w2/index"));
 const Work3 = lazy(() => import(/* webpackChunkName: "Work3" */ "@/pages/works/w3/index"));
+const Work4 = lazy(() => import(/* webpackChunkName: "Work4" */ "@/pages/works/w4/index"));
 
 
 // Mac小技巧
@@ -623,6 +624,11 @@ const routers = [
         label: "图像转换为文本",
         icon: <MenuOutlined />,
         component: Work3,
+      }, {
+        key: "work4",
+        label: "vscode",
+        icon: <MenuOutlined />,
+        component: Work4,
       },
       
     ],
