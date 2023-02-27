@@ -19,6 +19,7 @@ const Blog20230210 = lazy(() => import(/* webpackChunkName: "Blog20230210" */ "@
 const Blog20230213 = lazy(() => import(/* webpackChunkName: "Blog20230213" */ "@/pages/blogs/2023-02-13"));
 const Blog20230214 = lazy(() => import(/* webpackChunkName: "Blog20230214" */ "@/pages/blogs/2023-02-14"));
 const Blog20230221 = lazy(() => import(/* webpackChunkName: "Blog20230221" */ "@/pages/blogs/2023-02-21"));
+const Blog20230227 = lazy(() => import(/* webpackChunkName: "Blog20230227" */ "@/pages/blogs/2023-02-27"));
 
 const Study_10_hoc = lazy(() => import(/* webpackChunkName: "Study_10_hoc" */ "@/pages/juejin/study_10_hoc"));
 const Study_11_render = lazy(() => import(/* webpackChunkName: "Study_11_render" */ "@/pages/juejin/study_11_render"));
@@ -103,6 +104,7 @@ const Work1 = lazy(() => import(/* webpackChunkName: "Work1" */ "@/pages/works/w
 const Work2 = lazy(() => import(/* webpackChunkName: "Work2" */ "@/pages/works/w2/index"));
 const Work3 = lazy(() => import(/* webpackChunkName: "Work3" */ "@/pages/works/w3/index"));
 const Work4 = lazy(() => import(/* webpackChunkName: "Work4" */ "@/pages/works/w4/index"));
+const Work5 = lazy(() => import(/* webpackChunkName: "Work5" */ "@/pages/works/w5/index"));
 
 
 // Mac小技巧
@@ -205,6 +207,11 @@ const routers = [
         label: "Blog20230221",
         icon: <MenuOutlined />,
         component: Blog20230221,
+      }, {
+        key: "Blog20230227",
+        label: "Blog20230227",
+        icon: <MenuOutlined />,
+        component: Blog20230227,
       },
       
     ]
@@ -629,6 +636,11 @@ const routers = [
         label: "vscode",
         icon: <MenuOutlined />,
         component: Work4,
+      }, {
+        key: "work5",
+        label: "xxx",
+        icon: <MenuOutlined />,
+        component: Work5,
       },
       
     ],
