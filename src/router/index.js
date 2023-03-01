@@ -20,6 +20,7 @@ const Blog20230213 = lazy(() => import(/* webpackChunkName: "Blog20230213" */ "@
 const Blog20230214 = lazy(() => import(/* webpackChunkName: "Blog20230214" */ "@/pages/blogs/2023-02-14"));
 const Blog20230221 = lazy(() => import(/* webpackChunkName: "Blog20230221" */ "@/pages/blogs/2023-02-21"));
 const Blog20230227 = lazy(() => import(/* webpackChunkName: "Blog20230227" */ "@/pages/blogs/2023-02-27"));
+const Blog20230228 = lazy(() => import(/* webpackChunkName: "Blog20230228" */ "@/pages/blogs/2023-02-28"));
 
 const Study_10_hoc = lazy(() => import(/* webpackChunkName: "Study_10_hoc" */ "@/pages/juejin/study_10_hoc"));
 const Study_11_render = lazy(() => import(/* webpackChunkName: "Study_11_render" */ "@/pages/juejin/study_11_render"));
@@ -212,6 +213,11 @@ const routers = [
         label: "Blog20230227",
         icon: <MenuOutlined />,
         component: Blog20230227,
+      }, {
+        key: "Blog20230228",
+        label: "Blog20230228",
+        icon: <MenuOutlined />,
+        component: Blog20230228,
       },
       
     ]

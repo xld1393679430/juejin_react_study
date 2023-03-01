@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import { Radio, Divider, Alert } from 'antd';
-import Demo01 from './demo01'
-import Demo02 from './demo02'
+import Blog1 from './blog1'
+import Blog2 from './blog2'
+import Blog3 from './blog3'
+import Blog4 from './blog4'
+import Blog5 from './blog5'
+import Blog6 from './blog6'
 
-const Blogs = [Demo01, Demo02]
+
+const Blogs = [Blog1, Blog2, Blog3, Blog4, Blog5, Blog6]
 
 const Index = () => {
-	const [value, setValue] = useState(2)
+	const [value, setValue] = useState(1)
 
 	const onChange = (event) => {
 		setValue(event.target.value)
